@@ -82,6 +82,15 @@ function changeToFish(){
     type="Fish"
 }
 
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
+
 async function saveRecipe(){
     var a = await getAllRecipes() 
     var b = a[a.length-1].recipeId+1
@@ -93,15 +102,41 @@ async function saveRecipe(){
         recipeDesc: document.getElementById("recipeDesc").value,
         recipePicture: picture,
         recipeDuration:[
-            document.getElementById("prepTime"),
-            document.getElementById("cookTime")
+            document.getElementById("prepTime")*60,
+            document.getElementById("cookTime")*60
         ],
         ingredients:[],
         steps:[],
         allRatings:[]
     }
     var ingredientsList = document.querySelectorAll("#ingredient")
-    console.log(ingredientsList) 
     var stepsList = document.querySelectorAll("#step")
-    console.log(stepsList)   
+    ingredientsList.forEach(element => {
+        fullRecipe.ingredients.push(element.value)
+    }); 
+    stepsList.forEach(element => {
+        fullRecipe.steps.push(element.value)
+    });
+    a.push(fullRecipe)
+    var jsonData = JSON.stringify(a,null,2)
+    const fs = require('fs')
+    fs.writeFileSync("data/backup.json",jsonData)
+    fetch('/update-json-endpoint', {
+        method: 'POST',
+        body: jsonData,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('JSON file updated successfully.');
+        } else {
+            console.error('Failed to update JSON file.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+    
 }
