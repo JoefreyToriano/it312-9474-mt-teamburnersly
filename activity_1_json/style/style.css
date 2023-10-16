@@ -650,6 +650,9 @@
     .saveOrNo button:hover{
         background-color: #FFADAE;
     }
+    .saveOrNo button:active{
+        background-color: #b87b7c;
+    }
     .fill{
         width: 100%;
     }

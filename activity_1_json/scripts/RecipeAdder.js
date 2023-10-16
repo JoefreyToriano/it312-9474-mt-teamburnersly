@@ -1,4 +1,5 @@
 let type=""
+let picture
 
 function addIngredient(){
     var ingredienlist = document.getElementById("Ingredients")
@@ -10,6 +11,7 @@ function addIngredient(){
         trash.parentElement.parentElement.remove()
     }
     input.setAttribute("type","text")
+    input.setAttribute("id","ingredient")
     var div = document.createElement("div")
     div.setAttribute("class","inputObj")
     div.appendChild(input)
@@ -28,6 +30,7 @@ function addStep(){
         trash.parentElement.parentElement.remove()
     }
     input.setAttribute("type","text")
+    input.setAttribute("id","step")
     var div = document.createElement("div")
     div.setAttribute("class","inputObj")
     div.appendChild(input)
@@ -42,6 +45,7 @@ function a(){
     reader.readAsDataURL(file);
     reader.onload = function () {
         document.getElementById("prof").src=reader.result
+        picture=reader.result
     };
     reader.onerror = function (error) {
         console.log('Error: ', error);
@@ -78,6 +82,26 @@ function changeToFish(){
     type="Fish"
 }
 
-function saveRecipe(){
-    
+async function saveRecipe(){
+    var a = await getAllRecipes() 
+    var b = a[a.length-1].recipeId+1
+    var fullRecipe={
+        recipeId: b,
+        recipeName: document.getElementById("recipeName").value,
+        recipeAuthor: localStorage.getItem("User ID"),
+        recipeType: type,
+        recipeDesc: document.getElementById("recipeDesc").value,
+        recipePicture: picture,
+        recipeDuration:[
+            document.getElementById("prepTime"),
+            document.getElementById("cookTime")
+        ],
+        ingredients:[],
+        steps:[],
+        allRatings:[]
+    }
+    var ingredientsList = document.querySelectorAll("#ingredient")
+    console.log(ingredientsList) 
+    var stepsList = document.querySelectorAll("#step")
+    console.log(stepsList)   
 }
