@@ -38,6 +38,9 @@
             </header>
 
             <!-- ======= add recipe ======= -->
+            <div class="AddRecipe_title">
+                <h1> Share your recipe</h1>
+            </div>
             <div class="createRecipeForm">
                 <div class="form2">
 
@@ -66,7 +69,7 @@
                             </div>
                             <div class="fill">
                             </div>
-                            <div>
+                            <div class="timeForm_label">
                                 <p>Cooking Time:</p>
                                 <div class="timeInput">
                                     <input type="number" id="cookTime">
@@ -75,9 +78,11 @@
                             </div>
                         </div>
                     </div>
+                <br>
+                    <!--recipe time --> 
                     <div class="form">
-                        <p>Type</p>
-                        <p id="choosenType">Choosen Type:</p>
+                        <p>Category</p>
+                        <p id="choosenType">Choosen Category:</p>
                         <div class="recipeMenu" title="categories">
                             <button title="first" onclick="changeToChicken()">
                                 <img src="images/icons/chicken_icon.svg" alt="Fish Icon"> Chicken</button>
@@ -93,29 +98,36 @@
                                 <img src="images/icons/fish_icon.svg" alt="Fish Icon"> Fish </button>
                         </div>
                     </div>
+                <br>
+                    <!-- add ingredients --> 
                     <div class="listAdder">
                         <div class="formHeader">
                             <p>Ingredients</p>
-                            <img onclick="addIngredient()" src="images/Plus.png" >
+                            <img onclick="addIngredient()" src="images/icons/add_icon.svg" alt="Add Icon">
                         </div>
                         <ul id="Ingredients">
                             <li><div class="inputObj"><input type="text" id="ingredient"></div></li>
                         </ul>
                     </div>
+                <br>
+                    <!-- add procedure --> 
                     <div class="listAdder">
                         <div class="formHeader">
                             <p>Steps</p>
-                            <img onclick="addStep()" src="images/Plus.png" >
+                            <img onclick="addStep()" src="images/icons/add_icon.svg" alt="Add Icon" >
                         </div>
                         <ol id="Steps">
                             <li><div class="inputObj"><input type="text" id="step"></div></li>
                         </ol>
                     </div>
+                <br>
+                    <!-- upload image --> 
                     <div class="imageUploader">
                         <p>Upload Recipe Image</p>
                         <img id="prof">
                         <input type="file" id="myfile" name="myfile" accept="image/*" onchange="a()">
                     </div>
+                <br>
                     <div class="saveOrNo">
                         <button>Back</button>
                         <div></div>

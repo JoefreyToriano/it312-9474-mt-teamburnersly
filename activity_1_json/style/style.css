@@ -457,17 +457,18 @@
     .ingredients ul{
         margin: 0;
         margin-left: 5px;
+        color:var(--primary-color);
+        font-family: var(--regular-font);
     }
     .steps h2{
         margin: 0;
         padding: 0;
-        color:var(--primary-color);
-        font-family: var(--bold-font);
     }
     .steps ol{
         margin: 0;
         margin-left: 5px;
     }
+
     .back-button {
         display: flex;
         align-items: center;
@@ -488,10 +489,14 @@
     }
 
     /*Add Recipe*/
+    .AddRecipe_title h1{
+        font-family: var(--special-font);
+        color: var(--bgandtext-color-light);
+    }
     .createRecipeForm{
         display: flex;
         background-color: var(--bgandtext-color-light);
-        border-radius: 25px;
+        border-radius: 5px;
         width: 700px;
         min-height: 500px;
         height: auto;
@@ -508,7 +513,8 @@
         display: flex;
         width: 100%;
         flex-direction: column;
-        font-family: var(--regular-font);
+        font-family: var(--bold-font);
+        color: var(--bgandtext-color-dark);
     }
     .form > input[type=text]{
         width: 100%;
@@ -544,6 +550,7 @@
     }
     .formHeader p{
         width: 100%;
+        
     }
     .formHeader img{
         width: 25px;
@@ -582,12 +589,13 @@
         flex-direction: row;
         margin-bottom: 0;
     }
-
     .saveOrNo div{
         width: 100%;
     }
     .saveOrNo button{
-        background-color: var(--primary-color-light);
+        background-color: var(--primary-color);
+        color: var(--bgandtext-color-light);
+        font-family: var(--regular-font);
         margin: 0;
         width: 150px;
         border-radius: 25px;
@@ -616,7 +624,19 @@
     }
     .timeInput input[type="number"]{
         width: 100px;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: var(--primary-color);
     }
     .timeInput p{
         margin-left: 5px;
+    }
+    .form p[id=choosenType] {
+        color: var(--primary-color-dark);
+        font-size: 15px;
+        font-family: var(--light-font);
+    }
+    .listAdder .formHeader p, .imageUploader p {
+        font-family: var(--bold-font);
+        color: var(--bgandtext-color-dark);
     }

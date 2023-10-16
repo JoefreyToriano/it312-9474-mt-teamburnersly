@@ -6,7 +6,7 @@ function addIngredient(){
     var ingredient = document.createElement("li")
     var input = document.createElement("INPUT")
     var trash = document.createElement("img")
-    trash.src = ("images/Trash.png")
+    trash.src = ("images/icons/delete_icon.svg")
     trash.onclick = function(){
         trash.parentElement.parentElement.remove()
     }
@@ -25,7 +25,7 @@ function addStep(){
     var ingredient = document.createElement("li")
     var input = document.createElement("INPUT")
     var trash = document.createElement("img")
-    trash.src = ("images/Trash.png")
+    trash.src = ("images/icons/delete_icon.svg")
     trash.onclick = function(){
         trash.parentElement.parentElement.remove()
     }
@@ -53,32 +53,32 @@ function a(){
 }
 
 function changeToPork(){
-    document.getElementById("choosenType").innerHTML = "Choosen Type: Pork"
+    document.getElementById("choosenType").innerHTML = "Choosen Category: Pork"
     type="Pork"
 }
 
 function changeToChicken(){
-    document.getElementById("choosenType").innerHTML = "Choosen Type: Chicken"
+    document.getElementById("choosenType").innerHTML = "Choosen Category: Chicken"
     type="Chicken"
 }
 
 function changeToDessert(){
-    document.getElementById("choosenType").innerHTML = "Choosen Type: Dessert"
+    document.getElementById("choosenType").innerHTML = "Choosen Category: Dessert"
     type="Dessert"
 }
 
 function changeToBeef(){
-    document.getElementById("choosenType").innerHTML = "Choosen Type: Beef"
+    document.getElementById("choosenType").innerHTML = "Choosen Category: Beef"
     type="Beef"
 }
 
 function changeToVegetable(){
-    document.getElementById("choosenType").innerHTML = "Choosen Type: Vegetable"
+    document.getElementById("choosenType").innerHTML = "Choosen Category: Vegetable"
     type="Vegetable"
 }
 
 function changeToFish(){
-    document.getElementById("choosenType").innerHTML = "Choosen Type: Fish"
+    document.getElementById("choosenType").innerHTML = "Choosen Category: Fish"
     type="Fish"
 }
 
