@@ -2,16 +2,16 @@
 
   /* -- Font Family -- */
 @font-face {
-    font-family: MPlus-Rounded-Bold;
-    src: url("../fonts/mplus-rounded-bold.ttf");
+    font-family: Rubik-Bold;
+    src: url("../fonts/rubik_bold.ttf");
 }
 @font-face {
-    font-family: MPlus-Rounded-Regular;
-    src: url("../fonts/mplus-rounded-regular.ttf");
+    font-family: Rubik-Regular;
+    src: url("../fonts/rubik_regular.ttf");
 }
 @font-face {
-    font-family: MPlus-Rounded-Light;
-    src: url("../fonts/mplus-rounded-light.ttf");
+    font-family: Rubik-Light;
+    src: url("../fonts/rubik_light.ttf");
 }
 @font-face {
     font-family: Lobster-Regular;
@@ -30,9 +30,9 @@
 
 /* -- Font Root -- */
 :root {
-    --bold-font: 'MPlus-Rounded-Bold';
-    --regular-font: 'MPlus-Rounded-Regular';
-    --light-font: 'MPlus-Rounded-Light';
+    --bold-font: 'Rubik-Bold';
+    --regular-font: 'Rubik-Regular';
+    --light-font: 'Rubik-Light';
     --special-font: 'Lobster-Regular';
 }
 
@@ -642,7 +642,6 @@
         color: var(--bgandtext-color-dark);
     }
 
-    * Home */
     .intro {
         display: flex; /* Use flexbox for layout */
         color: var(--primary-color);
