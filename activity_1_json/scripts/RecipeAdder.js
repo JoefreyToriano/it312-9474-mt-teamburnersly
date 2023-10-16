@@ -82,6 +82,15 @@ function changeToFish(){
     type="Fish"
 }
 
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
+
 async function saveRecipe(){
     var a = await getAllRecipes() 
     var b = a[a.length-1].recipeId+1
@@ -101,7 +110,14 @@ async function saveRecipe(){
         allRatings:[]
     }
     var ingredientsList = document.querySelectorAll("#ingredient")
-    console.log(ingredientsList) 
     var stepsList = document.querySelectorAll("#step")
-    console.log(stepsList)   
+    console.log(stepsList)
+    ingredientsList.forEach(element => {
+        fullRecipe.ingredients.push(element.value)
+    }); 
+    stepsList.forEach(element => {
+        fullRecipe.steps.push(element.value)
+    });
+    var jsonData = JSON.stringify(fullRecipe,null,2)
+    download(jsonData, 'json.json', 'text/plain');
 }
