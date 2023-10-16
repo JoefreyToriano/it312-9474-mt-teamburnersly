@@ -1,7 +1,10 @@
 [
     {
-      "category": "Chicken",
+      "recipeId" : 1,
       "recipe_name": "Crispy Fried Chicken",
+      "recipeAuthor" : 1,
+      "recipeType": "chicken",
+      "recipePic": " ",
       "prep_time": "20 minutes",
       "cook_time": "15 minutes",
       "total_time": "35 minutes",
@@ -31,12 +34,27 @@
         "7. Remove from the pot and put on a plate lined with paper towels. This will absorb the oil.",
         "8. Serve with ketchup or gravy.",
         "9. Share and enjoy!"
-      ]
+      ],
+      "allRatings" : [
+        {
+        "user":2,
+        "rating": 10
+      },
+      {
+        "user":3,
+        "rating":3
+    }
+  
+]
     },
-    {
-      "category": "Chicken",
+      {
+      
+      "recipeId" : 2,
       "recipe_name": "Kakaibang Filipino Chicken Adobo",
-      "description": "Chicken adobo marinated in yogurt",
+      "recipeDesc": "Chicken adobo marinated in yogurt",
+      "recipeAuthor" : 2,
+      "recipeType": "Chicken",
+      "recipePic" : " ",
       "prep_time": "10 minutes",
       "cook_time": "50 minutes",
       "ingredients": [
@@ -71,11 +89,24 @@
         "8. Combine cornstarch with ¼ cup water to make a slurry. Mix well. Pour into the cooking pot and stir immediately. Add boiled eggs. Continue cooking until the sauce thickens.",
         "9. Arrange on a serving plate and garnish with chopped green onions.",
         "10. Share and enjoy!"
+      ],
+      "allRatings" : [
+        {
+          "user" :4,
+          "rating" : 10
+        },
+        {
+          "user" : 5,
+          "rating" : 9
+        }
       ]
     },
         {
-        "category": "Chicken",
-        "recipe_name": "Chicken Tinola",
+        "recipeId": "3",
+        "recipeName": "Chicken Tinola",
+        "recipeAuthor" : 1,
+        "recipeType": "Chicken",
+        "recipePic" : " ",
         "prep_time": "10 minutes",
         "cook_time": "1 hour",
         "total_time": "1 hour 10 minutes",
@@ -98,12 +129,26 @@
             "6. Add the hot pepper leaves",
             "7. Add salt and pepper to taste",
             "8. Serve hot. Share and enjoy!"
-      ]
+      ],
+      "allRatings" : [
+        {
+          "user" : 3,
+          "rating" : 9
+        },
+        {
+          "user" : 5,
+          "rating" : 8
+        }
+  ]   
     },
-    {
-        "category": "Pork",
-        "recipe_name": "Pork Binagoongan sa Gata",
-        "description": "Pork belly with shrimp paste in coconut milk",
+      {
+        "recipeId" : 4,
+
+        "recipeName": "Pork Binagoongan sa Gata",
+        "recipeDesc": "Pork belly with shrimp paste in coconut milk",
+        "recipeAuthor" : 3,
+        "recipeType": "Pork",
+        "recipePic" : " ",
         "prep_time": "15 minutes",
         "cook_time": "1 hour 20 minutes",
         "ingredients": [
@@ -130,12 +175,25 @@
         "Combine Knorr Gintaang Gulay Mix with 1 cup water. Pour the mixture into the pot. Add vinegar. Cover and continue cooking until the pork becomes tender.",
         "Add the fried eggplants, long green peppers, along with a teaspoon of sugar. Cook for 2 minutes.",
         "Season with fish sauce and ground black pepper. Serve with rice. Share and enjoy!"
-        ]
-        },
+        ],
+        "allRatings" : [
+          {
+            "user" : 4,
+            "rating" : 5
+          },
+          {
+            "user" : 2, 
+            "rating" : 10
+          }
+      ]
+    },
         {
-            "category" :"Pork",
-            "recipe_name": "Crispy Pata Kare Kare",
-            "description": "Crispy pork hock cooked in peanut sauce and served with steamed vegetables",
+            "recipeId" : 4,          
+            "recipeName": "Crispy Pata Kare Kare",
+            "recipeDesc": "Crispy pork hock cooked in peanut sauce and served with steamed vegetables",
+            "recipeAuthor" : 1,
+            "recipeType" :"Pork",
+            "recipePic" : " ",
             "prep_time": "10 minutes",
             "cook_time": "1 hour 30 minutes",
             "ingredients": {
@@ -167,12 +225,21 @@
               "Heat oil in a wide and deep pot. Fry the pork hock until the bottom side turns golden brown and crispy. Turn it over and do the same thing on the opposite side. Remove from the pot. Let it cool down. Debone the pork hock. Set aside.",
               "Arrange the vegetable ingredients on a steamer. Steam for 3 to 5 minutes. Set aside.",
               "Assemble your crispy pata kare-kare by pouring half of the sauce on a serving bowl. Arrange the steamed vegetables all around. Top with crispy pata. Distribute the remaining sauce by pouring onto the bowl. Serve with shrimp paste (bagoong alamang) as a condiment. Share and enjoy!"
+            ],
+            "allRatings" : [
+              {
+                "user" : 2,
+                "rating" : 9
+              }
             ]
           },
           {
-            "category" : "Pork",
-            "recipe_name": "Pork Sinigang Recipe",
-            "description": "Pork soup in sour broth with okra, kangkong, eggplant, and string beans. This dish is best during the cold weather.",
+            "recipeId" : 5,
+            "recipeName": "Pork Sinigang Recipe",
+            "recipeDesc": "Pork soup in sour broth with okra, kangkong, eggplant, and string beans. This dish is best during the cold weather.",
+            "recipeAuthor" : 2,
+            "recipeType" : "Pork",
+            "recipePic" : " ",
             "prep_time": "10 minutes",
             "cook_time": "1 hour",
             "total_time": "1 hour 10 minutes",
@@ -200,12 +267,21 @@
               "Add the string beans (and other vegetables if there are any) and simmer for 5 to 8 minutes.",
               "Put-in the spinach, turn off the heat, and cover the pot. Let the spinach cook using the remaining heat in the pot.",
               "Serve hot. Share and enjoy!"
+            ],
+            "allRatings" : [
+              {
+                "user" : 2,
+                "rating" : 6
+              }
             ]
           },
             {
-                "category" : "dessert",
-                "recipe_name": "Leche Flan",
-                "description": "This is a simple and easy version of a famous Filipino dessert known as Leche Flan.",
+                "recipeId" : 6,
+                "recipeName": "Leche Flan",
+                "recipeDesc": "This is a simple and easy version of a famous Filipino dessert known as Leche Flan.",
+                "recipeAuthor" : 2,
+                "recipeType" : "dessert",
+                "recipePic" : " ",
                 "prep_time": "10 minutes",
                 "cook_time": "45 minutes",
                 "total_time": "55 minutes",
@@ -229,12 +305,21 @@
                   "Steam the mold with egg and milk mixture for 30 to 35 minutes.",
                   "After steaming, let the temperature cool down then refrigerate.",
                   "Serve for dessert. Share and Enjoy!"
+                ],
+                "allRatings" :[
+                  {
+                    "user" : 5,
+                    "rating" : 8
+                  }
                 ]
               },
               {
-                "category" : "dessert",
-                "recipe_name": "Biko Recipe",
-                "description": "Sticky Filipino rice cake",
+                "recipeId" : 7,
+                "recipeName": "Biko Recipe",
+                "recipeDesc": "Sticky Filipino rice cake",
+                "recipeAuthor" : 4,
+                "recipeType" : "dessert",
+                "recipePic" : " ",
                 "prep_time": "10 minutes",
                 "cook_time": "40 minutes",
                 "total_time": "50 minutes",
@@ -251,12 +336,25 @@
                   "Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
                   "Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
                   "Share and Enjoy!"
-                ]
-              },
+                ],
+                "allRatings" : [
+                  {
+                    "user" :4,
+                    "rating" : 10
+                  },
+                  {
+                    "user" : 5,
+                    "rating" : 9
+              }
+        ]
+             },
               {
-                "category": "dessert",
-                "recipe_name": "Maja Blanca",
-                "description": "This is a recipe for Maja Blanca.",
+                "recipeId" : 8,
+                "recipeName": "Maja Blanca",
+                "recipeDesc": "This is a recipe for Maja Blanca.",
+                "recipeAuthor" : 2,
+                "recipeType" : "dessert",
+                "recipePic" : " ",
                 "prep_time": "8 minutes",
                 "cook_time": "35 minutes",
                 "total_time": "43 minutes",
@@ -280,12 +378,21 @@
                   "Allow to cool down then refrigerate for at least 1 hour.",
                   "Garnish with toasted grated coconut (or latik if available).",
                   "Serve cold. Share and enjoy!"
+                ],
+                "allRatings" : [
+                  {
+                    "user" : 1,
+                    "rating" : 5
+                  }
                 ]
               },
               {
-                "category": "beef",
-                "recipe_name": "Better Beef Nilaga",
-                "description": "Filipino boiled beef soup with bok choy and corn",
+                "recipeId" : 9,
+                "recipeName": "Better Beef Nilaga",
+                "recipeDesc": "Filipino boiled beef soup with bok choy and corn",
+                "recipeAuthor" : 5,
+                "recipeType" : "beef",
+                "recipePic" : " ",
                 "prep_time": "15 minutes",
                 "cook_time": "1 hour 30 minutes",
                 "ingredients": {
@@ -313,12 +420,21 @@
                   "Add the long green beans, cabbage, and bok choy. Continue cooking for 3 minutes.",
                   "Season with fish sauce and ground black pepper.",
                   "Transfer to a serving bowl. Serve hot. Share and enjoy!"
+                ],
+                "allRatings" : [
+                  {
+                    "user" : 2,
+                    "rating" : 8
+                  }
                 ]
               },
               {
-                "category": "beef",
-                "recipe_name": "Creamy Beef with Mushroom",
-                "description": "A delicious creamy beef and mushroom dish.",
+                "recipeId" : 10,
+                "recipeName": "Creamy Beef with Mushroom",
+                "recipeDesc": "A delicious creamy beef and mushroom dish.",
+                "recipeAuthor" : 5,
+                "recipeType" : "beef",
+                "recipePic" :" ",
                 "prep_time": "5 minutes",
                 "cook_time": "30 minutes",
                 "ingredients": {
@@ -344,43 +460,21 @@
                   "Season with salt and ground black pepper.",
                   "Top with parsley. Serve warm with rice.",
                   "Share and enjoy!"
+                ],
+                "allRatings" :[
+                  {
+                    "user" :3,
+                    "rating" : 8
+                  }
                 ]
               },
               {
-                "category": "beef",
-                "recipe_name": "Creamy Beef with Mushroom",
-                "description": "A delightful dish with tender beef and creamy mushroom sauce.",
-                "prep_time": "5 minutes",
-                "cook_time": "30 minutes",
-                "ingredients": {
-                  "Beef Sirloin (sliced thinly)": "2 lbs",
-                  "Button Mushrooms": "8 ounces",
-                  "Knorr Cream of Mushroom Soup": "62 grams",
-                  "Garlic (sliced)": "1 head",
-                  "Onion (diced)": "1",
-                  "Water": "2 cups",
-                  "Butter": "3 tablespoons",
-                  "Cooking Oil": "1 tablespoon",
-                  "Parsley (chopped)": "1 tablespoon",
-                  "Salt and Ground Black Pepper (to taste)": ""
-                },
-                "instructions": [
-                  "Melt butter in a pan. Add cooking oil.",
-                  "Sauté garlic until it browns. Add onion and cook until it softens.",
-                  "Add the beef. Cook while stirring until the sides turn brown.",
-                  "Pour 1 cup of water. Cover the pan. Adjust to a simmer and continue cooking for 35 minutes.",
-                  "Add button mushrooms. Stir.",
-                  "Combine 1 cup of water and Knorr Cream of Mushroom in a bowl. Mix well.",
-                  "Pour the mixture into the pan. Let it boil. Continue cooking uncovered for 10 to 15 minutes using low heat setting.",
-                  "Season with salt and ground black pepper.",
-                  "Top with parsley. Serve warm with rice.",
-                  "Share and enjoy!"
-                ]
-              },
-              {
-                "category" : "beef",
-                "recipe_name": "Beef Steak",
-                "description": "Tender beef steak stew with onions.",
+                "recipeId" : 11,
+                "recipeName": "Beef Steak",
+                "recipeDesc": "Tender beef steak stew with onions.",
+                "recipeAuthor" : 2,
+                "recipeType" : "beef",
+                "recipePic" :" ",
                 "prep_time": "10 minutes",
                 "cook_time": "1 hour",
                 "ingredients": {
@@ -407,12 +501,21 @@
                   "Make the sauce thicker by pouring-in the slurry. Do this by mixing cornstarch with 3 tablespoons of water.",
                   "Once the sauce gets thick enough, you may turn the heat off and transfer your Filipino Style Beef Steak to a serving bowl.",
                   "Serve with warm rice. Share and enjoy!"
+                ],
+                "allRatings" : [
+                  {
+                    "user" : 3,
+                    "rating" : 10
+                  }
                 ]
               },
               {
-                "category": "vegetable",
-                "recipe_name": "Ginataang Sitaw at Kalabasa with Fried Tilapia",
-                "description": "Ginataang sitaw at kalabasa and crispy fried tilapia served with rice.",
+                "recipeId" : 12, 
+                "recipeName": "Ginataang Sitaw at Kalabasa with Fried Tilapia",
+                "recipeDesc": "Ginataang sitaw at kalabasa and crispy fried tilapia served with rice.",
+                "recipeAuthor":3,
+                "recipeType" : "vegetable",
+                "recipePic" :" ",
                 "prep_time": "10 minutes",
                 "cook_time": "20 minutes",
                 "ingredients": {
@@ -435,12 +538,21 @@
                   "Combine Knorr Ginataang Gulay Mix and 1 ½ cups water. Stir and pour it into the pan. Cover the pan with a lid and let the liquid boil. Cook for 5 to 7 minutes.",
                   "You can season with salt and ground black pepper as needed.",
                   "Serve with rice and fried tilapia. Share and enjoy!"
+                ],
+                "allRatings" : [
+                  {
+                    "user" :4,
+                    "rating" : 10
+                  }
                 ]
               },
               {
-                "category": "vegetable",
-                "recipe_name": "Ginisang Munggo (Monggo)",
-                "description": "Sauteed mung beans with spinach. This simple and healthy dish is perfect to have during rainy or cold weather. Serve it with rice and fried fish on the side.",
+                "recipeId" : 13,
+                "recipeName" : "Ginisang Munggo (Monggo)",
+                "recipeDesc": "Sauteed mung beans with spinach. This simple and healthy dish is perfect to have during rainy or cold weather. Serve it with rice and fried fish on the side.",
+                "recipeAuthor" :3,
+                "recipeType" :"vegetable",
+                "recipePic" : " ",
                 "prep_time": "10 minutes",
                 "cook_time": "1 hour",
                 "total_time": "1 hour 20 minutes",
@@ -469,12 +581,22 @@
                   "Add the spinach and pork rinds (chicharon).",
                   "Sprinkle the ground black pepper.",
                   "Serve hot. Share and Enjoy!"
+                ],
+                "allRatings" :[
+                  {
+                    "user" :3,
+                    "rating" :5
+                  }
                 ]
               },
-              {
-                "category":"vegetable",
-                "recipe_name": "Chop Suey",
-                "description": "This is a perfect dish for vegetable lovers. Chop suey is a dish made using a variety of veggies including snow peas, young corn, cabbage, and bell peppers. There is also a protein and seafood component in it. I went the extra mile by adding boiled and cute quail eggs. It was so good.",
+                {
+                
+                "recipeId" : 14,
+                "recipeName": "Chop Suey",
+                "recipeDesc": "This is a perfect dish for vegetable lovers. Chop suey is a dish made using a variety of veggies including snow peas, young corn, cabbage, and bell peppers. There is also a protein and seafood component in it. I went the extra mile by adding boiled and cute quail eggs. It was so good.",
+                "recipeAuthor" :4,
+                "recipeType" : "vegetable",
+                "recipePic" : " ",
                 "prep_time": "10 minutes",
                 "cook_time": "30 minutes",
                 "total_time": "40 minutes",
@@ -512,12 +634,21 @@
                   "Add the boiled quail eggs and cornstarch diluted in water. Toss.",
                   "Transfer to a serving plate. Serve.",
                   "Share and enjoy!"
+                ],
+                "allRatings" :[
+                  {
+                    "user" : 5,
+                    "rating" : 10
+                  }
                 ]
               },
               {
-                "category": "fish",
-                "recipe_name": "Pinangat na Galunggong sa Kamias",
-                "description": "This is a simple round scad dish, wherein the fish is stewed with bilimbi along with onion, ginger, and pepper.",
+                "recipeId" : 15,
+                "recipeName": "Pinangat na Galunggong sa Kamias",
+                "recipeDesc": "This is a simple round scad dish, wherein the fish is stewed with bilimbi along with onion, ginger, and pepper.",
+                "recipeAuthor" : 2,
+                "recipeType" : "fish",
+                "recipePic" : " ",
                 "ingredients": {
                   "Galunggong Fish (cleaned)": "1 lb",
                   "Kamias (Bilimbi, dried)": "20 pieces",
@@ -555,12 +686,21 @@
                   "Remove from the pan and arrange on a serving plate.",
                   "Serve with your favorite condiments and side dish.",
                   "Share and enjoy!"
+                ],
+                "allRatings" : [
+                  {
+                    "user" : 1,
+                    "rating" : 7
+                  }
                 ]
               },
               {
-                "category": "fish",
-                "recipe_name": "Paksiw na Bangus",
-                "description": "This is a recipe for Paksiw na Bangus (Milkfish stewed in vinegar).",
+                "recipeId" : 16,
+                "recipeName": "Paksiw na Bangus",
+                "recipeDesc": "This is a recipe for Paksiw na Bangus (Milkfish stewed in vinegar).",
+                "recipeAuthor" : 1,
+                "recipeType" : "fish",
+                "recipePic" :" ",
                 "ingredients": {
                   "Milkfish (cleaned and sliced crosswise into serving pieces)": "1 1/2 lbs.",
                   "Ginger (crushed)": "3 thumbs",
@@ -581,6 +721,16 @@
                   "Add salt to taste.",
                   "Transfer to a serving plate and serve.",
                   "Share and enjoy!"
+                ],
+                "allRatings" : [
+                  {
+                    "user" : 5,
+                    "rating" : 6
+                  },
+                  {
+                    "user" : 3,
+                    "rating" : 10
+                  }
                 ]
               }
   ]
