@@ -21,5 +21,24 @@ Ms. Kasima Rose Mendoza
 Midterm Project Activity - 1
 Module 4: Client-Side Web Scripting using JavaScript
 
+# AGLUTOW 
+Introducing Aglutow, a user-friendly recipe-sharing web application designed to cater to your culinary cravings. With Aglutow, you can effortlessly explore a wide array of delectable recipes contributed by fellow food enthusiasts. Whether you're a seasoned chef or a kitchen novice, you can also showcase your culinary expertise by sharing your own mouthwatering recipes. Join our community of food lovers and embark on a delightful gastronomic journey with Aglutow!
+
+# SETUP
+Here's a step-by-step procedure for setting up and using the Live Server extension in Visual Studio Code:
+
+1. Open the project in Visual Studio Code (VS Code).
+
+2. Visit the following link to access the Live Server extension on the Visual Studio Code marketplace: [Live Server by Ritwick Dey](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+3. Install and enable the Live Server extension by clicking the "Install" button on the extension's page.
+
+4. Once the extension is installed, you'll see the Live Server icon at the bottom of your VS Code window.
+
+5. To start the Live Server, click the "Go Live" button at the bottom of your VS Code window. The server will start on port 5501, and your default web browser will open, displaying the project. The URL will look like this: `http://127.0.0.1:5501/your-project-folder/index.html`. It should direct you to the login menu of the project.
+
+6. To stop the Live Server, simply click the same "Go Live" button again.
+
+These steps will help you set up and use the Live Server extension to easily launch a local development server for your web project in Visual Studio Code.
 
 

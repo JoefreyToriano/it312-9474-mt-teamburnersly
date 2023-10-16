@@ -1,5 +1,5 @@
 async function getAllRecipes(){
-    let recipes = await fetch("data/recipes.json")
+    let recipes = await fetch("data/backup.json")
     let recipeList = await recipes.json()
     return recipeList
 }
@@ -18,7 +18,7 @@ async function getUserById(id){
 }
 
 async function getRecipeById(id){
-    let recipes = await fetch("data/recipes.json")
+    let recipes = await fetch("data/backup.json")
     let recipeList = await recipes.json()
     let chosenRecipe
     for(let i = 0; i < recipeList.length; i++){
