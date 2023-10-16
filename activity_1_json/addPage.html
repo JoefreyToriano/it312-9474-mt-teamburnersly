@@ -51,7 +51,7 @@
                             <div>
                                 <p>Preparation Time:</p>
                                 <div class="timeInput">
-                                    <input type="number">
+                                    <input type="number" id="prepTime">
                                     <p>Minutes</p>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                             <div>
                                 <p>Cooking Time:</p>
                                 <div class="timeInput">
-                                    <input type="number">
+                                    <input type="number" id="cookTime">
                                     <p>Minutes</p>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <img onclick="addIngredient()" src="images/Plus.png" >
                         </div>
                         <ul id="Ingredients">
-                            <li><div class="inputObj"><input type="text"></div></li>
+                            <li><div class="inputObj"><input type="text" id="ingredient"></div></li>
                         </ul>
                     </div>
                     <div class="listAdder">
@@ -99,7 +99,7 @@
                             <img onclick="addStep()" src="images/Plus.png" >
                         </div>
                         <ol id="Steps">
-                            <li><div class="inputObj"><input type="text"></div></li>
+                            <li><div class="inputObj"><input type="text" id="step"></div></li>
                         </ol>
                     </div>
                     <div class="imageUploader">
@@ -110,7 +110,7 @@
                     <div class="saveOrNo">
                         <button>Back</button>
                         <div></div>
-                        <button>Save</button>
+                        <button onclick="saveRecipe()">Save</button>
                     </div>
                 </div>
             </div>
