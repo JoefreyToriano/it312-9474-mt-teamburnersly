@@ -26,4 +26,8 @@ function logOut(){
   localStorage.removeItem("User ID")
 }
 
+function redirect() {
+  window.location.href = 'home.html'
+}
+
 initializeHeader()

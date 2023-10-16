@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aglutow | Recipes</title>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <img src="images/icons/home_icon.svg" alt="icon_1">
+            <div class="logo">
+                <img src="images/logos/aglutow_logo_white.svg" alt="icon_1">
+                <p>Aglutow</p>
+            </div>
+            <div class="headerMenu">
+                <img src="images/Profile Pictures/Alice.png" class="headerProfile" id="profilePicture" onclick="myFunction()">
+                
+                <div class="miniMenu" id="miniMenu">
+                    <a href="profile.html" title="first">
+                        <div class="buttonWithImage">
+                            <img src="images/icons/profile_icon.svg" alt="icon_2">
+                            <p>Profile</p>
+                        </div>
+                    </a>    
+                    <a title="last" onclick="logOut()" href="index.html" >
+                        <div class="buttonWithImage">
+                            <img src="images/icons/logout_icon.svg" alt="icon_3">
+                            <p>Log Out</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <div class="left-content">
+                    <h1>Aglutow</h1>
+                    <p>Aglutow is an online website where anyone can view and upload their recipes. There is also a rating sytem to rate each recipe. </p>
+                </div>
+                <img src="images/Profile Pictures/Alice.png" alt="food">
+            </div>
+            <div class="recipeMenu" title="categories">
+                <button title="first" onclick="showAllRecipes2()">
+                    <img src="images/icons/all_icon.svg" alt="Fish Icon"> All</button>
+                <button onclick="showRecipeByType('Chicken')">
+                    <img src="images/icons/chicken_icon.svg" alt="Fish Icon"> Chicken</button>
+                <button onclick="showRecipeByType('Pork')">
+                    <img src="images/icons/pork_icon.svg" alt="Fish Icon"> Pork</button>
+                <button onclick="showRecipeByType('Dessert')">
+                    <img src="images/icons/dessert_icon.svg" alt="Fish Icon"> Dessert</button>
+                <button onclick="showRecipeByType('Beef')"> 
+                    <img src="images/icons/beef_icon.svg" alt="Fish Icon"> Beef</button>
+                <button onclick="showRecipeByType('Vegetable')">
+                    <img src="images/icons/vegetable_icon.svg" alt="Fish Icon"> Vegetable</button>
+                <button onclick="showRecipeByType('Fish')" title="last">
+                    <img src="images/icons/fish_icon.svg" alt="Fish Icon"> Fish </button>
+            </div>
+            <div class="searchDiv">
+                <input type="text" id="recipeSearch" placeholder="Search for recipes">
+                <div id="searchResults">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </div>
+    
+        </div>
+
+        
+        <script src="scripts/Home.js"></script>
+        <script src="scripts/FileReader.js"></script>
+        <script src="scripts/HeaderFunctions.js"></script>
+    </body>
+</html>

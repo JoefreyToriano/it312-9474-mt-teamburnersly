@@ -631,6 +631,7 @@
     .timeInput p{
         margin-left: 5px;
     }
+
     .form p[id=choosenType] {
         color: var(--primary-color-dark);
         font-size: 15px;
@@ -639,4 +640,67 @@
     .listAdder .formHeader p, .imageUploader p {
         font-family: var(--bold-font);
         color: var(--bgandtext-color-dark);
+    }
+
+    * Home */
+    .intro {
+        display: flex; /* Use flexbox for layout */
+        color: var(--primary-color);
+    }
+
+    .intro h1 {
+        font-family: var(--special-font);
+        margin: 0;
+        font-size: 45px;
+    }
+
+    .intro p {
+        flex: 1;
+        font-family: var(--regular-font);
+    }
+
+    .intro img {
+        width: 150px;
+        height: auto; 
+    }
+
+    .left-content {
+        margin-right: 5%;
+    }
+
+    #recipeSearch {
+        border-radius: 30px;
+        height: 30px;
+    }
+
+    /* Style the container for search results */
+    #searchResults {
+        margin-top: 20px;
+    }
+
+    /* Style each recipe element */
+    #searchResults div {
+        background-color: gray;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    /* Style the heading of each recipe */
+    #searchResults div h2 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    /* Style the recipe description */
+    #searchResults div p {
+        margin: 5px 0;
+    }
+
+    /* Style the star rating */
+    #searchResults div img {
+        width: 20px; 
+        height: 20px; 
+        margin-right: 5px;
     }
