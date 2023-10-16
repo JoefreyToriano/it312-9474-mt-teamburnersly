@@ -572,7 +572,7 @@
         width: 100%;
         flex-direction: column;
     }
-    .form input[type=text]{
+    .form > input[type=text]{
         width: 100%;
         border-radius: 25px;
         height: 25px;
@@ -649,4 +649,24 @@
     }
     .saveOrNo button:hover{
         background-color: #FFADAE;
+    }
+    .fill{
+        width: 100%;
+    }
+    .timeForm{
+        display: flex;
+        flex-direction: row;
+    }
+    .timeForm *{
+        margin: 0;
+    }
+    .timeInput{
+        display: flex;
+        align-items: center;
+    }
+    .timeInput input[type="number"]{
+        width: 100px;
+    }
+    .timeInput p{
+        margin-left: 5px;
     }
