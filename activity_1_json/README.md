@@ -22,7 +22,7 @@ Midterm Project Activity - 1
 Module 4: Client-Side Web Scripting using JavaScript
 
 # AGLUTOW 
-
+Introducing Aglutow, a user-friendly recipe-sharing web application designed to cater to your culinary cravings. With Aglutow, you can effortlessly explore a wide array of delectable recipes contributed by fellow food enthusiasts. Whether you're a seasoned chef or a kitchen novice, you can also showcase your culinary expertise by sharing your own mouthwatering recipes. Join our community of food lovers and embark on a delightful gastronomic journey with Aglutow!
 
 # SETUP
 Here's a step-by-step procedure for setting up and using the Live Server extension in Visual Studio Code:
