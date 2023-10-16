@@ -10,6 +10,7 @@
     </head>
         <!-- ======= index body ======= -->
         <body>
+            <!-- ======= header ======= -->
             <header class="header">
                 <img src="images/icons/home_icon.svg" alt="icon_1">
                 <div class="logo">
@@ -35,22 +36,44 @@
                     </div>
                 </div>
             </header>
+
+            <!-- ======= add recipe ======= -->
             <div class="createRecipeForm">
                 <div class="form2">
+
+                    <!--recipe name -->
                     <div class="form">
                         <p>Name of Recipe</p>
                         <input type="text" id="recipeName">
                     </div>
+
+                    <!--recipe description -->
                     <div class="form">
                         <p>Description</p>
                         <input type="text" id="recipeDesc">
                     </div>
-                    <div class="timeForm">
+                <br>
+                    <!--recipe time -->
+                    <div class="form">
                         <p>Time</p>
-                        <p>Preparation Time:</p>
-                        <input type="text">
-                        <p>Cooking Time:</p>
-                        <input type="text">
+                        <div class="timeForm">
+                            <div class="timeForm_label">
+                                <p>Preparation Time:</p>
+                                <div class="timeInput">
+                                    <input type="number" id="prepTime">
+                                    <p>Minutes</p>
+                                </div>
+                            </div>
+                            <div class="fill">
+                            </div>
+                            <div>
+                                <p>Cooking Time:</p>
+                                <div class="timeInput">
+                                    <input type="number" id="cookTime">
+                                    <p>Minutes</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="form">
                         <p>Type</p>
@@ -76,7 +99,7 @@
                             <img onclick="addIngredient()" src="images/Plus.png" >
                         </div>
                         <ul id="Ingredients">
-                            <li><div class="inputObj"><input type="text"></div></li>
+                            <li><div class="inputObj"><input type="text" id="ingredient"></div></li>
                         </ul>
                     </div>
                     <div class="listAdder">
@@ -85,7 +108,7 @@
                             <img onclick="addStep()" src="images/Plus.png" >
                         </div>
                         <ol id="Steps">
-                            <li><div class="inputObj"><input type="text"></div></li>
+                            <li><div class="inputObj"><input type="text" id="step"></div></li>
                         </ol>
                     </div>
                     <div class="imageUploader">
@@ -96,7 +119,7 @@
                     <div class="saveOrNo">
                         <button>Back</button>
                         <div></div>
-                        <button>Save</button>
+                        <button onclick="saveRecipe()">Save</button>
                     </div>
                 </div>
             </div>

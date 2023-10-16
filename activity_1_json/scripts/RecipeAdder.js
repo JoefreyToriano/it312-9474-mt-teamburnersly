@@ -1,4 +1,5 @@
 let type=""
+let picture
 
 function addIngredient(){
     var ingredienlist = document.getElementById("Ingredients")
@@ -10,6 +11,7 @@ function addIngredient(){
         trash.parentElement.parentElement.remove()
     }
     input.setAttribute("type","text")
+    input.setAttribute("id","ingredient")
     var div = document.createElement("div")
     div.setAttribute("class","inputObj")
     div.appendChild(input)
@@ -28,6 +30,7 @@ function addStep(){
         trash.parentElement.parentElement.remove()
     }
     input.setAttribute("type","text")
+    input.setAttribute("id","step")
     var div = document.createElement("div")
     div.setAttribute("class","inputObj")
     div.appendChild(input)
@@ -42,6 +45,7 @@ function a(){
     reader.readAsDataURL(file);
     reader.onload = function () {
         document.getElementById("prof").src=reader.result
+        picture=reader.result
     };
     reader.onerror = function (error) {
         console.log('Error: ', error);
@@ -78,6 +82,61 @@ function changeToFish(){
     type="Fish"
 }
 
-function saveRecipe(){
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
+
+async function saveRecipe(){
+    var a = await getAllRecipes() 
+    var b = a[a.length-1].recipeId+1
+    var fullRecipe={
+        recipeId: b,
+        recipeName: document.getElementById("recipeName").value,
+        recipeAuthor: localStorage.getItem("User ID"),
+        recipeType: type,
+        recipeDesc: document.getElementById("recipeDesc").value,
+        recipePicture: picture,
+        recipeDuration:[
+            document.getElementById("prepTime")*60,
+            document.getElementById("cookTime")*60
+        ],
+        ingredients:[],
+        steps:[],
+        allRatings:[]
+    }
+    var ingredientsList = document.querySelectorAll("#ingredient")
+    var stepsList = document.querySelectorAll("#step")
+    ingredientsList.forEach(element => {
+        fullRecipe.ingredients.push(element.value)
+    }); 
+    stepsList.forEach(element => {
+        fullRecipe.steps.push(element.value)
+    });
+    a.push(fullRecipe)
+    var jsonData = JSON.stringify(a,null,2)
+    const fs = require('fs')
+    fs.writeFileSync("data/backup.json",jsonData)
+    fetch('/update-json-endpoint', {
+        method: 'POST',
+        body: jsonData,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('JSON file updated successfully.');
+        } else {
+            console.error('Failed to update JSON file.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
     
 }

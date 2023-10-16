@@ -132,73 +132,6 @@
         background-position: center;
     }
 
-    /* .loginBox {
-        width: 420px;
-        background: transparent;
-        border: 2px solid rgba(255,255,255, .2);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-        color: #fff;
-        border-radius: 10px;
-        padding:30px 40px;
-    }
-
-    .loginBox h1 {
-        font-size: 36px;
-        text-align: center;
-        font-family: IBM-Plex-Sans-Bold;
-    }
-
-    .loginBox .input_box {
-        position: relative;
-        width: 100%;
-        height: 50px;
-        margin: 30px 0;
-    }
-
-    .input_box input {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        border: none;
-        outline: none;
-        border: 2px solid rgba(255,255,255, .2);
-        border-radius: 40px;
-        font-size: 16px;
-        color: #fff;
-        padding: 20px 45px 20px 20px;
-    }
-
-    .input_box input::placeholder {
-        color: #fff;
-        font-family: IBM-Plex-Sans-Light;
-    }
-
-    .input_box i {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform:translateY(-50%);
-        font-size: 20px;
-    }
-
-    .loginBox .btn {
-        width: 100%;
-        height: 45px;
-        background: #fff;
-        border: none;
-        outline: none;
-        border-radius: 40px;
-        box-shadow: 40px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-        cursor: pointer;
-        font-size: 16px;
-        color:#333;
-        font-weight: 600;
-        margin-bottom: 10px;
-    } */
-
-
     /*LOG IN BOX*/
     .LogInBox{
         background-color: var(--bgandtext-color-light);
@@ -317,6 +250,8 @@
         width: 100%;
         height: 50px;
         border-style: none;
+        align-items: center;
+        display: flex;
     }
     .recipeMenu button:hover{
         background-color: #FFADAE;
@@ -555,13 +490,15 @@
     /*Add Recipe*/
     .createRecipeForm{
         display: flex;
-        background-color: aliceblue;
+        background-color: var(--bgandtext-color-light);
         border-radius: 25px;
-        width: 500px;
+        width: 700px;
         min-height: 500px;
         height: auto;
         padding: 50px;
         box-sizing: border-box;
+        border-style: solid;
+        border-color: var(--primary-color-dark);
     }
     .createRecipeForm *{
         margin: 0;
@@ -571,12 +508,16 @@
         display: flex;
         width: 100%;
         flex-direction: column;
+        font-family: var(--regular-font);
     }
-    .form input[type=text]{
+    .form > input[type=text]{
         width: 100%;
-        border-radius: 25px;
+        border-radius: 15px;
         height: 25px;
         text-align: center;
+        color: var(--primary-color-dark);
+        border-style: solid;
+        border-color: var(--primary-color);
     }
     .form .recipeMenu{
         margin: 0;
@@ -631,11 +572,17 @@
         width: 100%;
         flex-direction: column;
     }
+    .timeForm_label p{
+        color: var(--primary-color-dark);
+        font-size: 15px;
+        font-family: var(--light-font);
+    }
     .saveOrNo{
         display: flex;
         flex-direction: row;
         margin-bottom: 0;
     }
+
     .saveOrNo div{
         width: 100%;
     }
@@ -648,7 +595,30 @@
         border-style: none;
     }
     .saveOrNo button:hover{
-        background-color: #FFADAE;
+        background-color: var(--primary-color-dark);
+    }
+    .saveOrNo button:active{
+        background-color: var(--primary-color-dark);
+    }
+    .fill{
+        width: 100%;
+    }
+    .timeForm{
+        display: flex;
+        flex-direction: row;
+    }
+    .timeForm *{
+        margin: 0;
+    }
+    .timeInput{
+        display: flex;
+        align-items: center;
+    }
+    .timeInput input[type="number"]{
+        width: 100px;
+    }
+    .timeInput p{
+        margin-left: 5px;
     }
 
 /* Home */
