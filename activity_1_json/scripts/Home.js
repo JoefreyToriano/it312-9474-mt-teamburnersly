@@ -52,7 +52,7 @@ const recipeSearchInput = document.getElementById('recipeSearch');
 const searchResultsContainer = document.getElementById('searchResults');
 
 // Fetch recipe data from the JSON file
-fetch('data/Recipes.json')
+fetch('data/backup.json')
     .then(response => response.json())
     .then(data => {
         window.recipes = data;
