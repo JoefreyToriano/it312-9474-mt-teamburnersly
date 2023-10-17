@@ -336,12 +336,15 @@ p {
   background-color: orange;
   height: 50px;
 }
-#trailerBtn {
+#trailerBtn ,#episodesBtn { 
   color: orange;
   display: inline;
   text-align: center;
   justify-content: center;
   height: 50px;
+}
+#trailerBtn {
+  margin-left: 10px;
 }
 #trailerFrame {
   display: block;
@@ -550,7 +553,7 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 256vh;
+    height: 245vh;
     display: grid;
     grid-template-columns: repeat(20,1fr); 
     grid-template-rows: repeat(20,1fr);
