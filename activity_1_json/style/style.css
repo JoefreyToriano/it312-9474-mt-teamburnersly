@@ -784,14 +784,6 @@
     #searchResults {
         margin-top: 20px;
     }
-    /* Style each recipe element */
-    #searchResults div {
-        background-color: var(--bgandtext-color-light);
-        border: 3px solid var(--primary-color);
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 30px;
-    }
 
     /* Style the heading of each recipe */
     #searchResults div h2 {
@@ -806,7 +798,6 @@
         margin: 5px 0;
         font-family: var(--regular-font);
         color: var(--bgandtext-color-dark);
-        max-width: 800px;
     }
     #searchResults div img {
         width: auto;
@@ -821,7 +812,23 @@
         height: 20px; 
         margin-right: 5px;
     }
-
+    .homeRecipeTab{
+        display: flex;
+        flex-direction: row;
+        background-color: var(--bgandtext-color-light);
+        border: 3px solid var(--primary-color);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 30px;
+    }
+    .homeRecipeTab img{
+        margin-left: 5px;
+        width: 150px;
+        height: 150px;
+    }
+    .homeRecipeTab div{
+        width: 100%;
+    }
     .searchDiv input[type="text"]{
         color: var(--bgandtext-color-dark);
         border-style: solid;
