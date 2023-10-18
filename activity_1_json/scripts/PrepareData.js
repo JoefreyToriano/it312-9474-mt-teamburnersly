@@ -198,9 +198,9 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeId: 5,
                 recipeName: "Crispy Pata Kare Kare",
                 recipeAuthor: 1,
-                recipeType: "pork",
-                recipeDesc: "Crispy pork hock cooked in peanut sauce and served with steamed vegetables",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipeType: "Pork",
+                recipeDesc: "Savor the extraordinary harmony of textures and flavors with Crispy Pata Kare-Kare. This remarkable dish unites the delightful crunch of deep-fried pork knuckle with the luscious, nutty essence of Kare-Kare sauce, promising a Filipino culinary experience that's simply irresistible.",
+                recipePicture:"images/food_images/crispy_pata_kare_kare.jpeg",
                 recipeDuration:[
                     15,
                     80
@@ -247,11 +247,11 @@ if (localStorage.getItem("allRecipes")==null||true){
         
             {
                 recipeId: 6,
-                recipeName: "Pork Sinigang Recipe",
+                recipeName: "Pork Sinigang",
                 recipeAuthor: 3,
-                recipeType: "pork",
-                recipeDesc: "Pork soup in sour broth with okra, kangkong, eggplant, and string beans. This dish is best during the cold weather.",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipeType: "Pork",
+                recipeDesc: "Indulge in the rich and tangy flavors of Pork Sinigang, a beloved Filipino stew that tantalizes taste buds with succulent pork, crisp vegetables, and a zesty tamarind broth. Its delightful blend of savory and sour notes promises a comforting and invigorating dining experience you won't want to miss.",
+                recipePicture:"images/food_images/pork_sinigang.jpeg",
                 recipeDuration:[
                         15,
                         90
@@ -297,45 +297,46 @@ if (localStorage.getItem("allRecipes")==null||true){
         
             {
                 recipeId: 7,
-                recipeName: "Biko Recipe",
+                recipeName: "Chicken Sisig",
                 recipeAuthor: 3,
-                recipeType: "dessert",
-                recipeDesc: "Sticky Filipino rice cake",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
-                recipeDuration:[
-                    10,
-                    40
+                recipeType: "appetizer",
+                recipeDesc: "Sizzling Filipino chicken appetizer",
+                recipePicture: "images/food_images/chicken_sisig.jpeg",
+                recipeDuration: [20, 40],
+                ingredients: [
+                    "2 lbs. boneless chicken thighs, finely chopped",
+                    "1 cup chicken liver, minced",
+                    "1 large red onion, minced",
+                    "4 cloves garlic, minced",
+                    "5-7 pieces green chili peppers, minced",
+                    "1/4 cup mayonnaise",
+                    "1 tablespoon soy sauce",
+                    "1 tablespoon oyster sauce",
+                    "1 tablespoon calamansi juice (or lemon juice)",
+                    "Salt and pepper to taste",
+                    "3 tablespoons cooking oil"
                 ],
-                ingredients:[
-                    "3 lbs. pork belly cubed",
-                    "40 grams Knorr Ginataang Gulay Recipe Mix",
-                    "4 tablespoons shrimp paste",
-                    "3 cups water",
-                    "1 eggplant sliced",
-                    "1 tomato chopped",
-                    "1 onion minced",
-                    "5 cloves garlic minced",
-                    "2 tablespoons white vinegar",
-                    "1 teaspoon sugar",
-                    "3 long green chili peppers sliced",
-                    "5 tablespoons cooking oil",
-                    "Fish sauce and ground black pepper to taste"
+                steps: [
+                    "1. Heat a sizzling plate or a cast-iron skillet over medium-high heat.",
+                    "2. Add cooking oil to the hot plate or skillet.",
+                    "3. Saute the garlic and onions until the onions are soft and translucent.",
+                    "4. Add the minced chicken liver and cook until it turns brown.",
+                    "5. Put in the finely chopped chicken thighs and cook until they are browned and fully cooked.",
+                    "6. Add the minced green chili peppers and saute for a few minutes until they're cooked and fragrant.",
+                    "7. Pour in the mayonnaise, soy sauce, oyster sauce, and calamansi juice. Mix well and cook for a few more minutes until the sauce thickens.",
+                    "8. Season with salt and pepper to taste.",
+                    "9. Once the sisig is cooked and sizzling, remove it from the heat and transfer it to a serving plate.",
+                    "10. Serve immediately, garnished with extra green chili peppers if desired.",
+                    "11. Enjoy your sizzling Chicken Sisig!"
                 ],
-                steps:[
-                    "Combine the sticky rice and water in a rice cooker and cook until the rice is ready (we intentionally combined a lesser amount of water than the usual so that the rice will not be fully cooked).",
-                    "While the rice is cooking, combine the coconut milk with brown sugar and salt in a separate pot and cook on low heat until the texture becomes thick. Stir constantly.",
-                    "Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
-                    "Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
-                    "Share and Enjoy!"
-                ],
-                allRatings:[
+                allRatings: [
                     {
-                        "user":4,
+                        "user": 4,
                         "rating": 10
                     },
                     {
-                        "user":5,
-                        "rating":9
+                        "user": 5,
+                        "rating": 9
                     }
                 ]
             },
@@ -470,7 +471,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Beef",
                 recipeDesc: "Pinoy Beef Steak, also known as Bistek Tagalog, is a mouthwatering Filipino dish that marries succulent slices of beef, soaked in a zesty soy sauce and calamansi marinade, with the delightful tang of onions and a hint of garlic. This flavorful symphony of tender meat and vibrant seasonings creates a dish that's not just a Filipino favorite but a global sensation, promising a tantalizing taste of the Philippines with every delicious bite.",
-                recipePicture:"images/food_images/beef_steak.jpg",
+                recipePicture:"images/food_images/beef_steak.jpeg",
                 recipeDuration:[
                     10,
                     60
@@ -517,7 +518,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeName: "Beef Caldereta",
                 recipeAuthor: 4,
                 recipeType: "Beef",
-                recipeDesc: "Sticky Filipino rice cake",
+                recipeDesc: "Indulge in the irresistible allure of Beef Caldereta, a symphony of flavors where succulent beef harmonizes with rich tomato sauce, aromatic spices, and vibrant bell peppers. This Filipino culinary masterpiece will tantalize your taste buds, leaving you craving for more with every exquisite bite.",
                 recipePictur:"images/food_images/beef_caldereta.jpeg",
                 recipeDuratio:[
                         20,
@@ -622,7 +623,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Vegetable",
                 recipeDesc: "Pinoy Chop Suey is a delightful Filipino culinary masterpiece that harmoniously blends vibrant, crisp vegetables and succulent meats, expertly sautéed in a savory sauce. This beloved dish not only tantalizes the taste buds with its rich flavors but also captures the essence of Filipino cuisine's diverse and colorful essence, making it a must-try for anyone seeking a delicious and multicultural dining experience.",
-                recipePicture:"images/food_images/chop_suey.jpeg",
+                recipePicture:"images/food_images/chop-suey.jpeg",
                 recipeDuration:[
                     10,
                     40
@@ -679,7 +680,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 5,
                 recipeType: "Fish",
                 recipeDesc: "Indulge in the mouthwatering flavors of Pinangat na Galunggong sa Kamias, a Filipino dish that perfectly balances the tanginess of kamias (bilimbi fruit) with the savory goodness of galunggong (round scad). This delightful combination creates a harmonious blend of sweet and sour, making it a must-try delicacy for those seeking a truly authentic Filipino culinary experience.",
-                recipePicture:"images/food_images/pinangat_na_isda",
+                recipePicture:"images/food_images/pinangat_na_isda.jpeg",
                 recipeDuration:[
                     15,
                     30
@@ -720,8 +721,8 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeName: "Paksiw na Bangus",
                 recipeAuthor: 3,
                 recipeType: "Fish",
-                recipeDesc:  "Paksiw na Bangus is a Filipino culinary delight that tantalizes the taste buds with its perfect harmony of sourness and savory flavors. Dive into a world of delectable tangy sensations as this dish offers a delightful twist on traditional milkfish, making it a must-try for those seeking a unique and satisfying culinary experience.",
-                recipePicture:"images/food_images/paksiw_na_bangus",
+                recipeDesc: "Paksiw na Bangus is a Filipino culinary delight that tantalizes the taste buds with its perfect harmony of sourness and savory flavors. Dive into a world of delectable tangy sensations as this dish offers a delightful twist on traditional milkfish, making it a must-try for those seeking a unique and satisfying culinary experience.",
+                recipePicture:"images/food_images/paksiw_na_bangus.jpeg",
                 recipeDuration:[
                     15,
                     30
