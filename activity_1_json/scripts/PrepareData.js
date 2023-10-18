@@ -27,15 +27,15 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "¼ teaspoon ground black pepper"
                 ],
                 steps:[
-                    "1. Rub salt all over the chicken. Let it stay for 15 minutes.",
-                    "2. Heat the oil in a cooking pot.",
-                    "3. Prepare the batter. Start by pressing a fork on the chicken cube until it is completely squashed. Combine it with warm milk. Stir until well blended. Set aside.",
-                    "4. Combine flour, baking powder, garlic powder, salt, and ground black pepper. Mix well using a fork or a wire whisk. Set aside.",
-                    "5. Beat the eggs in a large mixing bowl. Add the milk mixture. Continue to beat until all the ingredients are all incorporated. Add half of flour mixture. Whisk. Add the remaining half and whisk until the texture of the batter becomes smooth.",
-                    "6. Dredge the chicken in flour and then dip in batter. Roll it again in flour until completely covered. Fry in medium heat for 7 minutes per side.",
-                    "7. Remove from the pot and put on a plate lined with paper towels. This will absorb the oil.",
-                    "8. Serve with ketchup or gravy.",
-                    "9. Share and enjoy!"
+                    "Rub salt all over the chicken. Let it stay for 15 minutes.",
+                    "Heat the oil in a cooking pot.",
+                    "Prepare the batter. Start by pressing a fork on the chicken cube until it is completely squashed. Combine it with warm milk. Stir until well blended. Set aside.",
+                    "Combine flour, baking powder, garlic powder, salt, and ground black pepper. Mix well using a fork or a wire whisk. Set aside.",
+                    "Beat the eggs in a large mixing bowl. Add the milk mixture. Continue to beat until all the ingredients are all incorporated. Add half of flour mixture. Whisk. Add the remaining half and whisk until the texture of the batter becomes smooth.",
+                    "Dredge the chicken in flour and then dip in batter. Roll it again in flour until completely covered. Fry in medium heat for 7 minutes per side.",
+                    "Remove from the pot and put on a plate lined with paper towels. This will absorb the oil.",
+                    "Serve with ketchup or gravy.",
+                    "Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -80,16 +80,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "½ Knorr Chicken Cube"
                 ],
                 steps:[
-                    "1. Combine the marinade ingredients in a large bowl. Mix well. Add the chicken pieces and coat them with the marinade mixture. Cover the bowl and put it inside the refrigerator. Let it marinate for at least 3 hours.",
-                    "2. Heat cooking oil in a pan. Fry both sides of the chicken liver until they brown. Remove from the pan and set aside.",
-                    "3. Using the remaining oil, fry the marinated chicken for 1 minute per side. Remove from the pan.",
-                    "4. Melt the butter with the remaining oil. Add crushed garlic. Cook until it starts to brown.",
-                    "5. Put the chicken back into the pan. Add soy sauce, vinegar, lemon-lime soda, and water. Let it come to a boil.",
-                    "6. Add ½ Knorr Chicken Cube, cracked peppercorn, and bay leaves. Cover the pot and reduce the heat to a low setting. Cook for 20 to 25 minutes.",
-                    "7. Add the fried chicken livers back into the pan. Stir.",
-                    "8. Combine cornstarch with ¼ cup water to make a slurry. Mix well. Pour into the cooking pot and stir immediately. Add boiled eggs. Continue cooking until the sauce thickens.",
-                    "9. Arrange on a serving plate and garnish with chopped green onions.",
-                    "10. Share and enjoy!"
+                    "Combine the marinade ingredients in a large bowl. Mix well. Add the chicken pieces and coat them with the marinade mixture. Cover the bowl and put it inside the refrigerator. Let it marinate for at least 3 hours.",
+                    "Heat cooking oil in a pan. Fry both sides of the chicken liver until they brown. Remove from the pan and set aside.",
+                    "Using the remaining oil, fry the marinated chicken for 1 minute per side. Remove from the pan.",
+                    "Melt the butter with the remaining oil. Add crushed garlic. Cook until it starts to brown.",
+                    "Put the chicken back into the pan. Add soy sauce, vinegar, lemon-lime soda, and water. Let it come to a boil.",
+                    "Add ½ Knorr Chicken Cube, cracked peppercorn, and bay leaves. Cover the pot and reduce the heat to a low setting. Cook for 20 to 25 minutes.",
+                    "Add the fried chicken livers back into the pan. Stir.",
+                    "Combine cornstarch with ¼ cup water to make a slurry. Mix well. Pour into the cooking pot and stir immediately. Add boiled eggs. Continue cooking until the sauce thickens.",
+                    "Arrange on a serving plate and garnish with chopped green onions.",
+                    "Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -125,14 +125,14 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "1 1/2 cups hot pepper leaves"
                 ],
                 steps:[
-                    "1. Sauté the garlic, onion, and ginger",
-                    "2. Put-in the chicken and cook until the color turns light brown",
-                    "3. Add the fish sauce and mix well",
-                    "4. Pour-in the rice washing and bring to a boil. Simmer for 45 minutes.",
-                    "5. Add the green papaya wedges and simmer for 5 minutes",
-                    "6. Add the hot pepper leaves",
-                    "7. Add salt and pepper to taste",
-                    "8. Serve hot. Share and enjoy!"
+                    "Sauté the garlic, onion, and ginger",
+                    "Put-in the chicken and cook until the color turns light brown",
+                    "Add the fish sauce and mix well",
+                    "Pour-in the rice washing and bring to a boil. Simmer for 45 minutes.",
+                    "Add the green papaya wedges and simmer for 5 minutes",
+                    "Add the hot pepper leaves",
+                    "Add salt and pepper to taste",
+                    "Serve hot. Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -173,14 +173,14 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "Fish sauce and ground black pepper to taste"
                 ],
                 steps:[
-                    "1. Heat a pan and then sear the pork belly. Remove the belly from the pan and set it aside.",
-                    "2. Add 2 tablespoons of cooking oil in the same pan. Fry the eggplants for 2 minutes per side. Remove and set aside.",
-                    "3. Heat the remaining oil in a pan. Sauté garlic, onion, and tomato. Add the shrimp paste (bagoong alamang) and cook it for 2 minutes.",
-                    "4. Add the seared pork back once the onion softens. Cook for 1 minute.",
-                    "5. Pour water and let the mixture boil. Adjust the heat to a low setting. Cook for 35 minutes.",
-                    "6. Combine Knorr Gintaang Gulay Mix with 1 cup water. Pour the mixture into the pot. Add vinegar. Cover and continue cooking until the pork becomes tender.",
-                    "7. Add the fried eggplants, long green peppers, along with a teaspoon of sugar. Cook for 2 minutes.",
-                    "8. Season with fish sauce and ground black pepper. Serve with rice. Share and enjoy!"
+                    "Heat a pan and then sear the pork belly. Remove the belly from the pan and set it aside.",
+                    "Add 2 tablespoons of cooking oil in the same pan. Fry the eggplants for 2 minutes per side. Remove and set aside.",
+                    "Heat the remaining oil in a pan. Sauté garlic, onion, and tomato. Add the shrimp paste (bagoong alamang) and cook it for 2 minutes.",
+                    "Add the seared pork back once the onion softens. Cook for 1 minute.",
+                    "Pour water and let the mixture boil. Adjust the heat to a low setting. Cook for 35 minutes.",
+                    "Combine Knorr Gintaang Gulay Mix with 1 cup water. Pour the mixture into the pot. Add vinegar. Cover and continue cooking until the pork becomes tender.",
+                    "Add the fried eggplants, long green peppers, along with a teaspoon of sugar. Cook for 2 minutes.",
+                    "Season with fish sauce and ground black pepper. Serve with rice. Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -221,17 +221,17 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "Fish sauce and ground black pepper to taste"
                 ],
                 steps:[
-                    "1. Combine all the boiling ingredients in a large cooking pot. Add pork hock. Boil for 1 hour.",
-                    "2. Remove the pork hock from the cooking pot. Let it cool down and then rub salt all over. Air dry for 30 minutes.",
-                    "3. Heat oil in a pan. Sauté garlic and onion. Once the onion softens, add the peanut paste. Stir and cook for 1 minute.",
-                    "4. Pour water and then stir until the mixture becomes smooth. Let the liquid boil.", 
-                    "5. Add Knorr Pork Cube and annatto powder. Cover the pot. Reduce the heat to a simmer. Continue cooking until your desired consistency is achieved.", 
-                    "6. Season with salt and ground black pepper. Set aside.",
-                    "7. Heat oil in a wide and deep pot. Fry the pork hock until the bottom side turns golden brown and crispy. Turn it over and do the same thing on the opposite side.", 
-                    "8. Remove from the pot. Let it cool down. Debone the pork hock. Set aside.",
-                    "9. Arrange the vegetable ingredients on a steamer. Steam for 3 to 5 minutes. Set aside.",
-                    "10. Assemble your crispy pata kare-kare by pouring half of the sauce on a serving bowl. Arrange the steamed vegetables all around.", 
-                    "11. Top with crispy pata. Distribute the remaining sauce by pouring onto the bowl. Serve with shrimp paste (bagoong alamang) as a condiment. Share and enjoy!"
+                    "Combine all the boiling ingredients in a large cooking pot. Add pork hock. Boil for 1 hour.",
+                    "Remove the pork hock from the cooking pot. Let it cool down and then rub salt all over. Air dry for 30 minutes.",
+                    "Heat oil in a pan. Sauté garlic and onion. Once the onion softens, add the peanut paste. Stir and cook for 1 minute.",
+                    "Pour water and then stir until the mixture becomes smooth. Let the liquid boil.", 
+                    "Add Knorr Pork Cube and annatto powder. Cover the pot. Reduce the heat to a simmer. Continue cooking until your desired consistency is achieved.", 
+                    "Season with salt and ground black pepper. Set aside.",
+                    "Heat oil in a wide and deep pot. Fry the pork hock until the bottom side turns golden brown and crispy. Turn it over and do the same thing on the opposite side.", 
+                    "Remove from the pot. Let it cool down. Debone the pork hock. Set aside.",
+                    "Arrange the vegetable ingredients on a steamer. Steam for 3 to 5 minutes. Set aside.",
+                    "Assemble your crispy pata kare-kare by pouring half of the sauce on a serving bowl. Arrange the steamed vegetables all around.", 
+                    "Top with crispy pata. Distribute the remaining sauce by pouring onto the bowl. Serve with shrimp paste (bagoong alamang) as a condiment. Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -272,16 +272,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                         "Fish sauce and ground black pepper to taste"
                     ],
                 steps:[
-                        "1. Heat the pot and put-in the cooking oil.",
-                        "2. Sauté the onion until its layers separate from each other.",
-                        "3. Add the pork belly and cook until the outer part turns light brown.",
-                        "4. Put-in the fish sauce and mix with the ingredients.",
-                        "5. Pour the water and bring to a boil.",
-                        "6. Add the taro and tomatoes, then simmer for 40 minutes or until pork is tender.",
-                        "7. Put-in the sinigang mix and chili.",
-                        "8. Add the string beans (and other vegetables if there are any) and simmer for 5 to 8 minutes.",
-                        "9. Put-in the spinach, turn off the heat, and cover the pot. Let the spinach cook using the remaining heat in the pot.",
-                        "10. Serve hot. Share and enjoy!"
+                        "Heat the pot and put-in the cooking oil.",
+                        "Sauté the onion until its layers separate from each other.",
+                        "Add the pork belly and cook until the outer part turns light brown.",
+                        "Put-in the fish sauce and mix with the ingredients.",
+                        "Pour the water and bring to a boil.",
+                        "Add the taro and tomatoes, then simmer for 40 minutes or until pork is tender.",
+                        "Put-in the sinigang mix and chili.",
+                        "Add the string beans (and other vegetables if there are any) and simmer for 5 to 8 minutes.",
+                        "Put-in the spinach, turn off the heat, and cover the pot. Let the spinach cook using the remaining heat in the pot.",
+                        "Serve hot. Share and enjoy!"
                     ],
                 allRatings:[
                         {
@@ -322,11 +322,11 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "Fish sauce and ground black pepper to taste"
                 ],
                 steps:[
-                    "1. Combine the sticky rice and water in a rice cooker and cook until the rice is ready (we intentionally combined a lesser amount of water than the usual so that the rice will not be fully cooked).",
-                    "2. While the rice is cooking, combine the coconut milk with brown sugar and salt in a separate pot and cook on low heat until the texture becomes thick. Stir constantly.",
-                    "3. Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
-                    "4. Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
-                    "5. Share and Enjoy!"
+                    "Combine the sticky rice and water in a rice cooker and cook until the rice is ready (we intentionally combined a lesser amount of water than the usual so that the rice will not be fully cooked).",
+                    "While the rice is cooking, combine the coconut milk with brown sugar and salt in a separate pot and cook on low heat until the texture becomes thick. Stir constantly.",
+                    "Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
+                    "Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
+                    "Share and Enjoy!"
                 ],
                 allRatings:[
                     {
@@ -359,11 +359,11 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "1/2 tsp Salt"
                 ],
                 steps:[
-                    "1. Combine the sticky rice and water in a rice cooker and cook until the rice is ready (we intentionally combined a lesser amount of water than the usual so that the rice will not be fully cooked).",
-                    "2. While the rice is cooking, combine the coconut milk with brown sugar and salt in a separate pot and cook on low heat until the texture becomes thick. Stir constantly.",
-                    "3. Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
-                    "4. Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
-                    "5. Share and Enjoy!"
+                    "Combine the sticky rice and water in a rice cooker and cook until the rice is ready (we intentionally combined a lesser amount of water than the usual so that the rice will not be fully cooked).",
+                    "While the rice is cooking, combine the coconut milk with brown sugar and salt in a separate pot and cook on low heat until the texture becomes thick. Stir constantly.",
+                    "Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
+                    "Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
+                    "Share and Enjoy!"
                 ],
                 allRatings:[
                     {
@@ -394,16 +394,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "5 tbsp toasted grated coconut"
                 ],
                 steps:[
-                    "1. Pour the coconut milk in a cooking pot and bring to a boil.",
-                    "2. Add the sugar, condensed milk, and whole sweet kernel corn then stir until all the ingredients are evenly distributed.",
-                    "3. Simmer for 8 minutes.",
+                    "Pour the coconut milk in a cooking pot and bring to a boil.",
+                    "Add the sugar, condensed milk, and whole sweet kernel corn then stir until all the ingredients are evenly distributed.",
+                    "Simmer for 8 minutes.",
                     "Combine the milk and cornstarch then whisk until the cornstarch is diluted.",
-                    "4. Pour the fresh milk and cornstarch mixture into the cooking pot and stir thoroughly.",
-                    "5. Allow to cook while stirring until the mixture reaches your desired thickness.",
-                    "6. Pour the mixture in a serving tray then arrange and flatten the top using a flat tool such as a wooden spatula.",
-                    "7. Allow to cool down then refrigerate for at least 1 hour.",
-                    "8. Garnish with toasted grated coconut (or latik if available).",
-                    "9. Serve cold. Share and enjoy!"
+                    "Pour the fresh milk and cornstarch mixture into the cooking pot and stir thoroughly.",
+                    "Allow to cook while stirring until the mixture reaches your desired thickness.",
+                    "Pour the mixture in a serving tray then arrange and flatten the top using a flat tool such as a wooden spatula.",
+                    "Allow to cool down then refrigerate for at least 1 hour.",
+                    "Garnish with toasted grated coconut (or latik if available).",
+                    "Serve cold. Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -441,16 +441,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "Salt and Ground Black Pepper (to taste)"
                 ],
                 steps:[
-                    "1. Melt butter in a pan. Add cooking oil.",
-                    "2. Sauté garlic until it browns. Add onion and cook until it softens.",
-                    "3. Add the beef. Cook while stirring until the sides turn brown.",
-                    "4. Pour 1 cup of water. Cover the pan. Adjust to a simmer and continue cooking for 35 minutes.",
-                    "5. Add button mushrooms. Stir.",
-                    "6. Combine 1 cup of water and Knorr Cream of Mushroom in a bowl. Mix well.",
-                    "7. Pour the mixture into the pan. Let it boil. Continue cooking uncovered for 10 to 15 minutes using low heat setting.",
-                    "8. Season with salt and ground black pepper.",
-                    "9. Top with parsley. Serve warm with rice.",
-                    "10. Share and enjoy!"
+                    "Melt butter in a pan. Add cooking oil.",
+                    "Sauté garlic until it browns. Add onion and cook until it softens.",
+                    "Add the beef. Cook while stirring until the sides turn brown.",
+                    "Pour 1 cup of water. Cover the pan. Adjust to a simmer and continue cooking for 35 minutes.",
+                    "Add button mushrooms. Stir.",
+                    "Combine 1 cup of water and Knorr Cream of Mushroom in a bowl. Mix well.",
+                    "Pour the mixture into the pan. Let it boil. Continue cooking uncovered for 10 to 15 minutes using low heat setting.",
+                    "Season with salt and ground black pepper.",
+                    "Top with parsley. Serve warm with rice.",
+                    "Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -489,16 +489,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "3 tablespoons of Cooking Oil"
                 ],
                 steps:[
-                    "1. Combine beef, soy sauce, juice from ½ lemon, and ½ teaspoon cracked peppercorn in a bowl. Mix well. Refrigerate for at least 1 hour.",
-                    "2. Heat cooking oil in a pan. Fry each side of the marinated beef for 1 minute. Remove and set aside.",
-                    "3. Using the remaining oil (you can add more if needed), sauté half of the onion and add the garlic.",
-                    "4. Put the beef in the pan once the onion softens. Sauté for 1 minute.",
-                    "5. Pour 1 ½ cups of water into the pan. Cover and let the liquid boil.",
-                    "6. Add Knorr Beef Cube. Cover the pan and then adjust the heat to a low setting. Cook for up to 40 minutes. Note: add more water as needed.",
-                    "7. Add the remaining onion and season with cracked peppercorn and add brown sugar.",
-                    "8. Make the sauce thicker by pouring-in the slurry. Do this by mixing cornstarch with 3 tablespoons of water.",
-                    "9. Once the sauce gets thick enough, you may turn the heat off and transfer your Filipino Style Beef Steak to a serving bowl.",
-                    "10. Serve with warm rice. Share and enjoy!"
+                    "Combine beef, soy sauce, juice from ½ lemon, and ½ teaspoon cracked peppercorn in a bowl. Mix well. Refrigerate for at least 1 hour.",
+                    "Heat cooking oil in a pan. Fry each side of the marinated beef for 1 minute. Remove and set aside.",
+                    "Using the remaining oil (you can add more if needed), sauté half of the onion and add the garlic.",
+                    "Put the beef in the pan once the onion softens. Sauté for 1 minute.",
+                    "Pour 1 ½ cups of water into the pan. Cover and let the liquid boil.",
+                    "Add Knorr Beef Cube. Cover the pan and then adjust the heat to a low setting. Cook for up to 40 minutes. Note: add more water as needed.",
+                    "Add the remaining onion and season with cracked peppercorn and add brown sugar.",
+                    "Make the sauce thicker by pouring-in the slurry. Do this by mixing cornstarch with 3 tablespoons of water.",
+                    "Once the sauce gets thick enough, you may turn the heat off and transfer your Filipino Style Beef Steak to a serving bowl.",
+                    "Serve with warm rice. Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -544,16 +544,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                         "1-2 tablespoons sugar (optional, for sweetness)"
                     ],
                 steps:[
-                        "1. Marinate the beef in fish sauce or soy sauce, and then set it aside for at least 30 minutes.",
-                        "2. In a large pot, heat the cooking oil over medium heat. Sauté garlic and onions until fragrant.",
-                        "3. Add the marinated beef and cook until browned on all sides.",
-                        "4. Pour in the tomato sauce, liver spread, and beef broth. Stir to combine.",
-                        "5. Add the bay leaf, paprika, and ground black pepper. Season with salt and pepper to taste.",
-                        "6. Simmer on low heat for 1.5 to 2 hours or until the beef becomes tender. Add more broth if needed.",
-                        "7. Add the potatoes, olives, and bell peppers. Cook until the vegetables are tender.",
-                        "8. Adjust the seasoning. You can add sugar for a touch of sweetness if desired.",
-                        "9. If you want it spicy, you can add chili peppers for some heat.",
-                        "10. Serve hot with steamed rice. Enjoy your delicious Beef Caldereta!"
+                        "Marinate the beef in fish sauce or soy sauce, and then set it aside for at least 30 minutes.",
+                        "In a large pot, heat the cooking oil over medium heat. Sauté garlic and onions until fragrant.",
+                        "Add the marinated beef and cook until browned on all sides.",
+                        "Pour in the tomato sauce, liver spread, and beef broth. Stir to combine.",
+                        "Add the bay leaf, paprika, and ground black pepper. Season with salt and pepper to taste.",
+                        "Simmer on low heat for 1.5 to 2 hours or until the beef becomes tender. Add more broth if needed.",
+                        "Add the potatoes, olives, and bell peppers. Cook until the vegetables are tender.",
+                        "Adjust the seasoning. You can add sugar for a touch of sweetness if desired.",
+                        "If you want it spicy, you can add chili peppers for some heat.",
+                        "Serve hot with steamed rice. Enjoy your delicious Beef Caldereta!"
                     ],
                 allRatings:[
                         {
@@ -593,16 +593,16 @@ if (localStorage.getItem("allRecipes")==null||true){
                             "1/4 teaspoon Ground Black Pepper"
                         ],
                 steps:[
-                        "1. In a pan, put-in the water and bring it to a boil",
-                        "2. Put-in the Mung beans and simmer until they become soft (about 35 to 50 minutes).",
-                        "3. On a separate pan, sauté the garlic, onion, and tomato.",
-                        "4. Add the pork. Cook for 5 minutes.",
-                        "5. Put-in the beef cube and fish sauce. Simmer for 10 minutes or until the meat is tender. Note: If necessary, you may add water to help make the meat tender, but make sure to add more time to simmer.",
-                        "6. Add the shrimp. Stir and then cook for 2 minutes.",
-                        "7. Pour the cooked Mung beans. Stir and then simmer for 10 minutes.",
-                        "8. Add the spinach and pork rinds (chicharon).",
-                        "9. Sprinkle the ground black pepper.",
-                        "10. Serve hot. Share and Enjoy!"
+                        "In a pan, put-in the water and bring it to a boil",
+                        "Put-in the Mung beans and simmer until they become soft (about 35 to 50 minutes).",
+                        "On a separate pan, sauté the garlic, onion, and tomato.",
+                        "Add the pork. Cook for 5 minutes.",
+                        "Put-in the beef cube and fish sauce. Simmer for 10 minutes or until the meat is tender. Note: If necessary, you may add water to help make the meat tender, but make sure to add more time to simmer.",
+                        "Add the shrimp. Stir and then cook for 2 minutes.",
+                        "Pour the cooked Mung beans. Stir and then simmer for 10 minutes.",
+                        "Add the spinach and pork rinds (chicharon).",
+                        "Sprinkle the ground black pepper.",
+                        "Serve hot. Share and Enjoy!"
                     ],
                 allRatings:[
                         {
@@ -649,18 +649,18 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "3 tablespoons of Cooking Oil"
                 ],
                 steps:[
-                    "1. Heat oil in a wok or pan.",
-                    "2. Pan fry the shrimp for 1 minute per side. Remove from the wok. Set aside.",
-                    "3. Saute onion. Add garlic and continue to saute until the onion becomes soft.",
-                    "4. Add pork and chicken. Stir fry until light brown.",
-                    "5.Add soy sauce and oyster sauce. Stir.",
-                    "6. Pour water. Let boil. Cover and cook in medium heat for 15 minutes.",
-                    "7. Add cauliflower, carrots, bell peppers, snow peas, and young corn. Stir.",
-                    "8. Add cabbage. Toss. Cover and cook for 5 to 7 minutes.",
-                    "9. Put the pan-fried shrimp into the pot and add ground black pepper.",
-                    "10. Add the boiled quail eggs and cornstarch diluted in water. Toss.",
-                    "11. Transfer to a serving plate. Serve.",
-                    "12. Share and enjoy!"
+                    "Heat oil in a wok or pan.",
+                    "Pan fry the shrimp for 1 minute per side. Remove from the wok. Set aside.",
+                    "Saute onion. Add garlic and continue to saute until the onion becomes soft.",
+                    "Add pork and chicken. Stir fry until light brown.",
+                    "Add soy sauce and oyster sauce. Stir.",
+                    "Pour water. Let boil. Cover and cook in medium heat for 15 minutes.",
+                    "Add cauliflower, carrots, bell peppers, snow peas, and young corn. Stir.",
+                    "Add cabbage. Toss. Cover and cook for 5 to 7 minutes.",
+                    "Put the pan-fried shrimp into the pot and add ground black pepper.",
+                    "Add the boiled quail eggs and cornstarch diluted in water. Toss.",
+                    "Transfer to a serving plate. Serve.",
+                    "Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -697,12 +697,12 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "Salt and Ground Black Pepper (to taste)"
                 ], 
                 steps:[
-                    "1. Rub salt all over the fish. Let it stay for 5 minutes.",
-                    "2. Distribute the pork fat in a cooking pot. Add kamias, onion, tomato, ginger, and long green pepper.",
-                    "3. Arrange the fish over the ingredients and season with ground black pepper.",
-                    "4. Pour water into the pot. Cover it and turn the stove on. Let the water boil. Adjust heat to low. Continue cooking for 15 minutes.",
-                    "5. Adjust the seasoning by adding salt if needed. Continue cooking without covering the pot until the sauce reduces to half.",
-                    "6. Transfer to a serving plate. Serve with warm rice. Share and enjoy!"
+                    "Rub salt all over the fish. Let it stay for 5 minutes.",
+                    "Distribute the pork fat in a cooking pot. Add kamias, onion, tomato, ginger, and long green pepper.",
+                    "Arrange the fish over the ingredients and season with ground black pepper.",
+                    "Pour water into the pot. Cover it and turn the stove on. Let the water boil. Adjust heat to low. Continue cooking for 15 minutes.",
+                    "Adjust the seasoning by adding salt if needed. Continue cooking without covering the pot until the sauce reduces to half.",
+                    "Transfer to a serving plate. Serve with warm rice. Share and enjoy!"
                 ],
                 allRatings:[
                     {
@@ -740,12 +740,12 @@ if (localStorage.getItem("allRecipes")==null||true){
                     "Salt (to taste"
                 ],
                 steps:[
-                    "1. Arrange ginger, garlic, okra, onion, long green pepper, peppercorn, and eggplant in a pot.",
-                    "2. Place the milkfish slices on top.",
-                    "3. Pour water and vinegar into the pot. Apply heat and let it boil. Cover and continue to cook on low to medium heat for 15 minutes.",
-                    "4. Add salt to taste.",
-                    "5. Transfer to a serving plate and serve.",
-                    "6. Share and enjoy!"
+                    "Arrange ginger, garlic, okra, onion, long green pepper, peppercorn, and eggplant in a pot.",
+                    "Place the milkfish slices on top.",
+                    "Pour water and vinegar into the pot. Apply heat and let it boil. Cover and continue to cook on low to medium heat for 15 minutes.",
+                    "Add salt to taste.",
+                    "Transfer to a serving plate and serve.",
+                    "Share and enjoy!"
                 ],
                 allRatings:[
                     {
