@@ -1,6 +1,6 @@
 async function getAllRecipes(){
     let recipes = await fetch("data/backup.json")
-    let recipeList = await recipes.json()
+    let recipeList = JSON.parse(localStorage.getItem("allRecipes"))
     return recipeList
 }
 
