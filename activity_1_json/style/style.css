@@ -46,6 +46,7 @@
         flex-direction: column;
         padding: 0;
         margin: 0;
+        animation: transitionIn 0.75s;
     }
 
     /* -- Header -- */
@@ -165,9 +166,7 @@
         color: var(--bgandtext-color-dark);
     }
     .LogInBox input[type=text],input[type=password]{
-        text-align: center;
         border-radius: 25px;
-        border-color: goldenrod;
         border-style: solid;
         background-color: var(--bgandtext-color-light);
         margin-bottom: 10px;
@@ -176,13 +175,16 @@
         border: 2px solid var(--primary-color);
         border-radius: 40px;
         padding: 15px 30px 15px 30px;
+        text-align: center;
     }
     #username::placeholder {
-        color: var(--primary-color-light);
+        color: var(--bgandtext-color-grey);
         font-family: var(--light-font);
+        text-align: center;
       }
+
     #password::placeholder {
-        color: var(--primary-color-light);
+        color: var(--bgandtext-color-grey);
         font-family: var(--light-font);
       }
     .LogInBox input[type=text]:focus, input[type=password]{
@@ -198,7 +200,6 @@
         border: none;
         outline: none;
         border-radius: 40px;
-        box-shadow: 40px;
         box-shadow: 0 0 10px rgba(0, 0, 0, .1);
         cursor: pointer;
         font-size: 16px;
@@ -244,10 +245,18 @@
     }
     #noRecipe {
         color: var(--primary-color-dark);
-        font: var(--regular-font);
-        font-size: 25px;
+        font-family: var(--light-font);
+        font-size: 20px;
     }
+
     /* --  Recipe Menu Nav Bar -- */
+    .contentBox h3{
+        font-family: var(--regular-font);
+        text-align: center;
+        color: var(--bgandtext-color-dark);
+        text-align: left;
+        padding-left: 20px;
+    }
     .recipeMenu{
         display: flex;
     }
@@ -551,7 +560,6 @@
     .back-button {
         display: flex;
         align-items: center;
-        align-content: left;
         margin-top: 20px;
         justify-content: flex-start;
     }
@@ -777,6 +785,7 @@
         height: 20px;
     }
 
+
     /* -- Search Bar -- */
     .searchDiv h1{
         font-family: var(--special-font);
@@ -847,6 +856,17 @@
         color: var(--bgandtext-color-grey);
         text-align: left;
         padding-left: 15px;
+    }
+
+    @keyframes transitionIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     
