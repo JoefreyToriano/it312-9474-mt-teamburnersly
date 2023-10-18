@@ -5,7 +5,7 @@ async function showOwnRecipes(id){
     var allRecipes = await getAllRecipes()
     var chosenRecipes = await getRecipeByUserId(allRecipes,id)
     await clearAllRecipes()
-    document.getElementById("currentFilter").innerHTML="OWN RECIPES"
+    document.getElementById("currentFilter").innerHTML="Owned Recipes"
     showRecipeInList(chosenRecipes)
 }
 
@@ -14,7 +14,7 @@ async function showSavedRecipes(id){
     var allRecipes = await getAllRecipes()
     var finalList = await getSavedRecipes(allRecipes,id)
     await clearAllRecipes()
-    document.getElementById("currentFilter").innerHTML="SAVED RECIPES"
+    document.getElementById("currentFilter").innerHTML="Saved Recipes"
     showRecipeInList(finalList)
 }
 
@@ -22,7 +22,7 @@ async function showAllRecipes(){
     picked = "all"
     var allRecipes = await getAllRecipes()
     await clearAllRecipes()
-    document.getElementById("currentFilter").innerHTML="ALL RECIPES"
+    document.getElementById("currentFilter").innerHTML="All Recipes"
     showRecipeInList(allRecipes)
 }
 
@@ -30,12 +30,12 @@ async function showAllRecipes2(){
     var currentList = await getAllRecipes()
     if (picked == "own"){
         currentList = await getRecipeByUserId(currentList,userId)
-        document.getElementById("currentFilter").innerHTML = "OWN RECIPES"
+        document.getElementById("currentFilter").innerHTML = "Owned Recipes"
     } else if (picked == "saved"){
         currentList = await getSavedRecipes(currentList,userId)
-        document.getElementById("currentFilter").innerHTML = "SAVED RECIPES"
+        document.getElementById("currentFilter").innerHTML = "Saved Recipes"
     } else{
-        document.getElementById("currentFilter").innerHTML = "ALL RECIPES"
+        document.getElementById("currentFilter").innerHTML = "All Recipes"
     }
     await clearAllRecipes()
     showRecipeInList(currentList)
@@ -46,14 +46,14 @@ async function showRecipeByType(type){
     var currentFilter = ""
     if (picked == "own"){
         currentList = await getRecipeByUserId(currentList,userId)
-        currentFilter = "OWN RECIPES: "
+        currentFilter = "Owned Recipies: "
     } else if (picked == "saved"){
         currentList = await getSavedRecipes(currentList,userId)
-        currentFilter = "SAVED RECIPES: "
+        currentFilter = "Saved Recipies: "
     }
     currentList = await getRecipeByType(currentList,type)
     await clearAllRecipes()
-    var currentFilter = currentFilter + type.toUpperCase()
+    var currentFilter = currentFilter + type
     document.getElementById("currentFilter").innerHTML = currentFilter
     showRecipeInList(currentList)
 }
@@ -108,7 +108,7 @@ async function showRecipeById(id){
 async function showRecipeInList(chosenRecipes){
     if (chosenRecipes.length == 0){
         var noRecipe = document.createElement("h1")
-        var noRecipeText = document.createTextNode("THERE ARE NO RECIPES AVAILABLE")
+        var noRecipeText = document.createTextNode("Oops! There are no recipes available")
         noRecipe.appendChild(noRecipeText)
         noRecipe.setAttribute("id","noRecipe")
         document.getElementById("recipeBox").appendChild(noRecipe)
