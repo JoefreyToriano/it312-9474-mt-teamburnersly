@@ -317,17 +317,17 @@ if (localStorage.getItem("allRecipes")==null){
                     "3 tablespoons cooking oil"
                 ],
                 steps: [
-                    "1. Heat a sizzling plate or a cast-iron skillet over medium-high heat.",
-                    "2. Add cooking oil to the hot plate or skillet.",
-                    "3. Saute the garlic and onions until the onions are soft and translucent.",
-                    "4. Add the minced chicken liver and cook until it turns brown.",
-                    "5. Put in the finely chopped chicken thighs and cook until they are browned and fully cooked.",
-                    "6. Add the minced green chili peppers and saute for a few minutes until they're cooked and fragrant.",
-                    "7. Pour in the mayonnaise, soy sauce, oyster sauce, and calamansi juice. Mix well and cook for a few more minutes until the sauce thickens.",
-                    "8. Season with salt and pepper to taste.",
-                    "9. Once the sisig is cooked and sizzling, remove it from the heat and transfer it to a serving plate.",
-                    "10. Serve immediately, garnished with extra green chili peppers if desired.",
-                    "11. Enjoy your sizzling Chicken Sisig!"
+                    "Heat a sizzling plate or a cast-iron skillet over medium-high heat.",
+                    "Add cooking oil to the hot plate or skillet.",
+                    "Saute the garlic and onions until the onions are soft and translucent.",
+                    "Add the minced chicken liver and cook until it turns brown.",
+                    "Put in the finely chopped chicken thighs and cook until they are browned and fully cooked.",
+                    "Add the minced green chili peppers and saute for a few minutes until they're cooked and fragrant.",
+                    "Pour in the mayonnaise, soy sauce, oyster sauce, and calamansi juice. Mix well and cook for a few more minutes until the sauce thickens.",
+                    "Season with salt and pepper to taste.",
+                    "Once the sisig is cooked and sizzling, remove it from the heat and transfer it to a serving plate.",
+                    "Serve immediately, garnished with extra green chili peppers if desired.",
+                    "Enjoy your sizzling Chicken Sisig!"
                 ],
                 allRatings: [
                     {
