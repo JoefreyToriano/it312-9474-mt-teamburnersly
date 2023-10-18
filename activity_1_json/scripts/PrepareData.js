@@ -302,7 +302,10 @@ if (localStorage.getItem("allRecipes")==null){
                 recipeType: "Chicken",
                 recipeDesc: "Sizzling Filipino chicken appetizer",
                 recipePicture: "images/food_images/chicken-sisig.jpeg",
-                recipeDuration: [20, 40],
+                recipeDuration: [
+                    20, 
+                    40
+                ],
                 ingredients: [
                     "2 lbs. boneless chicken thighs, finely chopped",
                     "1 cup chicken liver, minced",
