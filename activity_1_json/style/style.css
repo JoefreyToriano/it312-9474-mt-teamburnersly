@@ -292,7 +292,8 @@
     .contentBox > h1{
         width: 100%;
         text-align: center;
-        font-family: var(--bold-font);
+        font-family: var(--regular-font);
+        color: var(--bgandtext-color-dark);
     }
     .textBox p, .textBox h1{
         margin: 0;
@@ -308,7 +309,7 @@
         border-radius: 25px;
         width: 200px;
         height: 300px;
-        background-color: rgb(117, 1, 1);
+        background-color: var(--primary-color-dark);
         overflow: hidden;
     }
     .recipeTab img{
@@ -322,24 +323,33 @@
         flex-direction: column-reverse;
         bottom: 0;
         left: 0;
-        background-image: linear-gradient(rgba(165, 42, 42, 0), #8c2323);
+        background-image: linear-gradient(rgba(165, 42, 42, 0),  var(--primary-color-dark));
         border-radius: 0 0 25px 25px;
         width: 100%;
         height: 30%;
         padding: 15px;
         box-sizing: border-box;
         transition: height 0.5s;
+        font-family: var(--bold-font);
+        text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.5);
     }
     .recipeTabTitle p[title=desc]{
         min-height: 18px;
         max-height: 100%;
         overflow: hidden;
+        font-family: var(--regular-font);
+        color: var(--bgandtext-color-light);
+        text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.5);
     }
     .recipeTabTitle p[title="rating"]{
         display: none;
+        font-family: var(--light-font);
+        text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.5);
     }
     .recipeTabTitle:hover p[title="rating"]{
         display: block;
+        font-family: var(--light-font);
+        text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.5);
     }
     .recipeTabTitle:hover{
         height: 100%;
@@ -721,18 +731,28 @@
         display: flex; 
         color: var(--primary-color);
     }
-    .intro h1 {
-        font-family: var(--special-font);
+    .intro h3 {
+        font-family: var(--regular-font);
         margin: 0;
         font-size: 45px;
+        padding-left: 20px;
     }
     .intro p {
         flex: 1;
         font-family: var(--regular-font);
+        color: var(--bgandtext-color-dark);
+        padding-left: 20px;
+    }
+    .intro h4 {
+        flex: 1;
+        font-family: var(--light-font);
+        color: var(--bgandtext-color-dark);
+        padding-left: 20px;
     }
     .intro img {
-        width: 150px;
+        width: 240px;
         height: auto; 
+        border-radius: 15px;
     }
     .left-content {
         margin-right: 5%;
