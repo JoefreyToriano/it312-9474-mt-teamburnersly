@@ -1,12 +1,11 @@
 async function getAllRecipes(){
-    let recipes = await fetch("data/Recipes.json")
-    let recipeList = await recipes.json()
+    let recipes = await fetch("data/backup.json")
+    let recipeList = JSON.parse(localStorage.getItem("allRecipes"))
     return recipeList
 }
 
-async function getUserById(id){
-    let users = await fetch("data/users.json")
-    let userList = await users.json()
+function getUserById(id){
+    let userList = JSON.parse(localStorage.getItem("allUsers"))
     let chosenUser
     for(let i = 0; i <userList.length; i++){
         if(userList[i].userid==id){
@@ -17,10 +16,8 @@ async function getUserById(id){
     return chosenUser
 }
 
-async function getRecipeById(id){
-    let recipes = await fetch("data/Recipes.json")
-    let recipeList = await recipes.json()
-    let chosenRecipe
+function getRecipeById(id){
+    let recipeList = JSON.parse(localStorage.getItem("allRecipes"))
     for(let i = 0; i < recipeList.length; i++){
         if(recipeList[i].recipeId==id){
             chosenRecipe = recipeList[i]
