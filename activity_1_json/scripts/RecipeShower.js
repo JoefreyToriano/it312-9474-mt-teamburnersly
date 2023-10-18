@@ -90,6 +90,7 @@ async function showRecipeById(id){
     /*End*/
     var desc = document.createElement("p")
     var descText = document.createTextNode(recipe.recipeDesc)
+    desc.setAttribute("title","desc")
     desc.appendChild(descText)
     title.appendChild(desc)
     var author = document.createElement("p")

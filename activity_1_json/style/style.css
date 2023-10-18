@@ -330,6 +330,10 @@
         box-sizing: border-box;
         transition: height 0.5s;
     }
+    .recipeTabTitle p[title=desc]{
+        max-height: 54px;
+        overflow: hidden;
+    }
     .recipeTabTitle p[title="rating"]{
         display: none;
     }
