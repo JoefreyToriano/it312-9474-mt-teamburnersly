@@ -200,7 +200,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 1,
                 recipeType: "pork",
                 recipeDesc: "Crispy pork hock cooked in peanut sauce and served with steamed vegetables",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipePicture:"images/food_images/crispy_pata_kare_kare.jpeg",
                 recipeDuration:[
                     15,
                     80
@@ -251,7 +251,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "pork",
                 recipeDesc: "Pork soup in sour broth with okra, kangkong, eggplant, and string beans. This dish is best during the cold weather.",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipePicture:"images/food_images/pork_sinigang.jpeg",
                 recipeDuration:[
                         15,
                         90
@@ -301,7 +301,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "dessert",
                 recipeDesc: "Sticky Filipino rice cake",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipePicture:"images/food_images/biko.jpeg",
                 recipeDuration:[
                     10,
                     40
@@ -470,7 +470,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Beef",
                 recipeDesc: "Pinoy Beef Steak, also known as Bistek Tagalog, is a mouthwatering Filipino dish that marries succulent slices of beef, soaked in a zesty soy sauce and calamansi marinade, with the delightful tang of onions and a hint of garlic. This flavorful symphony of tender meat and vibrant seasonings creates a dish that's not just a Filipino favorite but a global sensation, promising a tantalizing taste of the Philippines with every delicious bite.",
-                recipePicture:"images/food_images/beef_steak.jpg",
+                recipePicture:"images/food_images/beef_steak.jpeg",
                 recipeDuration:[
                     10,
                     60
@@ -622,7 +622,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Vegetable",
                 recipeDesc: "Pinoy Chop Suey is a delightful Filipino culinary masterpiece that harmoniously blends vibrant, crisp vegetables and succulent meats, expertly sautéed in a savory sauce. This beloved dish not only tantalizes the taste buds with its rich flavors but also captures the essence of Filipino cuisine's diverse and colorful essence, making it a must-try for anyone seeking a delicious and multicultural dining experience.",
-                recipePicture:"images/food_images/chop_suey.jpeg",
+                recipePicture:"images/food_images/chop-suey.jpeg",
                 recipeDuration:[
                     10,
                     40
@@ -679,7 +679,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 5,
                 recipeType: "Fish",
                 recipeDesc: "Indulge in the mouthwatering flavors of Pinangat na Galunggong sa Kamias, a Filipino dish that perfectly balances the tanginess of kamias (bilimbi fruit) with the savory goodness of galunggong (round scad). This delightful combination creates a harmonious blend of sweet and sour, making it a must-try delicacy for those seeking a truly authentic Filipino culinary experience.",
-                recipePicture:"images/food_images/pinangat_na_isda",
+                recipePicture:"images/food_images/pinangat_na_isda.jpeg",
                 recipeDuration:[
                     15,
                     30
@@ -721,7 +721,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Fish",
                 recipeDesc:  "Paksiw na Bangus is a Filipino culinary delight that tantalizes the taste buds with its perfect harmony of sourness and savory flavors. Dive into a world of delectable tangy sensations as this dish offers a delightful twist on traditional milkfish, making it a must-try for those seeking a unique and satisfying culinary experience.",
-                recipePicture:"images/food_images/paksiw_na_bangus",
+                recipePicture:"images/food_images/paksiw_na_bangus.jpeg",
                 recipeDuration:[
                     15,
                     30
