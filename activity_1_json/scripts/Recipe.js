@@ -6,19 +6,26 @@ async function initializeRecipe(id){
     var type = recipe.recipeType
     document.getElementById("type").firstElementChild.nextElementSibling.innerHTML = type
     var icon = document.getElementById("type").firstElementChild
-    if(type=="Dessert"){
-        icon.src = "images/icons/dessert_icon.svg"
-    } else if (type=="Fish"){
-        icon.src = "images/icons/fish_icon.svg"
-    } else if (type=="Beef"){
-        icon.src = "images/icons/beef_icon.svg"
-    } else if (type=="Chciken"){
-        icon.src = "images/icons/chicken_icon.svg"
-    } else if (type=="Pork"){
-        icon.src = "images/icons/pork_icon.svg"
-    } else if (type=="Vegetable"){
-        icon.src = "images/icons/vegetable_icon.svg"
-    } 
+    switch (type) {
+        case "Fish":
+            icon.src = "images/icons/fish_icon.svg";
+            break;
+        case "Beef":
+            icon.src = "images/icons/beef_icon.svg";
+            break;
+        case "Chicken":
+            icon.src = "images/icons/chicken_icon.svg";
+            break;
+        case "Pork":
+            icon.src = "images/icons/pork_icon.svg";
+            break;
+        case "Vegetable":
+            icon.src = "images/icons/vegetable_icon.svg";
+            break;
+        default:
+            icon.src = "images/icons/dessert_icon.svg";
+            break;
+    }
     document.getElementsByClassName("recipeCreator")[0].firstElementChild.src = chosenUser.profilePic
     document.getElementsByClassName("recipeCreator")[0].firstElementChild.nextElementSibling.innerHTML = chosenUser.firstName+" "+chosenUser.lastName
     document.getElementsByClassName("recipeDesc")[0].firstElementChild.innerHTML = recipe.recipeDesc
@@ -37,5 +44,33 @@ async function initializeRecipe(id){
         step.appendChild(document.createTextNode(recipe.steps[i]))
         steps.appendChild(step)
     }
+    var userFave=getUserById(localStorage.getItem("User ID")).favoriteRecipes.indexOf(Number(id))
+    console.log(userFave)
+    if(userFave=== -1){
+        document.getElementById("hearted").src="images/Unhearted.png"
+    } else{
+        document.getElementById("hearted").src="images/Hearted.png"
+    }
 }
 initializeRecipe(sessionStorage.getItem("choosenRecipe"))
+
+function toggleFavorites(){
+    var userList = JSON.parse(localStorage.getItem("allUsers"))
+    var choosenRecipe = Number(sessionStorage.getItem("choosenRecipe"))
+    for(var i = 0;i<userList.length;i++){
+        if(userList[i].userid==localStorage.getItem("User ID")){
+            var index = userList[i].favoriteRecipes.indexOf(choosenRecipe)
+            if(index === -1){
+                userList[i].favoriteRecipes.push(choosenRecipe)
+                document.getElementById("hearted").src="images/Hearted.png"
+                break
+            } else{
+                userList[i].favoriteRecipes.splice(index,1)
+                document.getElementById("hearted").src="images/Unhearted.png"
+                break
+            }
+        }
+    }
+    userList = JSON.stringify(userList)
+    localStorage.setItem("allUsers",userList)
+}

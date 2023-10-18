@@ -7,12 +7,17 @@ function calculateAverageRatings() {
         if (ratings.length === 0) {
             recipe.averageRating = 0;
         } else {
-            const sum = ratings.reduce((total, rating) => total + rating.rating, 0);
+            const sum = ratings.reduce((total, rating) => total + rating.rating,0);
             recipe.averageRating = sum / ratings.length;
         }
     }
 
     recipes.sort((a, b) => b.averageRating - a.averageRating);
+}
+
+function viewRecipe(recipeId) {
+    sessionStorage.setItem("choosenRecipe",recipeId)
+    window.location.href = "recipePage.html"
 }
 
 // Function to display the search results
@@ -30,6 +35,7 @@ function displaySearchResults(results) {
                 <p>Rating: ${recipe.averageRating}</p>
                 <p>${generateStarRatingHTML(recipe.averageRating)}</p>
             `;
+            recipeElement.addEventListener('click', () => viewRecipe(recipe.recipeId))
             searchResultsContainer.appendChild(recipeElement);
         });
     }

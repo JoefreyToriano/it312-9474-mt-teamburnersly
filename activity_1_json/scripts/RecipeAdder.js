@@ -82,28 +82,30 @@ function changeToFish(){
     type="Fish"
 }
 
-function download(content, fileName, contentType) {
-    var a = document.createElement("a");
-    var file = new Blob([content], {type: contentType});
-    a.href = URL.createObjectURL(file);
-    a.download = fileName;
-    a.click();
-}
-
-
 async function saveRecipe(){
     var a = await getAllRecipes() 
     var b = a[a.length-1].recipeId+1
+    var textInputList = document.querySelectorAll("input[type=text]")
+    if(picture==""||type==""){
+        alert("Please fill out all the necessary forms")
+            return
+    }
+    for (var i = 0; i<textInputList.length;i++){
+        if(textInputList[i].value==""){
+            alert("Please fill out all the necessary forms")
+            return
+        }
+    }
     var fullRecipe={
         recipeId: b,
         recipeName: document.getElementById("recipeName").value,
-        recipeAuthor: localStorage.getItem("User ID"),
+        recipeAuthor: Number(localStorage.getItem("User ID")),
         recipeType: type,
         recipeDesc: document.getElementById("recipeDesc").value,
         recipePicture: picture,
         recipeDuration:[
-            document.getElementById("prepTime")*60,
-            document.getElementById("cookTime")*60
+            document.getElementById("prepTime").value*60,
+            document.getElementById("cookTime").value*60
         ],
         ingredients:[],
         steps:[],
@@ -119,24 +121,7 @@ async function saveRecipe(){
     });
     a.push(fullRecipe)
     var jsonData = JSON.stringify(a,null,2)
-    const fs = require('fs')
-    fs.writeFileSync("data/backup.json",jsonData)
-    fetch('/update-json-endpoint', {
-        method: 'POST',
-        body: jsonData,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log('JSON file updated successfully.');
-        } else {
-            console.error('Failed to update JSON file.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-    
+    localStorage.setItem("allRecipes",jsonData)
+    confirm("Your recipe has been saved")
+    window.location.href = "profile.html"
 }

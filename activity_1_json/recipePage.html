@@ -41,17 +41,13 @@
             </header>
 
             <!-- ======= content ======= -->
-            <div class="back-button">
-                <img src="images/icons/back_icon.svg" alt="Back Arrow">
-                <a href="profile.html">Go Back</a>
-            </div>
-            
             <div class="content">
                 <div class="contentBox" title="fullRecipe">
                     <div class="recipeImage">
                         <img src="images/Food Pictures/milkshake.jpeg" id="recImg">
                         <div class="imageTitle">
                             <div id = "title">
+                                <img src="images/Hearted.png" onclick="toggleFavorites()" id="hearted">
                                 <h1 id="titleText">Strawberry Milkshake</h1>
                             </div>
                             <div id = "type">
@@ -81,12 +77,12 @@
                     <div class="sandi">
                         <div class="ingredients">
                             <h2>Ingredients</h2>
-                            <ul>
+                            <ul id="ingredientsList">
                             </ul>
                         </div>
                         <div class="steps">
                             <h2>Steps</h2>
-                            <ol>
+                            <ol id="stepsList">
                             </ol>
                         </div>
                     </div>
