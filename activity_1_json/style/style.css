@@ -685,12 +685,27 @@
     .left-content {
         margin-right: 5%;
     }
-
+    .searchDiv {
+        color: var(--primary-color);
+    }
+    .searchDiv h1{
+        font-family: var(--special-font);
+        text-align: center;
+    }
     #recipeSearch {
         border-radius: 30px;
         height: 30px;
     }
-
+    #sortButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        
+    }
+    .sort-icon {
+        width: 20px;
+        height: 20px;
+    }
     /* Style the container for search results */
     #searchResults {
         margin-top: 20px;
@@ -698,7 +713,7 @@
 
     /* Style each recipe element */
     #searchResults div {
-        background-color: gray;
+        background-color: wheat;
         border: 1px solid #ddd;
         padding: 10px;
         margin-bottom: 10px;
@@ -722,3 +737,5 @@
         height: 20px; 
         margin-right: 5px;
     }
+
+    

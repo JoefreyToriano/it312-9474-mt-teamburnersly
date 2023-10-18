@@ -1,5 +1,6 @@
-function getAllRecipes(){
-    let recipeList = JSON.parse(localStorage.getItem("allRecipes"))
+async function getAllRecipes(){
+    let recipes = await fetch("data/backup.json")
+    let recipeList = await recipes.json()
     return recipeList
 }
 

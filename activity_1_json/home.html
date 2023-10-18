@@ -44,33 +44,43 @@
                 </div>
                 <img src="images/Profile Pictures/Alice.png" alt="food">
             </div>
-            <div class="recipeMenu">
-                <button title="first" onclick="showAllRecipes2()">
-                    <img src="images/icons/all_icon.svg" alt="Fish Icon"> All</button>
-                <button onclick="showRecipeByType('Chicken')">
-                    <img src="images/icons/chicken_icon.svg" alt="Fish Icon"> Chicken</button>
-                <button onclick="showRecipeByType('Pork')">
-                    <img src="images/icons/pork_icon.svg" alt="Fish Icon"> Pork</button>
-                <button onclick="showRecipeByType('Dessert')">
-                    <img src="images/icons/dessert_icon.svg" alt="Fish Icon"> Dessert</button>
-                <button onclick="showRecipeByType('Beef')"> 
-                    <img src="images/icons/beef_icon.svg" alt="Fish Icon"> Beef</button>
-                <button onclick="showRecipeByType('Vegetable')">
-                    <img src="images/icons/vegetable_icon.svg" alt="Fish Icon"> Vegetable</button>
-                <button onclick="showRecipeByType('Fish')" title="last">
-                    <img src="images/icons/fish_icon.svg" alt="Fish Icon"> Fish </button>
+            
+            <div class="contentBox" id="recipeBox">
+                <div class="recipeMenu" title="categories">
+                    <button title="first" onclick="showAllRecipes2()">
+                        <img src="images/icons/all_icon.svg" alt="Fish Icon"> All</button>
+                    <button onclick="showRecipeByType('Chicken')">
+                        <img src="images/icons/chicken_icon.svg" alt="Fish Icon"> Chicken</button>
+                    <button onclick="showRecipeByType('Pork')">
+                        <img src="images/icons/pork_icon.svg" alt="Fish Icon"> Pork</button>
+                    <button onclick="showRecipeByType('Dessert')">
+                        <img src="images/icons/dessert_icon.svg" alt="Fish Icon"> Dessert</button>
+                    <button onclick="showRecipeByType('Beef')"> 
+                        <img src="images/icons/beef_icon.svg" alt="Fish Icon"> Beef</button>
+                    <button onclick="showRecipeByType('Vegetable')">
+                        <img src="images/icons/vegetable_icon.svg" alt="Fish Icon"> Vegetable</button>
+                    <button onclick="showRecipeByType('Fish')" title="last">
+                        <img src="images/icons/fish_icon.svg" alt="Fish Icon"> Fish </button>
+                </div>
             </div>
+
             <div class="searchDiv">
+                <h1>Recipes</h1>
                 <input type="text" id="recipeSearch" placeholder="Search for recipes">
+                <button id="sortButton">
+                    <img class="sort-icon" src="images/sort.png" alt="Sort">
+                </button>
                 <div id="searchResults">
                     <!-- Search results will be displayed here -->
                 </div>
+                
             </div>
     
         </div>
 
         
         <script src="scripts/Home.js"></script>
+        <script src="scripts/RecipeShower.js"></script>
         <script src="scripts/FileReader.js"></script>
         <script src="scripts/HeaderFunctions.js"></script>
     </body>

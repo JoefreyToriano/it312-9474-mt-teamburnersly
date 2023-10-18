@@ -1,3 +1,5 @@
+let sortAscending = true;
+
 // Function to calculate the average rating for each recipe
 function calculateAverageRatings() {
     for (const recipe of recipes) {
@@ -10,8 +12,12 @@ function calculateAverageRatings() {
         }
     }
 
-    // Sort the recipes by average rating immediately after calculating ratings
     recipes.sort((a, b) => b.averageRating - a.averageRating);
+}
+
+function viewRecipe(recipeId) {
+    sessionStorage.setItem("choosenRecipe",recipeId)
+    window.location.href = "recipePage.html"
 }
 
 // Function to display the search results
@@ -29,6 +35,7 @@ function displaySearchResults(results) {
                 <p>Rating: ${recipe.averageRating}</p>
                 <p>${generateStarRatingHTML(recipe.averageRating)}</p>
             `;
+            recipeElement.addEventListener('click', () => viewRecipe(recipe.recipeId))
             searchResultsContainer.appendChild(recipeElement);
         });
     }
@@ -40,23 +47,35 @@ function generateStarRatingHTML(rating) {
     return starImage.repeat(rating);
 }
 
-// Function to sort and display recipes by rating
-function sortAndDisplayRecipes() {
+// Function to sort and display search results
+function sortAndDisplaySearchResults() {
     calculateAverageRatings();
     const searchResults = recipes.filter(recipe => recipe.recipeName.toLowerCase().includes(recipeSearchInput.value.toLowerCase()));
-    searchResults.sort((a, b) => b.averageRating - a.averageRating);
+    if (sortAscending) {
+        searchResults.sort((a, b) => a.averageRating - b.averageRating); // Sort in ascending order
+    } else {
+        searchResults.sort((a, b) => b.averageRating - a.averageRating); // Sort in descending order
+    }
     displaySearchResults(searchResults);
+    sortAscending = !sortAscending; // Toggle the sort order
 }
 
 const recipeSearchInput = document.getElementById('recipeSearch');
 const searchResultsContainer = document.getElementById('searchResults');
+const sortButton = document.getElementById('sortButton'); 
+
+// Add an event listener to the sort button
+sortButton.addEventListener('click', sortAndDisplaySearchResults);
 
 // Fetch recipe data from the JSON file
-fetch('data/backup.json')
+fetch('data/Recipes.json')
     .then(response => response.json())
     .then(data => {
+        const jsonDataString = JSON.stringify(data);
+        localStorage.setItem('recipeData', jsonDataString)
+
         window.recipes = data;
-        recipeSearchInput.addEventListener('input', sortAndDisplayRecipes);
-        sortAndDisplayRecipes(); // Sort and display recipes when data is loaded
+        recipeSearchInput.addEventListener('input', sortAndDisplaySearchResults);
+        sortAndDisplaySearchResults();
     })
     .catch(error => console.error('Error fetching recipe data:', error));

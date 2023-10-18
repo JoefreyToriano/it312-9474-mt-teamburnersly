@@ -15,6 +15,7 @@ class AnimeSearcher {
       updatedDiv: document.getElementById("recentlyUpdatedAnime"),
       trendingHeader: document.getElementById("trendingHeader"),
       updatedHeader: document.getElementById("updatedHeader"),
+      episodesBtn: document.getElementById("episodesBtn")
     };
     this.inputElements = [
       this.elements.animeInput,
@@ -31,6 +32,7 @@ class AnimeSearcher {
     console.log("Updated Header:", this.elements.updatedHeader);
     this.currentPage = 1;
     this.updatePageDisplay();
+    this.elements.episodesBtn = document.getElementById("episodesBtn");
     this.elements.prevBtn = document.getElementById("prevBtn");
     this.elements.nextBtn = document.getElementById("nextBtn");
     this.elements.prevBtn.addEventListener("click", this.prevPage.bind(this));
@@ -136,6 +138,7 @@ class AnimeSearcher {
     const animeStatus = document.getElementById("animeStatus");
     const animeInfoBtn = document.getElementById("animeInfoBtn");
     const trailerBtn = document.getElementById("trailerBtn");
+    this.currentAnime = anime;
     console.log("Opening modal for anime:", anime.mal_id);
     animeImage.src = anime.images.jpg.large_image_url || "";
     animeTitle.textContent = anime.title || "Unknown Title";
@@ -149,7 +152,6 @@ class AnimeSearcher {
       new Date(anime.aired.from).getFullYear() || "Unknown"
     }`;
     animeStatus.textContent = `Status: ${anime.status || "Unknown"}`;
-
     fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/statistics`)
       .then((response) => {
         if (!response.ok) {
@@ -361,7 +363,18 @@ function openModal(anime) {
   const animeStatus = document.getElementById("animeStatus");
   const animeInfoBtn = document.getElementById("animeInfoBtn");
   const trailerBtn = document.getElementById("trailerBtn");
+  const episodesBtn = document.getElementById("episodesBtn");
+  this.currentAnime = anime;
   console.log("Opening modal for anime:", anime.mal_id);
+  episodesBtn.addEventListener("click", () => {
+    console.log("Episodes button clicked.");
+    if (this.currentAnime) {
+        console.log("Fetching episodes for:", this.currentAnime.title);
+        this.fetchEpisodes(this.currentAnime);
+    } else {
+        console.error("No anime selected.");
+    }
+});
   animeImage.src = anime.images.jpg.large_image_url || "";
   animeTitle.textContent = anime.title || "Unknown Title";
   animeDescription.textContent = anime.synopsis || "Description not available.";
@@ -391,13 +404,10 @@ function openModal(anime) {
         console.warn("You've hit the rate limit for the Jikan API.");
       }
     });
-
   modal.style.display = "block";
-
   animeInfoBtn.onclick = () => {
     window.open(`https://myanimelist.net/anime/${anime.mal_id}`, "_blank");
   };
-
   trailerBtn.onclick = () => {
     fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/videos`)
       .then((response) => {
@@ -445,7 +455,93 @@ function openModal(anime) {
     }
   };
 }
+function fetchEpisodes(anime) {
+  const episodesModal = document.getElementById("episodesModal");
+  const episodesList = document.getElementById("episodesList");
+  
+  let episodeDetails = [];
+  
+  // Fetch episode details
+  fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/episodes`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      episodeDetails = data.data;
+      
+      // Clear previous episodes
+      episodesList.innerHTML = "";
+      
+      let episodeCounter = 1; // Initialize episode counter
 
+      // Display episodes
+      episodeDetails.forEach((episodeDetail) => {
+        const episodeCard = createEpisodeCard(episodeDetail, anime.images.jpg.large_image_url || "", episodeCounter++);
+        episodesList.appendChild(episodeCard);
+      });
+      
+      episodesModal.style.display = "block";
+    })
+    .catch((error) => {
+      console.error("Error fetching episodes:", error);
+    });
+}
+
+function createEpisodeCard(episodeDetail, animeImage, episodeNumber) {
+  const episodeDiv = document.createElement("div");
+  episodeDiv.classList.add("episode-card");
+
+  // Add episode image
+  const img = document.createElement("img");
+  img.src = animeImage || "path_to_fallback_image.jpg";
+  img.alt = `Image of Episode ${episodeNumber}`;
+  img.onerror = function () {
+    this.onerror = null;
+    this.src = "path_to_fallback_image.jpg";
+  };
+  episodeDiv.appendChild(img);
+
+  // Add episode title
+  const title = document.createElement("div");
+  title.classList.add("episode-title");
+  title.innerText = `Episode ${episodeNumber}: ${episodeDetail.title}`;
+  episodeDiv.appendChild(title);
+
+  // Add episode score
+  const score = document.createElement("div");
+  score.classList.add("episode-score");
+  score.innerText = `Score: ${episodeDetail.score || "Unknown"}`;
+  episodeDiv.appendChild(score);
+
+  // Add episode date aired
+  const dateAired = document.createElement("div");
+  dateAired.classList.add("episode-date");
+  dateAired.innerText = episodeDetail.aired ? new Date(episodeDetail.aired).toDateString() : "Unknown Date";
+  episodeDiv.appendChild(dateAired);
+
+  // Add episode forum link
+  const forumLink = document.createElement("a");
+  forumLink.classList.add("episode-forum");
+  forumLink.href = episodeDetail.forum_url;
+  forumLink.innerText = "Forums";
+  forumLink.target = "_blank";
+  episodeDiv.appendChild(forumLink);
+
+  return episodeDiv;
+}
+      const closeEpisodesModal = document.getElementById("closeEpisodesModal");
+closeEpisodesModal.onclick = () => {
+  episodesModal.style.display = "none";
+};
+
+window.onclick = (event) => {
+  if (event.target === episodesModal) {
+      episodesModal.style.display = "none";
+  }
+  };
 function updateModalWithStatistics(statsData) {
   const watching = document.getElementById("animeWatching");
   const completed = document.getElementById("animeCompleted");
