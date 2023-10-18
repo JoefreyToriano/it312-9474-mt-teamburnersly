@@ -300,7 +300,7 @@ if (localStorage.getItem("allRecipes")==null){
                 recipeName: "Chicken Sisig",
                 recipeAuthor: 3,
                 recipeType: "Chicken",
-                recipeDesc: "Sizzling Filipino chicken appetizer",
+                recipeDesc: "Experience the tantalizing flavors of Chicken Sisig, a sizzling Filipino specialty that captivates your palate with its exquisite fusion of succulent, marinated chicken, zesty calamansi, and crunchy onions. Served piping hot, this delightful dish presents a harmonious medley of savory and tangy notes, providing a culinary adventure that's truly unforgettable.",
                 recipePicture: "images/food_images/chicken-sisig.jpeg",
                 recipeDuration: [
                     20, 
@@ -522,8 +522,8 @@ if (localStorage.getItem("allRecipes")==null){
                 recipeAuthor: 4,
                 recipeType: "Beef",
                 recipeDesc: "Indulge in the irresistible allure of Beef Caldereta, a symphony of flavors where succulent beef harmonizes with rich tomato sauce, aromatic spices, and vibrant bell peppers. This Filipino culinary masterpiece will tantalize your taste buds, leaving you craving for more with every exquisite bite.",
-                recipePictur:"images/food_images/beef_caldereta.jpeg",
-                recipeDuratio:[
+                recipePicture:"images/food_images/beef_caldereta.jpeg",
+                recipeDuration:[
                         20,
                         60
                     ],
