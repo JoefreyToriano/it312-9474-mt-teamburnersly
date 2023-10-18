@@ -861,4 +861,3 @@ if (localStorage.getItem("allUsers")==null||true){
     var userList = JSON.stringify(users)
     localStorage.setItem("allUsers",userList)
 }
-console.log(JSON.parse(localStorage.getItem("allRecipes")))
