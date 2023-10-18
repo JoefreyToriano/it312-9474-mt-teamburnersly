@@ -251,7 +251,7 @@ if (localStorage.getItem("allRecipes")==null){
                 recipeAuthor: 3,
                 recipeType: "Pork",
                 recipeDesc: "Indulge in the rich and tangy flavors of Pork Sinigang, a beloved Filipino stew that tantalizes taste buds with succulent pork, crisp vegetables, and a zesty tamarind broth. Its delightful blend of savory and sour notes promises a comforting and invigorating dining experience you won't want to miss.",
-                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipePicture:"images/food_images/pork_sinigang.jpeg",
                 recipeDuration:[
                         15,
                         90
@@ -301,7 +301,7 @@ if (localStorage.getItem("allRecipes")==null){
                 recipeAuthor: 3,
                 recipeType: "Chicken",
                 recipeDesc: "Sizzling Filipino chicken appetizer",
-                recipePicture: "images/food_images/chicken_sisig.jpeg",
+                recipePicture: "images/food_images/chicken-sisig.jpeg",
                 recipeDuration: [20, 40],
                 ingredients: [
                     "2 lbs. boneless chicken thighs, finely chopped",
