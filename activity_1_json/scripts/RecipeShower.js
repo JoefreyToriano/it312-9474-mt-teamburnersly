@@ -46,10 +46,10 @@ async function showRecipeByType(type){
     var currentFilter = ""
     if (picked == "own"){
         currentList = await getRecipeByUserId(currentList,userId)
-        currentFilter = "Owned Recipies: "
+        currentFilter = "Owned Recipes: "
     } else if (picked == "saved"){
         currentList = await getSavedRecipes(currentList,userId)
-        currentFilter = "Saved Recipies: "
+        currentFilter = "Saved Recipes: "
     }
     currentList = await getRecipeByType(currentList,type)
     await clearAllRecipes()
