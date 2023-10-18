@@ -748,13 +748,12 @@
     }
 
     /* -- Search Bar -- */
-
-    .searchDiv {
-        color: var(--primary-color);
-    }
     .searchDiv h1{
         font-family: var(--special-font);
         text-align: center;
+        color: var(--bgandtext-color-dark);
+        text-align: left;
+        padding-left: 20px;
     }
     
     #searchResults {
@@ -762,26 +761,34 @@
     }
     /* Style each recipe element */
     #searchResults div {
-        background-color: wheat;
-        border: 1px solid #ddd;
+        background-color: var(--bgandtext-color-light);
+        border: 3px solid var(--primary-color);
         padding: 10px;
         margin-bottom: 10px;
-        border-radius: 5px;
+        border-radius: 30px;
     }
 
     /* Style the heading of each recipe */
     #searchResults div h2 {
         font-size: 24px;
         margin: 0;
+        font-family: var(--bold-font);
+        color: var(--bgandtext-color-dark);
     }
 
     /* Style the recipe description */
     #searchResults div p {
         margin: 5px 0;
+        font-family: var(--regular-font);
+        color: var(--bgandtext-color-dark);
+        max-width: 800px;
     }
     #searchResults div img {
         width: auto;
-        max-height: 300px;
+        width: 150px;
+        height: 150px;
+        border-radius: 30px;
+        object-fit: cover;
     }
     /* Style the star rating */
     #searchResults #starImg {
