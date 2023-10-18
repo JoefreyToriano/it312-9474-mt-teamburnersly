@@ -49,9 +49,9 @@ async function initializeRecipe(id){
     /*Checks wether it is a sved recipe or not*/
     var userFave=getUserById(localStorage.getItem("User ID")).favoriteRecipes.indexOf(Number(id))
     if(userFave=== -1){
-        document.getElementById("hearted").src="images/icons/hearted_icon.svg"
-    } else{
         document.getElementById("hearted").src="images/icons/unhearted_icon.svg"
+    } else{
+        document.getElementById("hearted").src="images/icons/hearted_icon.svg"
     }
     /*Creates the rating*/
     getRating()
