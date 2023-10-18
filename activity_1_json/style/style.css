@@ -543,6 +543,17 @@
         font-family: var(--regular-font);
     }
 
+    [type=radio] { 
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+    .star img{
+        width: 25px;
+        height: 25px;
+        margin-left: 5px;
+    }
     /* -- Add Recipe Page -- */
     .AddRecipe_title h1{
         font-family: var(--special-font);
