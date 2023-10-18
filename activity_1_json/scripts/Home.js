@@ -70,14 +70,11 @@ const sortButton = document.getElementById('sortButton');
 sortButton.addEventListener('click', sortAndDisplaySearchResults);
 
 // Fetch recipe data from the JSON file
-fetch('data/Recipes.json')
-    .then(response => response.json())
-    .then(data => {
-        const jsonDataString = JSON.stringify(data);
+
+
+        const jsonDataString = JSON.stringify(JSON.parse(localStorage.getItem("allRecipes")));
         localStorage.setItem('recipeData', jsonDataString)
 
-        window.recipes = data;
+        window.recipes = JSON.parse(localStorage.getItem("allRecipes"));
         recipeSearchInput.addEventListener('input', sortAndDisplaySearchResults);
         sortAndDisplaySearchResults();
-    })
-    .catch(error => console.error('Error fetching recipe data:', error));

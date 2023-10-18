@@ -198,7 +198,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeId: 5,
                 recipeName: "Crispy Pata Kare Kare",
                 recipeAuthor: 1,
-                recipeType: "Pork",
+                recipeType: "pork",
                 recipeDesc: "Savor the extraordinary harmony of textures and flavors with Crispy Pata Kare-Kare. This remarkable dish unites the delightful crunch of deep-fried pork knuckle with the luscious, nutty essence of Kare-Kare sauce, promising a Filipino culinary experience that's simply irresistible.",
                 recipePicture:"images/food_images/crispy_pata_kare_kare.jpeg",
                 recipeDuration:[
@@ -251,7 +251,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Pork",
                 recipeDesc: "Indulge in the rich and tangy flavors of Pork Sinigang, a beloved Filipino stew that tantalizes taste buds with succulent pork, crisp vegetables, and a zesty tamarind broth. Its delightful blend of savory and sour notes promises a comforting and invigorating dining experience you won't want to miss.",
-                recipePicture:"images/food_images/pork_sinigang.jpeg",
+                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
                 recipeDuration:[
                         15,
                         90
@@ -623,7 +623,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeAuthor: 3,
                 recipeType: "Vegetable",
                 recipeDesc: "Pinoy Chop Suey is a delightful Filipino culinary masterpiece that harmoniously blends vibrant, crisp vegetables and succulent meats, expertly sautéed in a savory sauce. This beloved dish not only tantalizes the taste buds with its rich flavors but also captures the essence of Filipino cuisine's diverse and colorful essence, making it a must-try for anyone seeking a delicious and multicultural dining experience.",
-                recipePicture:"images/food_images/chop-suey.jpeg",
+                recipePicture:"images/food_images/chop_suey.jpeg",
                 recipeDuration:[
                     10,
                     40
