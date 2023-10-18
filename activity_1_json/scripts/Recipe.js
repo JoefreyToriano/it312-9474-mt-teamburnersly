@@ -30,7 +30,22 @@ async function initializeRecipe(id){
     document.getElementsByClassName("recipeCreator")[0].firstElementChild.nextElementSibling.innerHTML = chosenUser.firstName+" "+chosenUser.lastName
     document.getElementsByClassName("recipeDesc")[0].firstElementChild.innerHTML = recipe.recipeDesc
     var allTime = recipe.recipeDuration
-    var timeText = "Prep Time: "+(allTime[0]/60).toFixed(2)+" min | Cook time: "+(allTime[1]/60).toFixed(2)+" | Total: "+((allTime[0]/60)+(allTime[1]/60)).toFixed(2)+" min"
+    var timeText = ""
+    if(allTime[0]<60){
+        timeText = "Prep Time: "+ allTime[0]+" s | Cook time: "
+    } else{
+        timeText = "Prep Time: "+(allTime[0]/60).toFixed(2)+" min | Cook time: "
+    }
+    if (allTime[1]<60){
+        timeText = timeText+allTime[1]+" s | Total: "
+    }else{
+        timeText = timeText+(allTime[1]/60).toFixed(2)+" min | Total: "
+    }
+    if (allTime[0]+allTime[1]<60){
+        timeText = timeText+(allTime[0]+allTime[1])+" s"
+    } else {
+        timeText = timeText+((allTime[0]/60)+(allTime[1]/60)).toFixed(2)+" min"
+    }
     document.getElementsByClassName("recipeTime")[0].firstElementChild.nextElementSibling.innerHTML=timeText
     var ingredienlist = document.getElementsByClassName("ingredients")[0].firstElementChild.nextElementSibling
     /*Lays out the ingredients*/
