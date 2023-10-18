@@ -1,5 +1,5 @@
 
-if (localStorage.getItem("allRecipes")==null||true){
+if (localStorage.getItem("allRecipes")==null){
     var recipes =[
             {
                 recipeId: 1,
@@ -807,7 +807,7 @@ if (localStorage.getItem("allRecipes")==null||true){
     localStorage.setItem("allRecipes",recipeList)
     
 }
-if (localStorage.getItem("allUsers")==null||true){
+if (localStorage.getItem("allUsers")==null){
     var users=[
         {
             userid: 1,

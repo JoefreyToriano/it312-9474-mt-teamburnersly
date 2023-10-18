@@ -242,6 +242,11 @@
         margin: 0;
         margin-top: 15px;
     }
+    #noRecipe {
+        color: var(--primary-color-dark);
+        font: var(--regular-font);
+        font-size: 25px;
+    }
     /* --  Recipe Menu Nav Bar -- */
     .recipeMenu{
         display: flex;
