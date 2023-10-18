@@ -510,22 +510,26 @@
     .ingredients h2{
         margin: 0;
         padding: 0;
-        color:var(--primary-color);
+        color:var(--bgandtext-color-dark);
         font-family: var(--bold-font);
     }
     .ingredients ul{
         margin: 0;
-        margin-left: 5px;
+        margin-left: 20px;
         color:var(--primary-color);
         font-family: var(--regular-font);
     }
     .steps h2{
         margin: 0;
         padding: 0;
+        color:var(--bgandtext-color-dark);
+        font-family: var(--bold-font);
     }
     .steps ol{
         margin: 0;
-        margin-left: 5px;
+        margin-left: 20px;
+        color:var(--bgandtext-color-dark);
+        font-family: var(--regular-font);
     }
 
     .back-button {
