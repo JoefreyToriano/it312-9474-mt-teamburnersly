@@ -50,12 +50,17 @@
                                 <img src="images/icons/hearted_icon.svg" onclick="toggleFavorites()" id="hearted">
                                 <h1 id="titleText">Strawberry Milkshake</h1>
                             </div>
-                            <div id = "type">
-                                <img src="images/icons/dessert_icon.svg">
-                                <p>Dessert</p>
-                            </div>   
+                                <div class="typeAndRating">
+                                    <div id = "type">
+                                        <img src="images/icons/dessert_icon.svg">
+                                        <p>Dessert</p>
+                                    </div>   
+                                    <div id = "overallRating">
+                                        <p>Rating</p>
+                                    </div>  
+                                </div>    
+                            </div>
                         </div>
-                    </div>
                     <div class="recipeHeader">
                         <div class="recipeInfo">
                             <div class="recipeCreator">
@@ -68,12 +73,58 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="recipeTime">
-                            <img src="images/icons/time_icon.svg">
-                            <p> Prep Time: </p>
+                        <div>
+                            <div class="recipeTime">
+                                <img src="images/icons/time_icon.svg">
+                                <p> Prep Time: </p>
+                            </div>
+                            <div id="rating">
+                                <p>Your rating</p>
+                                    <div class="typeAndRating">
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(1)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(2)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(3)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(4)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(5)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(6)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(7)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(8)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(9)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                        <label class="star">
+                                            <input type="radio" id="star" onclick="rate(10)">
+                                            <img src="images/Unstarred.png" alt="Unstarred" id="starIcon">
+                                        </label>
+                                    </div>
+                            </div>
                         </div>
                     </div>
-
                     <div class="sandi">
                         <div class="ingredients">
                             <h2>Ingredients</h2>
