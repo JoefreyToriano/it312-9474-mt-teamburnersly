@@ -28,7 +28,7 @@ function displaySearchResults(results) {
         searchResultsContainer.innerHTML = '<p>No matching recipes found.</p>';
     } else {
         results.forEach(recipe => {
-            var imgUrl = recipe.recipePic;
+            var imgUrl = recipe.recipePicture;
             const recipeElement = document.createElement('div');
             recipeElement.innerHTML = `
                 <img src="${imgUrl}" alt="${recipe.recipeName}">

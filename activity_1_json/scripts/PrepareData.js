@@ -205,7 +205,7 @@ if (localStorage.getItem("allRecipes")==null){
                     15,
                     80
                 ],
-                ingredien:[
+                ingredients:[
                     "3 lbs. pork belly cubed",
                     "40 grams Knorr Ginataang Gulay Recipe Mix",
                     "4 tablespoons shrimp paste",
