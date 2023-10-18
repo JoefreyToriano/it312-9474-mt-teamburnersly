@@ -110,11 +110,11 @@ async function getRating(){
         var rating = allRecipes[recipeIndex].allRatings[i2].rating
         var i = 0
         while(i<rating){
-            myRating[i].src = "images/star.png"
+            myRating[i].src = "images/icons/star_icon.svg"
             i++
         }
         while(i<10){
-            myRating[i].src = "images/Unstarred.png"
+            myRating[i].src = "images/icons/unstar_icon.svg"
             i++
         }
     }
