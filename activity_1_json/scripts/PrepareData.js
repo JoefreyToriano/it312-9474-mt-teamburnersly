@@ -623,7 +623,7 @@ if (localStorage.getItem("allRecipes")==null){
                 recipeAuthor: 3,
                 recipeType: "Vegetable",
                 recipeDesc: "Pinoy Chop Suey is a delightful Filipino culinary masterpiece that harmoniously blends vibrant, crisp vegetables and succulent meats, expertly sautéed in a savory sauce. This beloved dish not only tantalizes the taste buds with its rich flavors but also captures the essence of Filipino cuisine's diverse and colorful essence, making it a must-try for anyone seeking a delicious and multicultural dining experience.",
-                recipePicture:"images/food_images/chop_suey.jpeg",
+                recipePicture:"images/food_images/chop-suey.jpeg",
                 recipeDuration:[
                     10,
                     40
