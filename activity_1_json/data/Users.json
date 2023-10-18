@@ -6,7 +6,7 @@
         "userName": "alicetheredcon",
         "password": "Going2Alice",
         "favoriteRecipes":[2,3],
-        "profilePic":"images/Profile Pictures/Alice.png"
+        "profilePic":"images/profile_images/alice.jpeg"
     },
 
     {
@@ -16,16 +16,36 @@
         "userName": "hallowedseamstress",
         "password": "ThreadedNeedle",
         "favoriteRecipes":[1,3],
-        "profilePic":"images/Profile Pictures/Gwen.png"
+        "profilePic":"images/profile_images/gwen.jpeg"
     },
 
     {
         "userid": 3,
-        "firstName": "Jack",
-        "lastName": "Quicksilver",
-        "userName": "thederailed",
-        "password": "Oculus",
-        "favoriteRecipes":[2],
-        "profilePic":"images/Profile Pictures/Jack.png"
+        "firstName": "Megumi",
+        "lastName": "Fushiguro",
+        "userName": "tenshadows",
+        "password": "shikigami",
+        "favoriteRecipes":[2,10,13],
+        "profilePic":"images/profile_images/fushiguro.jpeg"
+    },
+
+    {
+        "userid": 4,
+        "firstName": "Toge",
+        "lastName": "Inumaki",
+        "userName": "shuke",
+        "password": "salmon",
+        "favoriteRecipes":[6,9,15],
+        "profilePic":"images/profile_images/inumaki.jpeg"
+    },
+
+    {
+        "userid": 5,
+        "firstName": "Satoru",
+        "lastName": "Goju",
+        "userName": "thestrongest",
+        "password": "infinity",
+        "favoriteRecipes":[8,2,16],
+        "profilePic":"images/profile_images/goju.jpeg"
     }
 ]
