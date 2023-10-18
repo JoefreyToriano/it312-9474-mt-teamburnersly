@@ -28,8 +28,10 @@ function displaySearchResults(results) {
         searchResultsContainer.innerHTML = '<p>No matching recipes found.</p>';
     } else {
         results.forEach(recipe => {
+            var imgUrl = recipe.recipePic;
             const recipeElement = document.createElement('div');
             recipeElement.innerHTML = `
+                <img src="${imgUrl}" alt="${recipe.recipeName}">
                 <h2>${recipe.recipeName}</h2>
                 <p>${recipe.recipeDesc}</p>
                 <p>Rating: ${recipe.averageRating}</p>
@@ -43,7 +45,7 @@ function displaySearchResults(results) {
 
 // Function to generate star rating HTML
 function generateStarRatingHTML(rating) {
-    const starImage = `<img src="images/star.png" alt="Star">`;
+    const starImage = `<img id="starImg" src="images/star.png" alt="Star">`;
     return starImage.repeat(rating);
 }
 
