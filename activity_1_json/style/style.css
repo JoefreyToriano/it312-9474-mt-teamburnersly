@@ -26,6 +26,7 @@
     --accent-color: #25567D;
     --bgandtext-color-light: #F8F7F2;
     --bgandtext-color-dark: #1A1A1A;
+    --bgandtext-color-grey: #808080;
 }
 
 /* -- Font Root -- */
@@ -127,12 +128,9 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: url(../images/login_background.jpg) no-repeat;
         background-size: cover;
         background-position: center;
     }
-
-    /*LOG IN BOX*/
     .LogInBox{
         background-color: var(--bgandtext-color-light);
         margin-top: 40px;
@@ -330,7 +328,8 @@
         margin: 0;
         padding: 0;
     }
-    /*Recipe Page*/
+    
+    /* -- Recipe Page-- */
     .recipeImage{
         width: 100%;
         position: relative;
@@ -488,7 +487,7 @@
         font-family: var(--regular-font);
     }
 
-    /*Add Recipe*/
+    /* -- Add Recipe Page -- */
     .AddRecipe_title h1{
         font-family: var(--special-font);
         color: var(--bgandtext-color-light);
@@ -642,31 +641,27 @@
         color: var(--bgandtext-color-dark);
     }
 
+    /* -- Home Page -- */
     .intro {
-        display: flex; /* Use flexbox for layout */
+        display: flex; 
         color: var(--primary-color);
     }
-
     .intro h1 {
         font-family: var(--special-font);
         margin: 0;
         font-size: 45px;
     }
-
     .intro p {
         flex: 1;
         font-family: var(--regular-font);
     }
-
     .intro img {
         width: 150px;
         height: auto; 
     }
-
     .left-content {
         margin-right: 5%;
     }
-
     #recipeSearch {
         border-radius: 30px;
         height: 30px;
@@ -674,18 +669,17 @@
     #sortButton {
         background: none;
         border: none;
-        cursor: pointer;
-        
+        cursor: pointer;    
     }
     .sort-icon {
         width: 20px;
         height: 20px;
     }
-    /* Style the container for search results */
+
+    /* -- Search Bar -- */
     #searchResults {
         margin-top: 20px;
     }
-
     /* Style each recipe element */
     #searchResults div {
         background-color: gray;
@@ -711,6 +705,21 @@
         width: 20px; 
         height: 20px; 
         margin-right: 5px;
+    }
+
+    .searchDiv input[type="text"]{
+        color: var(--bgandtext-color-dark);
+        border-style: solid;
+        border-color: var(--primary-color);
+        width: 200px;
+        font-family: var(--regular-font);
+        padding-left: 15px;
+    }
+
+    input[type="text"]::placeholder {
+        color: var(--bgandtext-color-grey);
+        text-align: left;
+        padding-left: 15px;
     }
 
     
