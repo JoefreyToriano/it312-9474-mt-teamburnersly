@@ -1,5 +1,5 @@
 
-if (localStorage.getItem("allRecipes")==null){
+if (localStorage.getItem("allRecipes")==null||true){
     var recipes =[
             {
                 recipeId: 1,
@@ -246,52 +246,52 @@ if (localStorage.getItem("allRecipes")==null){
             },
         
             {
-            recipeI: 6,
-            recipeNam: "Pork Sinigang Recipe",
-            recipeAutho: 3,
-            recipeTyp: "pork",
-            recipeDes: "Pork soup in sour broth with okra, kangkong, eggplant, and string beans. This dish is best during the cold weather.",
-            recipePictur:"images/Food Pictures/HatchBurgers.jpg",
-            recipeDuratio:[
-                    15,
-                    90
-                ],
-            ingredient:[
-                    "3 lbs. pork belly cubed",
-                    "40 grams Knorr Ginataang Gulay Recipe Mix",
-                    "4 tablespoons shrimp paste",
-                    "3 cups water",
-                    "1 eggplant sliced",
-                    "1 tomato chopped",
-                    "1 onion minced",
-                    "5 cloves garlic minced",
-                    "2 tablespoons white vinegar",
-                    "1 teaspoon sugar",
-                    "3 long green chili peppers sliced",
-                    "5 tablespoons cooking oil",
-                    "Fish sauce and ground black pepper to taste"
-                ],
-            step:[
-                    "1. Heat the pot and put-in the cooking oil.",
-                    "2. Sauté the onion until its layers separate from each other.",
-                    "3. Add the pork belly and cook until the outer part turns light brown.",
-                    "4. Put-in the fish sauce and mix with the ingredients.",
-                    "5. Pour the water and bring to a boil.",
-                    "6. Add the taro and tomatoes, then simmer for 40 minutes or until pork is tender.",
-                    "7. Put-in the sinigang mix and chili.",
-                    "8. Add the string beans (and other vegetables if there are any) and simmer for 5 to 8 minutes.",
-                    "9. Put-in the spinach, turn off the heat, and cover the pot. Let the spinach cook using the remaining heat in the pot.",
-                    "10. Serve hot. Share and enjoy!"
-                ],
+                recipeId: 6,
+                recipeName: "Pork Sinigang Recipe",
+                recipeAuthor: 3,
+                recipeType: "pork",
+                recipeDesc: "Pork soup in sour broth with okra, kangkong, eggplant, and string beans. This dish is best during the cold weather.",
+                recipePicture:"images/Food Pictures/HatchBurgers.jpg",
+                recipeDuration:[
+                        15,
+                        90
+                    ],
+                ingredients:[
+                        "3 lbs. pork belly cubed",
+                        "40 grams Knorr Ginataang Gulay Recipe Mix",
+                        "4 tablespoons shrimp paste",
+                        "3 cups water",
+                        "1 eggplant sliced",
+                        "1 tomato chopped",
+                        "1 onion minced",
+                        "5 cloves garlic minced",
+                        "2 tablespoons white vinegar",
+                        "1 teaspoon sugar",
+                        "3 long green chili peppers sliced",
+                        "5 tablespoons cooking oil",
+                        "Fish sauce and ground black pepper to taste"
+                    ],
+                steps:[
+                        "1. Heat the pot and put-in the cooking oil.",
+                        "2. Sauté the onion until its layers separate from each other.",
+                        "3. Add the pork belly and cook until the outer part turns light brown.",
+                        "4. Put-in the fish sauce and mix with the ingredients.",
+                        "5. Pour the water and bring to a boil.",
+                        "6. Add the taro and tomatoes, then simmer for 40 minutes or until pork is tender.",
+                        "7. Put-in the sinigang mix and chili.",
+                        "8. Add the string beans (and other vegetables if there are any) and simmer for 5 to 8 minutes.",
+                        "9. Put-in the spinach, turn off the heat, and cover the pot. Let the spinach cook using the remaining heat in the pot.",
+                        "10. Serve hot. Share and enjoy!"
+                    ],
                 allRatings:[
-                    {
-                        "user":3,
-                        "rating": 6
-                    },
-                    {
-                        "user":2,
-                        "rating":8
-                    }
+                        {
+                            "user":3,
+                            "rating": 6
+                        },
+                        {
+                            "user":2,
+                            "rating":8
+                        }
                 ]
             },
         
@@ -321,14 +321,14 @@ if (localStorage.getItem("allRecipes")==null){
                     "5 tablespoons cooking oil",
                     "Fish sauce and ground black pepper to taste"
                 ],
-            step:[
+                steps:[
                     "1. Combine the sticky rice and water in a rice cooker and cook until the rice is ready (we intentionally combined a lesser amount of water than the usual so that the rice will not be fully cooked).",
                     "2. While the rice is cooking, combine the coconut milk with brown sugar and salt in a separate pot and cook on low heat until the texture becomes thick. Stir constantly.",
                     "3. Once the rice is cooked and the coconut milk-sugar mixture is thick enough, add the cooked rice to the coconut milk and sugar mixture, then mix well. Continue cooking until all the liquid evaporates (but do not overcook).",
                     "4. Scoop the cooked biko and place it on a serving plate, then flatten the surface.",
                     "5. Share and Enjoy!"
                 ],
-            allRating:[
+                allRatings:[
                     {
                         "user":4,
                         "rating": 10
@@ -513,107 +513,107 @@ if (localStorage.getItem("allRecipes")==null){
             },
         
             {
-            recipeI: 12,
-            recipeNam: "Beef Caldereta",
-            recipeAutho: 4,
-            recipeTyp: "Beef",
-            recipeDes: "Sticky Filipino rice cake",
-            recipePictur:"images/food_images/beef_caldereta.jpeg",
-            recipeDuratio:[
-                    20,
-                    60
-                ],
-            ingredient:[
-                    "1 kg beef, cubed (usually from the chuck or shoulder)",
-                    "2 large potatoes, peeled and cubed",
-                    "2 red bell peppers, sliced into strips",
-                    "1 green bell pepper, sliced into strips",
-                    "1 cup green olives",
-                    "3 cloves garlic, minced",
-                    "1 onion, chopped",
-                    "2 cups tomato sauce",
-                    "1 cup liver spread (or liver pâté)",
-                    "2 cups beef broth",
-                    "3-4 tablespoons cooking oil",
-                    "Salt and pepper to taste",
-                    "Chili peppers (optional, for added heat)",
-                    "1 bay leaf",
-                    "1 teaspoon paprika",
-                    "1 teaspoon ground black pepper",
-                    "Fish sauce or soy sauce (for marinating)",
-                    "1-2 tablespoons sugar (optional, for sweetness)"
-                ],
-    step:[
-                    "1. Marinate the beef in fish sauce or soy sauce, and then set it aside for at least 30 minutes.",
-                    "2. In a large pot, heat the cooking oil over medium heat. Sauté garlic and onions until fragrant.",
-                    "3. Add the marinated beef and cook until browned on all sides.",
-                    "4. Pour in the tomato sauce, liver spread, and beef broth. Stir to combine.",
-                    "5. Add the bay leaf, paprika, and ground black pepper. Season with salt and pepper to taste.",
-                    "6. Simmer on low heat for 1.5 to 2 hours or until the beef becomes tender. Add more broth if needed.",
-                    "7. Add the potatoes, olives, and bell peppers. Cook until the vegetables are tender.",
-                    "8. Adjust the seasoning. You can add sugar for a touch of sweetness if desired.",
-                    "9. If you want it spicy, you can add chili peppers for some heat.",
-                    "10. Serve hot with steamed rice. Enjoy your delicious Beef Caldereta!"
-                ],
+                recipeId: 12,
+                recipeName: "Beef Caldereta",
+                recipeAuthor: 4,
+                recipeType: "Beef",
+                recipeDesc: "Sticky Filipino rice cake",
+                recipePictur:"images/food_images/beef_caldereta.jpeg",
+                recipeDuratio:[
+                        20,
+                        60
+                    ],
+                ingredients:[
+                        "1 kg beef, cubed (usually from the chuck or shoulder)",
+                        "2 large potatoes, peeled and cubed",
+                        "2 red bell peppers, sliced into strips",
+                        "1 green bell pepper, sliced into strips",
+                        "1 cup green olives",
+                        "3 cloves garlic, minced",
+                        "1 onion, chopped",
+                        "2 cups tomato sauce",
+                        "1 cup liver spread (or liver pâté)",
+                        "2 cups beef broth",
+                        "3-4 tablespoons cooking oil",
+                        "Salt and pepper to taste",
+                        "Chili peppers (optional, for added heat)",
+                        "1 bay leaf",
+                        "1 teaspoon paprika",
+                        "1 teaspoon ground black pepper",
+                        "Fish sauce or soy sauce (for marinating)",
+                        "1-2 tablespoons sugar (optional, for sweetness)"
+                    ],
+                steps:[
+                        "1. Marinate the beef in fish sauce or soy sauce, and then set it aside for at least 30 minutes.",
+                        "2. In a large pot, heat the cooking oil over medium heat. Sauté garlic and onions until fragrant.",
+                        "3. Add the marinated beef and cook until browned on all sides.",
+                        "4. Pour in the tomato sauce, liver spread, and beef broth. Stir to combine.",
+                        "5. Add the bay leaf, paprika, and ground black pepper. Season with salt and pepper to taste.",
+                        "6. Simmer on low heat for 1.5 to 2 hours or until the beef becomes tender. Add more broth if needed.",
+                        "7. Add the potatoes, olives, and bell peppers. Cook until the vegetables are tender.",
+                        "8. Adjust the seasoning. You can add sugar for a touch of sweetness if desired.",
+                        "9. If you want it spicy, you can add chili peppers for some heat.",
+                        "10. Serve hot with steamed rice. Enjoy your delicious Beef Caldereta!"
+                    ],
                 allRatings:[
-                    {
-                        "user":5,
-                        "rating": 9
-                    },
-                    {
-                        "user":2,
-                        "rating":8
-                    }
+                        {
+                            "user":5,
+                            "rating": 9
+                        },
+                        {
+                            "user":2,
+                            "rating":8
+                        }
                 ]
             },
         
             {
-        recipe: 13,
-        recipeNa: "Ginisang Monggo",
-        recipeAuth: 3,
-        recipeTy: "Vegetable",
-        recipeDe: "Ginisang Monggo, a beloved Filipino dish, is a flavorful and nutritious mung bean stew that tantalizes the taste buds with its perfect blend of sautéed garlic, onions, and tomatoes. With its rich, comforting aroma and hearty, protein-packed ingredients, Ginisang Monggo is not just a meal; it's a delightful taste of Filipino tradition that will leave you craving more.",
-        recipePictu:"images/food_images/ginisang_monggo.jpeg",
-        recipeDurati:[
-                    10,
-                    80
-                ],
-        ingredien:[
-                    "1 1/2 cups Mung Beans",
-                    "1 tbsp Garlic",
-                    "1/2 lb Pork (thinly sliced)",
-                    "2 cups Spinach (or alugbati)",
-                    "1 piece Tomato (chopped)",
-                    "1 piece Onion (chopped)",
-                    "8 pieces Shrimp (optional)",
-                    "2 tablespoons Fish Sauce",
-                    "24 ounces Water (for boiling)",
-                    "1 piece Knorr Beef Cube (for flavoring)",
-                    "1/2 cup Crushed Pork Rind (Chicharon)",
-                    "1/4 teaspoon Ground Black Pepper"
-                ],
-        ste:[
-                    "1. In a pan, put-in the water and bring it to a boil",
-                    "2. Put-in the Mung beans and simmer until they become soft (about 35 to 50 minutes).",
-                    "3. On a separate pan, sauté the garlic, onion, and tomato.",
-                    "4. Add the pork. Cook for 5 minutes.",
-                    "5. Put-in the beef cube and fish sauce. Simmer for 10 minutes or until the meat is tender. Note: If necessary, you may add water to help make the meat tender, but make sure to add more time to simmer.",
-                    "6. Add the shrimp. Stir and then cook for 2 minutes.",
-                    "7. Pour the cooked Mung beans. Stir and then simmer for 10 minutes.",
-                    "8. Add the spinach and pork rinds (chicharon).",
-                    "9. Sprinkle the ground black pepper.",
-                    "10. Serve hot. Share and Enjoy!"
-                ],
-            allRating:[
-                    {
-                        "user":4,
-                        "rating": 8
-                    },
-                    {
-                        "user":2,
-                        "rating":7
-                    }
-                ]
+                recipe: 13,
+                recipeName: "Ginisang Monggo",
+                recipeAuthor: 3,
+                recipeType: "Vegetable",
+                recipeDesc: "Ginisang Monggo, a beloved Filipino dish, is a flavorful and nutritious mung bean stew that tantalizes the taste buds with its perfect blend of sautéed garlic, onions, and tomatoes. With its rich, comforting aroma and hearty, protein-packed ingredients, Ginisang Monggo is not just a meal; it's a delightful taste of Filipino tradition that will leave you craving more.",
+                recipePicture:"images/food_images/ginisang_monggo.jpeg",
+                recipeDuration:[
+                            10,
+                            80
+                        ],
+                ingredients:[
+                            "1 1/2 cups Mung Beans",
+                            "1 tbsp Garlic",
+                            "1/2 lb Pork (thinly sliced)",
+                            "2 cups Spinach (or alugbati)",
+                            "1 piece Tomato (chopped)",
+                            "1 piece Onion (chopped)",
+                            "8 pieces Shrimp (optional)",
+                            "2 tablespoons Fish Sauce",
+                            "24 ounces Water (for boiling)",
+                            "1 piece Knorr Beef Cube (for flavoring)",
+                            "1/2 cup Crushed Pork Rind (Chicharon)",
+                            "1/4 teaspoon Ground Black Pepper"
+                        ],
+                steps:[
+                        "1. In a pan, put-in the water and bring it to a boil",
+                        "2. Put-in the Mung beans and simmer until they become soft (about 35 to 50 minutes).",
+                        "3. On a separate pan, sauté the garlic, onion, and tomato.",
+                        "4. Add the pork. Cook for 5 minutes.",
+                        "5. Put-in the beef cube and fish sauce. Simmer for 10 minutes or until the meat is tender. Note: If necessary, you may add water to help make the meat tender, but make sure to add more time to simmer.",
+                        "6. Add the shrimp. Stir and then cook for 2 minutes.",
+                        "7. Pour the cooked Mung beans. Stir and then simmer for 10 minutes.",
+                        "8. Add the spinach and pork rinds (chicharon).",
+                        "9. Sprinkle the ground black pepper.",
+                        "10. Serve hot. Share and Enjoy!"
+                    ],
+                allRatings:[
+                        {
+                            "user":4,
+                            "rating": 8
+                        },
+                        {
+                            "user":2,
+                            "rating":7
+                        }
+                    ]
             },
         
             {
@@ -648,7 +648,7 @@ if (localStorage.getItem("allRecipes")==null){
                     "¼ teaspoon of Ground Black Pepper",
                     "3 tablespoons of Cooking Oil"
                 ],
-            steps:[
+                steps:[
                     "1. Heat oil in a wok or pan.",
                     "2. Pan fry the shrimp for 1 minute per side. Remove from the wok. Set aside.",
                     "3. Saute onion. Add garlic and continue to saute until the onion becomes soft.",
@@ -806,7 +806,7 @@ if (localStorage.getItem("allRecipes")==null){
     localStorage.setItem("allRecipes",recipeList)
     
 }
-if (localStorage.getItem("allUsers")==null){
+if (localStorage.getItem("allUsers")==null||true){
     var users=[
         {
             userid: 1,
@@ -861,3 +861,4 @@ if (localStorage.getItem("allUsers")==null){
     var userList = JSON.stringify(users)
     localStorage.setItem("allUsers",userList)
 }
+console.log(JSON.parse(localStorage.getItem("allRecipes")))
