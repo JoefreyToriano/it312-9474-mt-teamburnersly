@@ -15,6 +15,11 @@ function calculateAverageRatings() {
     recipes.sort((a, b) => b.averageRating - a.averageRating);
 }
 
+function viewRecipe(recipeId) {
+    sessionStorage.setItem("choosenRecipe",recipeId)
+    window.location.href = "recipePage.html"
+}
+
 // Function to display the search results
 function displaySearchResults(results) {
     searchResultsContainer.innerHTML = '';
@@ -30,6 +35,7 @@ function displaySearchResults(results) {
                 <p>Rating: ${recipe.averageRating}</p>
                 <p>${generateStarRatingHTML(recipe.averageRating)}</p>
             `;
+            recipeElement.addEventListener('click', () => viewRecipe(recipe.recipeId))
             searchResultsContainer.appendChild(recipeElement);
         });
     }
