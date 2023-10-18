@@ -84,7 +84,7 @@ async function showRecipeById(id){
         average = average+item.rating
     })
     average=average/recipe.allRatings.length
-    var ratingText = document.createTextNode("Rating:"+average+"("+recipe.allRatings.length+")")
+    var ratingText = document.createTextNode("Rating:"+average.toFixed(1)+"("+recipe.allRatings.length+")")
     rating.appendChild(ratingText)
     title.appendChild(rating)
     /*End*/
