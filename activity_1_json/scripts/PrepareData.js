@@ -198,7 +198,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeId: 5,
                 recipeName: "Crispy Pata Kare Kare",
                 recipeAuthor: 1,
-                recipeType: "pork",
+                recipeType: "Pork",
                 recipeDesc: "Savor the extraordinary harmony of textures and flavors with Crispy Pata Kare-Kare. This remarkable dish unites the delightful crunch of deep-fried pork knuckle with the luscious, nutty essence of Kare-Kare sauce, promising a Filipino culinary experience that's simply irresistible.",
                 recipePicture:"images/food_images/crispy_pata_kare_kare.jpeg",
                 recipeDuration:[
@@ -299,7 +299,7 @@ if (localStorage.getItem("allRecipes")==null||true){
                 recipeId: 7,
                 recipeName: "Chicken Sisig",
                 recipeAuthor: 3,
-                recipeType: "appetizer",
+                recipeType: "Chicken",
                 recipeDesc: "Sizzling Filipino chicken appetizer",
                 recipePicture: "images/food_images/chicken_sisig.jpeg",
                 recipeDuration: [20, 40],
