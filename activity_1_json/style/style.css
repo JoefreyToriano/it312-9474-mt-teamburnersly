@@ -133,10 +133,16 @@
     }
 
     /*LOG IN BOX*/
+    .random{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
     .LogInBox{
         background-color: var(--bgandtext-color-light);
-        margin-top: 40px;
-        width: 25%;
+        width: 350px;
         padding: 20px;
         border-radius: 25px;
         border-style: solid;
@@ -230,7 +236,10 @@
     .textBox{
         margin-left: 30px;
     }
-
+    #currentFilter{
+        margin: 0;
+        margin-top: 15px;
+    }
     /* --  Recipe Menu Nav Bar -- */
     .recipeMenu{
         display: flex;
@@ -319,6 +328,12 @@
         box-sizing: border-box;
         transition: height 0.5s;
     }
+    .recipeTabTitle p[title="rating"]{
+        display: none;
+    }
+    .recipeTabTitle:hover p[title="rating"]{
+        display: block;
+    }
     .recipeTabTitle:hover{
         height: 100%;
         justify-content: center;
@@ -377,10 +392,13 @@
     }
     #title h1{
         margin: 0;
-        margin-left: 10px;
         margin-right: 10px;
         font-family: var(--bold-font);
         color: var(--bgandtext-color-dark)
+    }
+    #title img{
+        width: 38px;
+        height: 38px;
     }
     .imageTitle{
         position: absolute;
@@ -642,6 +660,7 @@
         color: var(--bgandtext-color-dark);
     }
 
+    /*Home*/
     .intro {
         display: flex; /* Use flexbox for layout */
         color: var(--primary-color);

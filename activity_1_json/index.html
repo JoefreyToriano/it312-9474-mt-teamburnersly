@@ -12,17 +12,19 @@
 
         <!-- ======= index body ======= -->
         <body>
-            <div class="LogInBox">
-                <img src="images/logos/aglutow_logo_white.svg" alt="Login Logo">
-                <h1>Welcome!</h1>
-                <p>Name:</p>
-                <input type="text" id="username" placeholder="username">
+            <div class="random">
+                <div class="LogInBox">
+                    <img src="images/logos/aglutow_logo_white.svg" alt="Login Logo">
+                    <h1 id="message">Welcome!</h1>
+                    <p>Name:</p>
+                    <input type="text" id="username" placeholder="username">
 
-                <p>Password:</p>
-                <input type="password" id="password" placeholder="password">
-
-                <button onclick="userExists()" class="btn">Enter</button>
+                    <p>Password:</p>
+                    <input type="password" id="password" placeholder="password">
+                    <button onclick="userExists()" class="btn">Enter</button>
+                </div>
             </div>
             <script src="scripts/Login.js"></script>
+            <script src="scripts/PrepareData.js"></script>
         </body>
 </html>

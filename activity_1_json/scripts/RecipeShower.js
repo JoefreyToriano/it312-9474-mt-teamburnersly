@@ -5,6 +5,7 @@ async function showOwnRecipes(id){
     var allRecipes = await getAllRecipes()
     var chosenRecipes = await getRecipeByUserId(allRecipes,id)
     await clearAllRecipes()
+    document.getElementById("currentFilter").innerHTML="OWN RECIPES"
     showRecipeInList(chosenRecipes)
 }
 
@@ -13,6 +14,7 @@ async function showSavedRecipes(id){
     var allRecipes = await getAllRecipes()
     var finalList = await getSavedRecipes(allRecipes,id)
     await clearAllRecipes()
+    document.getElementById("currentFilter").innerHTML="SAVED RECIPES"
     showRecipeInList(finalList)
 }
 
@@ -20,27 +22,39 @@ async function showAllRecipes(){
     picked = "all"
     var allRecipes = await getAllRecipes()
     await clearAllRecipes()
+    document.getElementById("currentFilter").innerHTML="ALL RECIPES"
     showRecipeInList(allRecipes)
 }
+
 async function showAllRecipes2(){
     var currentList = await getAllRecipes()
     if (picked == "own"){
         currentList = await getRecipeByUserId(currentList,userId)
+        document.getElementById("currentFilter").innerHTML = "OWN RECIPES"
     } else if (picked == "saved"){
         currentList = await getSavedRecipes(currentList,userId)
+        document.getElementById("currentFilter").innerHTML = "SAVED RECIPES"
+    } else{
+        document.getElementById("currentFilter").innerHTML = "ALL RECIPES"
     }
     await clearAllRecipes()
     showRecipeInList(currentList)
 }
+
 async function showRecipeByType(type){
     var currentList = await getAllRecipes()
+    var currentFilter = ""
     if (picked == "own"){
         currentList = await getRecipeByUserId(currentList,userId)
+        currentFilter = "OWN RECIPES: "
     } else if (picked == "saved"){
         currentList = await getSavedRecipes(currentList,userId)
+        currentFilter = "SAVED RECIPES: "
     }
     currentList = await getRecipeByType(currentList,type)
     await clearAllRecipes()
+    var currentFilter = currentFilter + type.toUpperCase()
+    document.getElementById("currentFilter").innerHTML = currentFilter
     showRecipeInList(currentList)
 }
 
@@ -48,7 +62,6 @@ async function showRecipeById(id){
     var recipe = await getRecipeById(id) 
     var chosenUser = await getUserById(recipe.recipeAuthor)
     var div = document.createElement("div")
-    console.log(div)
     div.onclick = function(){
         sessionStorage.setItem("choosenRecipe",id)
         window.location.href = "recipePage.html"
@@ -63,6 +76,18 @@ async function showRecipeById(id){
         sessionStorage.setItem("choosenRecipe",id)
         window.location.href = "recipePage.html"
     }
+    /*Rate element in title*/
+    var rating = document.createElement("p")
+    rating.setAttribute("title","rating")
+    var average = 0
+    recipe.allRatings.forEach((item,index)=>{
+        average = average+item.rating
+    })
+    average=average/recipe.allRatings.length
+    var ratingText = document.createTextNode("Rating:"+average+"("+recipe.allRatings.length+")")
+    rating.appendChild(ratingText)
+    title.appendChild(rating)
+    /*End*/
     var desc = document.createElement("p")
     var descText = document.createTextNode(recipe.recipeDesc)
     desc.appendChild(descText)
@@ -82,7 +107,7 @@ async function showRecipeById(id){
 async function showRecipeInList(chosenRecipes){
     if (chosenRecipes.length == 0){
         var noRecipe = document.createElement("h1")
-        var noRecipeText = document.createTextNode("You have no recipes")
+        var noRecipeText = document.createTextNode("THERE ARE NO RECIPES AVAILABLE")
         noRecipe.appendChild(noRecipeText)
         noRecipe.setAttribute("id","noRecipe")
         document.getElementById("recipeBox").appendChild(noRecipe)
@@ -141,8 +166,7 @@ async function getRecipeByType(recipeList,type){
 }
 /*Gets the recipe using its id*/
 async function getRecipeById(id){
-    let recipes = await fetch("data/backup.json")
-    let recipeList = await recipes.json()
+    let recipeList = await JSON.parse(localStorage.getItem("allRecipes"))
     let chosenRecipe
     for(let i = 0; i < recipeList.length; i++){
         if(recipeList[i].recipeId==id){
@@ -154,14 +178,12 @@ async function getRecipeById(id){
 }
 /*Gets all the recipes*/
 async function getAllRecipes(){
-    let recipes = await fetch("data/backup.json")
-    let recipeList = await recipes.json()
+    let recipeList = JSON.parse(localStorage.getItem("allRecipes"))
     return recipeList
 }
 
 async function getUserById(id){
-    let users = await fetch("data/users.json")
-    let userList = await users.json()
+    let userList = JSON.parse(localStorage.getItem("allUsers"))
     let chosenUser
     for(let i = 0; i <userList.length; i++){
         if(userList[i].userid==id){
@@ -172,10 +194,24 @@ async function getUserById(id){
     return chosenUser
 }
 
+function sortRecipesByRating(recipeList){
+    var averageList = []
+    for(var i = 0;i < recipeList.length;i++){
+        var average = 0
+        for(var i2 = 0;i2 <recipeList.allRating.length;i++){
+            average = recipeList.allRating[i2].rating
+        }
+        average = average/recipeList.allRating.length
+        averageList.push(average)
+    }
+    recipeList.sort(a,b)
+}
+
 function initializePage(id){
     (async () => {
         var chosenUser = await getUserById(id)
-        var recipesMade = await getRecipeByUserId(id)
+        var allRecipes = await getAllRecipes()
+        var recipesMade = await getRecipeByUserId(allRecipes,id)
         document.getElementById("fullName").innerHTML = chosenUser.firstName+" "+chosenUser.lastName
         document.getElementById("userName").innerHTML = "@"+chosenUser.userName
         document.getElementById("submitted").innerHTML = "Submitted Recipes: "+recipesMade.length

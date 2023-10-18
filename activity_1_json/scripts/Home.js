@@ -5,7 +5,7 @@ function calculateAverageRatings() {
         if (ratings.length === 0) {
             recipe.averageRating = 0;
         } else {
-            const sum = ratings.reduce((total, rating) => total + rating.rating, 0);
+            const sum = ratings.reduce((total, rating) => total + rating.rating,0);
             recipe.averageRating = sum / ratings.length;
         }
     }
