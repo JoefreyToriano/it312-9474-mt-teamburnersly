@@ -711,9 +711,12 @@
     #searchResults div p {
         margin: 5px 0;
     }
-
-    /* Style the star rating */
     #searchResults div img {
+        width: auto;
+        max-height: 300px;
+    }
+    /* Style the star rating */
+    #searchResults #starImg {
         width: 20px; 
         height: 20px; 
         margin-right: 5px;
