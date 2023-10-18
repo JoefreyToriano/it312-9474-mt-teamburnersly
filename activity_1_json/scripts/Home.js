@@ -45,7 +45,7 @@ function displaySearchResults(results) {
 
 // Function to generate star rating HTML
 function generateStarRatingHTML(rating) {
-    const starImage = `<img id="starImg" src="images/star.png" alt="Star">`;
+    const starImage = `<img id="starImg" src="images/icons/star_icon.svg" alt="Star">`;
     return starImage.repeat(rating);
 }
 

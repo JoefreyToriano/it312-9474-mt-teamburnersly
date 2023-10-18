@@ -49,9 +49,9 @@ async function initializeRecipe(id){
     /*Checks wether it is a sved recipe or not*/
     var userFave=getUserById(localStorage.getItem("User ID")).favoriteRecipes.indexOf(Number(id))
     if(userFave=== -1){
-        document.getElementById("hearted").src="images/Unhearted.png"
+        document.getElementById("hearted").src="images/icons/hearted_icon.svg"
     } else{
-        document.getElementById("hearted").src="images/Hearted.png"
+        document.getElementById("hearted").src="images/icons/unhearted_icon.svg"
     }
     /*Creates the rating*/
     getRating()
@@ -66,11 +66,11 @@ function toggleFavorites(){
             var index = userList[i].favoriteRecipes.indexOf(choosenRecipe)
             if(index === -1){
                 userList[i].favoriteRecipes.push(choosenRecipe)
-                document.getElementById("hearted").src="images/Hearted.png"
+                document.getElementById("hearted").src="images/icons/hearted_icon.svg"
                 break
             } else{
                 userList[i].favoriteRecipes.splice(index,1)
-                document.getElementById("hearted").src="images/Unhearted.png"
+                document.getElementById("hearted").src="images/icons/unhearted_icon.svg"
                 break
             }
         }
