@@ -46,6 +46,7 @@
         flex-direction: column;
         padding: 0;
         margin: 0;
+        animation: transitionIn 0.75s;
     }
 
     /* -- Header -- */
@@ -244,10 +245,18 @@
     }
     #noRecipe {
         color: var(--primary-color-dark);
-        font: var(--regular-font);
-        font-size: 25px;
+        font-family: var(--light-font);
+        font-size: 20px;
     }
+
     /* --  Recipe Menu Nav Bar -- */
+    .contentBox h3{
+        font-family: var(--regular-font);
+        text-align: center;
+        color: var(--bgandtext-color-dark);
+        text-align: left;
+        padding-left: 20px;
+    }
     .recipeMenu{
         display: flex;
     }
@@ -777,6 +786,7 @@
         height: 20px;
     }
 
+
     /* -- Search Bar -- */
     .searchDiv h1{
         font-family: var(--special-font);
@@ -847,6 +857,17 @@
         color: var(--bgandtext-color-grey);
         text-align: left;
         padding-left: 15px;
+    }
+
+    @keyframes transitionIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     
