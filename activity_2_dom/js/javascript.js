@@ -15,7 +15,7 @@ class AnimeSearcher {
       updatedDiv: document.getElementById("recentlyUpdatedAnime"),
       trendingHeader: document.getElementById("trendingHeader"),
       updatedHeader: document.getElementById("updatedHeader"),
-      episodesBtn: document.getElementById("episodesBtn")
+      episodesBtn: document.getElementById("episodesBtn"),
     };
     this.inputElements = [
       this.elements.animeInput,
@@ -38,7 +38,7 @@ class AnimeSearcher {
     this.elements.prevBtn.addEventListener("click", this.prevPage.bind(this));
     this.elements.nextBtn.addEventListener("click", this.nextPage.bind(this));
     this.elements.searchBtn.addEventListener("click", () => {
-      this.elements.resultsDiv.innerHTML = ""; // Clear previous results
+    this.elements.resultsDiv.innerHTML = ""; // Clear previous results
 
       if (this.isAnyInputFilled()) {
         this.elements.trendingDiv.style.display = "none";
@@ -125,103 +125,6 @@ class AnimeSearcher {
         );
         console.error("Error in search:", error);
       });
-  }
-
-  openModal(anime) {
-    const modal = document.getElementById("animeModal");
-    const animeImage = document.getElementById("animeImage");
-    const animeTitle = document.getElementById("animeTitle");
-    const animeDescription = document.getElementById("animeDescription");
-    const animeType = document.getElementById("animeType");
-    const animeGenre = document.getElementById("animeGenre");
-    const animeReleaseYear = document.getElementById("animeReleaseYear");
-    const animeStatus = document.getElementById("animeStatus");
-    const animeInfoBtn = document.getElementById("animeInfoBtn");
-    const trailerBtn = document.getElementById("trailerBtn");
-    this.currentAnime = anime;
-    console.log("Opening modal for anime:", anime.mal_id);
-    animeImage.src = anime.images.jpg.large_image_url || "";
-    animeTitle.textContent = anime.title || "Unknown Title";
-    animeDescription.textContent =
-      anime.synopsis || "Description not available.";
-    animeType.textContent = `Type: ${anime.type || "Unknown"}`;
-    animeGenre.textContent = `Genre: ${
-      anime.genres.map((genre) => genre.name).join(", ") || "Unknown"
-    }`;
-    animeReleaseYear.textContent = `Released: ${
-      new Date(anime.aired.from).getFullYear() || "Unknown"
-    }`;
-    animeStatus.textContent = `Status: ${anime.status || "Unknown"}`;
-    fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/statistics`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((statsData) => {
-        console.log("Received statsData:", statsData);
-        this.updateModalWithStatistics(statsData);
-      })
-      .catch((error) => {
-        console.error("Error fetching statistics:", error);
-        if (error.message.includes("429")) {
-          console.warn("You've hit the rate limit for the Jikan API.");
-        }
-      });
-
-    modal.style.display = "block";
-
-    animeInfoBtn.onclick = () => {
-      window.open(`https://myanimelist.net/anime/${anime.mal_id}`, "_blank");
-    };
-
-    trailerBtn.onclick = () => {
-      fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/videos`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          if (data && data.data && data.data.promo) {
-            const trailer = data.data.promo[0]?.trailer;
-            if (trailer && trailer.url) {
-              this.openTrailerModal(trailer.url);
-            } else {
-              alert("This anime doesn't have a recorded Official Trailer.");
-            }
-          } else {
-            alert("No videos available for this anime.");
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching trailer:", error);
-        });
-    };
-
-    const closeModal = document.getElementsByClassName("close-btn")[0];
-    closeModal.onclick = () => {
-      modal.style.display = "none";
-    };
-    window.onclick = (event) => {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-    const closeAnimeModal = document.getElementById("closeAnimeModal");
-    closeAnimeModal.onclick = () => {
-      document.getElementById("animeModal").style.display = "none";
-    };
-
-    window.onclick = (event) => {
-      if (event.target === document.getElementById("animeModal")) {
-        document.getElementById("animeModal").style.display = "none";
-      } else if (event.target === document.getElementById("trailerModal")) {
-        document.getElementById("trailerModal").style.display = "none";
-      }
-    };
   }
 
   updateModalWithStatistics(statsData) {
@@ -344,7 +247,7 @@ class AnimeSearcher {
     title.innerText = anime.title || "Unknown Title";
     animeDiv.appendChild(title);
     animeDiv.addEventListener("click", () => {
-      this.openModal(anime);
+      openModal(anime);
     });
     return animeDiv;
   }
@@ -365,16 +268,9 @@ function openModal(anime) {
   const trailerBtn = document.getElementById("trailerBtn");
   const episodesBtn = document.getElementById("episodesBtn");
   this.currentAnime = anime;
+
   console.log("Opening modal for anime:", anime.mal_id);
-  episodesBtn.addEventListener("click", () => {
-    console.log("Episodes button clicked.");
-    if (this.currentAnime) {
-        console.log("Fetching episodes for:", this.currentAnime.title);
-        this.fetchEpisodes(this.currentAnime);
-    } else {
-        console.error("No anime selected.");
-    }
-});
+
   animeImage.src = anime.images.jpg.large_image_url || "";
   animeTitle.textContent = anime.title || "Unknown Title";
   animeDescription.textContent = anime.synopsis || "Description not available.";
@@ -386,6 +282,19 @@ function openModal(anime) {
     new Date(anime.aired.from).getFullYear() || "Unknown"
   }`;
   animeStatus.textContent = `Status: ${anime.status || "Unknown"}`;
+
+  if (episodesBtn) {
+    // Only bind if the button exists
+    episodesBtn.addEventListener("click", () => {
+      console.log("Episodes button clicked.");
+      if (this.currentAnime) {
+        console.log("Fetching episodes for:", this.currentAnime.title);
+        this.fetchEpisodes(this.currentAnime);
+      } else {
+        console.error("No anime selected.");
+      }
+    });
+  }
 
   fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/statistics`)
     .then((response) => {
@@ -404,7 +313,9 @@ function openModal(anime) {
         console.warn("You've hit the rate limit for the Jikan API.");
       }
     });
+
   modal.style.display = "block";
+
   animeInfoBtn.onclick = () => {
     window.open(`https://myanimelist.net/anime/${anime.mal_id}`, "_blank");
   };
@@ -437,30 +348,29 @@ function openModal(anime) {
   closeModal.onclick = () => {
     modal.style.display = "none";
   };
+
   window.onclick = (event) => {
     if (event.target === modal) {
       modal.style.display = "none";
-    }
-  };
-  const closeAnimeModal = document.getElementById("closeAnimeModal");
-  closeAnimeModal.onclick = () => {
-    document.getElementById("animeModal").style.display = "none";
-  };
-
-  window.onclick = (event) => {
-    if (event.target === document.getElementById("animeModal")) {
-      document.getElementById("animeModal").style.display = "none";
     } else if (event.target === document.getElementById("trailerModal")) {
       document.getElementById("trailerModal").style.display = "none";
     }
   };
+
+  const closeAnimeModal = document.getElementById("closeAnimeModal");
+  if (closeAnimeModal) {
+    closeAnimeModal.onclick = () => {
+      document.getElementById("animeModal").style.display = "none";
+    };
+  }
 }
+
 function fetchEpisodes(anime) {
   const episodesModal = document.getElementById("episodesModal");
   const episodesList = document.getElementById("episodesList");
-  
+
   let episodeDetails = [];
-  
+
   // Fetch episode details
   fetch(`https://api.jikan.moe/v4/anime/${anime.mal_id}/episodes`)
     .then((response) => {
@@ -471,18 +381,22 @@ function fetchEpisodes(anime) {
     })
     .then((data) => {
       episodeDetails = data.data;
-      
+
       // Clear previous episodes
       episodesList.innerHTML = "";
-      
+
       let episodeCounter = 1; // Initialize episode counter
 
       // Display episodes
       episodeDetails.forEach((episodeDetail) => {
-        const episodeCard = createEpisodeCard(episodeDetail, anime.images.jpg.large_image_url || "", episodeCounter++);
+        const episodeCard = createEpisodeCard(
+          episodeDetail,
+          anime.images.jpg.large_image_url || "",
+          episodeCounter++
+        );
         episodesList.appendChild(episodeCard);
       });
-      
+
       episodesModal.style.display = "block";
     })
     .catch((error) => {
@@ -519,7 +433,9 @@ function createEpisodeCard(episodeDetail, animeImage, episodeNumber) {
   // Add episode date aired
   const dateAired = document.createElement("div");
   dateAired.classList.add("episode-date");
-  dateAired.innerText = episodeDetail.aired ? new Date(episodeDetail.aired).toDateString() : "Unknown Date";
+  dateAired.innerText = episodeDetail.aired
+    ? new Date(episodeDetail.aired).toDateString()
+    : "Unknown Date";
   episodeDiv.appendChild(dateAired);
 
   // Add episode forum link
@@ -532,16 +448,16 @@ function createEpisodeCard(episodeDetail, animeImage, episodeNumber) {
 
   return episodeDiv;
 }
-      const closeEpisodesModal = document.getElementById("closeEpisodesModal");
+const closeEpisodesModal = document.getElementById("closeEpisodesModal");
 closeEpisodesModal.onclick = () => {
   episodesModal.style.display = "none";
 };
 
 window.onclick = (event) => {
   if (event.target === episodesModal) {
-      episodesModal.style.display = "none";
+    episodesModal.style.display = "none";
   }
-  };
+};
 function updateModalWithStatistics(statsData) {
   const watching = document.getElementById("animeWatching");
   const completed = document.getElementById("animeCompleted");
@@ -690,43 +606,47 @@ document.addEventListener("DOMContentLoaded", function () {
   loadingScreen.style.display = "none";
 });
 function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&    
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
 }
 
 function animateFooter() {
-    if (isElementInViewport(document.querySelector('footer'))) {
-        document.querySelector('.footer-logo').style.opacity = '1';
-        document.querySelector('.footer-logo').style.transform = 'translateY(0)';
-      
-        document.querySelector('.footer-disclaimer').style.opacity = '1';
-        document.querySelector('.footer-disclaimer').style.transform = 'translateX(0)';
-      
-        document.querySelector('.footer-manga-btn').style.opacity = '1';
-        document.querySelector('.footer-manga-btn').style.transform = 'translateX(0)';
-      
-        document.querySelector('.footer-copyright').style.opacity = '1';
-        document.querySelector('.footer-copyright').style.transform = 'translateY(0)';
-        
-        // Remove the scroll event listener once the animation is triggered
-        window.removeEventListener('scroll', animateFooter);
-    }
+  if (isElementInViewport(document.querySelector("footer"))) {
+    document.querySelector(".footer-logo").style.opacity = "1";
+    document.querySelector(".footer-logo").style.transform = "translateY(0)";
+
+    document.querySelector(".footer-disclaimer").style.opacity = "1";
+    document.querySelector(".footer-disclaimer").style.transform =
+      "translateX(0)";
+
+    document.querySelector(".footer-manga-btn").style.opacity = "1";
+    document.querySelector(".footer-manga-btn").style.transform =
+      "translateX(0)";
+
+    document.querySelector(".footer-copyright").style.opacity = "1";
+    document.querySelector(".footer-copyright").style.transform =
+      "translateY(0)";
+
+    // Remove the scroll event listener once the animation is triggered
+    window.removeEventListener("scroll", animateFooter);
+  }
 }
 
 // Add scroll event listener
-window.addEventListener('scroll', animateFooter);
+window.addEventListener("scroll", animateFooter);
 
-const bgAnimation = document.getElementById('bgAnimation');
+const bgAnimation = document.getElementById("bgAnimation");
 
 const numberOfColorBoxes = 400;
 
 for (let i = 0; i < numberOfColorBoxes; i++) {
-    const colorBox = document.createElement('div');
-    colorBox.classList.add('colorBox');
-    bgAnimation.append(colorBox)
+  const colorBox = document.createElement("div");
+  colorBox.classList.add("colorBox");
+  bgAnimation.append(colorBox);
 }
