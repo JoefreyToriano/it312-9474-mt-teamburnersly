@@ -1,0 +1,32 @@
+.manga-card  {
+  display: inline-block;
+  width: 150px;
+  height: 250px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.manga-title  {
+  background-color: #00AFF0;
+  color: #27272B;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  font-size: 14px;
+  height: 40px; /* Set a fixed height for the title area */
+  overflow: visible;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+}
+.manga-card img {
+  width: 100%;
+  display: block;
+  height: calc(100% - 40px);
+  object-fit: cover;
+} 

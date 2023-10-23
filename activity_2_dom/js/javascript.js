@@ -38,7 +38,7 @@ class AnimeSearcher {
     this.elements.prevBtn.addEventListener("click", this.prevPage.bind(this));
     this.elements.nextBtn.addEventListener("click", this.nextPage.bind(this));
     this.elements.searchBtn.addEventListener("click", () => {
-    this.elements.resultsDiv.innerHTML = ""; // Clear previous results
+      this.elements.resultsDiv.innerHTML = ""; // Clear previous results
 
       if (this.isAnyInputFilled()) {
         this.elements.trendingDiv.style.display = "none";

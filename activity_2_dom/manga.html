@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OnlyManga</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/mangastyle.css" />
+    <body>
+      <div>
+        <input type="text" id="name" placeholder="Manga Name" />
+
+        <select id="setting">
+          <option value="">--Setting--</option>
+          <option value="Countryside">Countryside</option>
+          <option value="Desert">Desert</option>
+          <option value="Earth">Earth</option>
+          <!-- ... add more settings as needed -->
+        </select>
+
+        <select id="demographics">
+          <option value="">--Target Demographics--</option>
+          <option value="Josei">Josei</option>
+          <option value="Kids">Kids</option>
+          <option value="Seinen">Seinen</option>
+          <option value="Shoujo">Shoujo</option>
+          <option value="Shounen">Shounen</option>
+        </select>
+
+        <select id="themes">
+          <option value="">--Themes--</option>
+          <option value="Anti War">Anti War</option>
+          <option value="Coming Of Age">Coming Of Age</option>
+          <!-- ... add more themes as needed -->
+        </select>
+
+        <select id="genre">
+          <option value="">--Genre--</option>
+          <!-- Populate this dropdown dynamically with genres from the API -->
+        </select>
+
+        <button onclick="MangaSearch.search()">Search</button>
+        <div id="trending">
+          <h2>Trending This Week</h2>
+          <div class="results"></div>
+        </div>
+        <div id="top-publishing">
+          <h2>Top Publishing Manga</h2>
+          <div class="results"></div>
+        </div>
+        <div id="top-upcoming">
+          <h2>Top Upcoming Manga</h2>
+          <div class="results"></div>
+        </div>
+        <div id="most-popular">
+          <h2>Most Popular Manga</h2>
+          <div class="results"></div>
+        </div>
+      </div>
+
+      <ul id="results"></ul>
+      <script src="js/mangajs.js"></script>
+    </body>
+  </head>
+</html>
