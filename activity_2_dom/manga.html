@@ -14,6 +14,13 @@
     </header>
 
     <section class="search-section">
+
+      <div class="main-search">
+        <input type="text" id="name" placeholder="Search for Manga...">
+        <button onclick="mangaSearchInstance.search()">Search</button>
+    </div>
+      <button id="toggleFilters">Show Filters</button>
+      <div id="filtersDiv" style="display: none;">
         <input type="text" id="name" placeholder="Manga Name" />
         <select id="setting">
           <option value="">--Setting--</option>
@@ -43,7 +50,7 @@
           <option value="">--Genre--</option>
           <!-- Populate this dropdown dynamically with genres from the API -->
         </select>
-        <button onclick="mangaSearchInstance.search()">Search</button>
+        </div>
     </section>
 
     <section id="results-section">

@@ -3,6 +3,7 @@ class MangaSearch {
     this.baseURL = "https://kitsu.io/api/edge/";
     this.populateGenres();
     this.displayDefaultContent();
+    this.setupEventListeners();
   }
 
   populateGenres() {
@@ -160,6 +161,27 @@ class MangaSearch {
         .catch(error => {
             console.log('There was a problem with the fetch operation:', error.message);
         });
+}
+setupEventListeners() {
+  const toggleButton = document.getElementById('toggleFilters');
+  const filtersDiv = document.getElementById('filtersDiv');
+  const nameInput = document.getElementById('name');
+  
+  // Toggle filters visibility
+  toggleButton.addEventListener('click', () => {
+      if (filtersDiv.style.display === 'none') {
+          filtersDiv.style.display = 'block';
+          toggleButton.innerText = 'Hide Filters';
+      } else {
+          filtersDiv.style.display = 'none';
+          toggleButton.innerText = 'Show Filters';
+      }
+  });
+
+  // Initiate search when something is typed in the search bar
+  nameInput.addEventListener('input', () => {
+      this.search();
+  });
 }
 }
 const mangaSearchInstance = new MangaSearch();
