@@ -92,7 +92,7 @@ class MangaSearch {
     img.src =
       manga.attributes.posterImage && manga.attributes.posterImage.medium
         ? manga.attributes.posterImage.medium
-        : "path_to_fallback_image.jpg";
+        : " ";
     img.alt = `Image of ${
       manga.attributes.titles.en ||
       manga.attributes.titles.en_jp ||
@@ -100,7 +100,7 @@ class MangaSearch {
     }`;
     img.onerror = function () {
       this.onerror = null;
-      this.src = "path_to_fallback_image.jpg";
+      this.src = " ";
     };
     mangaDiv.appendChild(img);
 
@@ -114,8 +114,52 @@ class MangaSearch {
 
     return mangaDiv;
   }
+  search() {
+    // Grab values from the input and selects
+    const name = document.getElementById('name').value;
+    const setting = document.getElementById('setting').value;
+    const demographics = document.getElementById('demographics').value;
+    const themes = document.getElementById('themes').value;
+    const genre = document.getElementById('genre').value;
+    // Hides the Home page.
+    const sectionsToHide = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
+    sectionsToHide.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) section.style.display = 'none';
+    });
+    // Construct the API URL with filters
+    let url = this.baseURL + "manga?";
+    if (name) url += `&filter%5Btext%5D=${encodeURIComponent(name)}`;
+    if (genre) url += `&filter%5Bgenres%5D=${encodeURIComponent(genre)}`;
+    if (setting) url += `&filter[setting]=${setting}`;
+    if (demographics) url += `&filter[demographics]=${demographics}`;
+    if (themes) url += `&filter[themes]=${themes}`;
+    console.log("Constructed URL:", url);
+    // Make the API call
+    fetch(url)
+        .then(response => {
+            console.log("API Response:", response); // Log the API response
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ''; // clear previous results
 
-  // ... the rest of your search functions ...
+            if (data.data.length === 0) {
+                resultsDiv.innerHTML = '<div>No manga found for the given criteria.</div>';
+            } else {
+                data.data.forEach(manga => {
+                    const mangaCard = this.createMangaCard(manga);
+                    resultsDiv.appendChild(mangaCard);
+                });
+            }
+        })
+        .catch(error => {
+            console.log('There was a problem with the fetch operation:', error.message);
+        });
 }
-
+}
 const mangaSearchInstance = new MangaSearch();

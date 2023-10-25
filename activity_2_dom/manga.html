@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>OnlyManga</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/mangastyle.css" />
-    <body>
-      <div>
-        <input type="text" id="name" placeholder="Manga Name" />
+</head>
 
+<body>
+    <header>
+        <h1>OnlyManga</h1>
+    </header>
+
+    <section class="search-section">
+        <input type="text" id="name" placeholder="Manga Name" />
         <select id="setting">
           <option value="">--Setting--</option>
           <option value="Countryside">Countryside</option>
@@ -37,11 +43,13 @@
           <option value="">--Genre--</option>
           <!-- Populate this dropdown dynamically with genres from the API -->
         </select>
+        <button onclick="mangaSearchInstance.search()">Search</button>
+    </section>
 
-        <button onclick="MangaSearch.search()">Search</button>
+    <section id="results-section">
         <div id="trending">
-          <h2>Trending This Week</h2>
-          <div class="results"></div>
+            <h2>Trending This Week</h2>
+            <div class="results"></div>
         </div>
         <div id="top-publishing">
           <h2>Top Publishing Manga</h2>
@@ -55,10 +63,8 @@
           <h2>Most Popular Manga</h2>
           <div class="results"></div>
         </div>
-      </div>
-
       <ul id="results"></ul>
+    </section>
       <script src="js/mangajs.js"></script>
     </body>
-  </head>
 </html>
