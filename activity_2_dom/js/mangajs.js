@@ -5,6 +5,14 @@ class MangaSearch {
     this.displayDefaultContent();
     this.currentPage = 1;
     this.setupEventListeners();
+    this.trendingOffset = 0;
+    this.publishingOffset = 0;
+    this.upcomingOffset = 0;
+    this.popularOffset = 0;
+    document.getElementById('viewMoreTrending').addEventListener('click', () => this.viewMoreTrending());
+document.getElementById('viewTopPublishing').addEventListener('click', () => this.viewMorePublishing());
+document.getElementById('viewTopUpcoming').addEventListener('click', () => this.viewMoreUpcoming());
+document.getElementById('viewMostPopular').addEventListener('click', () => this.viewMorePopular());
   }
 
   populateGenres() {
@@ -40,68 +48,75 @@ class MangaSearch {
         this.fetchMostPopularManga();
     }
   }
+  fetchTrendingThisWeek(offset = 0) {
+    const fetchURL = `${this.baseURL}manga?sort=-user_count&page[offset]=${offset}`;
+    console.log("Fetching from:", fetchURL); // Debugging line
 
-  fetchTrendingThisWeek() {
-    fetch(
-      this.baseURL +
-        `trending/manga?page[limit]=20&page[offset]=${this.currentPage}`
-    )
+    fetch(fetchURL)
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.querySelector("#trending .results");
-        resultsDiv.innerHTML = ""; // clear any previous results
 
         data.data.forEach((manga) => {
           const mangaCard = this.createMangaCard(manga);
           resultsDiv.appendChild(mangaCard);
         });
       });
-  }
-
-  fetchTopPublishingManga() {
-    fetch(
-      this.baseURL +
-        `manga?filter%5Bstatus%5D=current&?page[limit]=20&page[offset]=0&sort=-user_count`
-    )
+}
+viewMoreTrending() {
+    this.trendingOffset += 10;
+    this.fetchTrendingThisWeek(this.trendingOffset);
+}
+  fetchTopPublishingManga(offset = 0) {
+    fetch(`${this.baseURL}manga?filter%5Bstatus%5D=current&page&sort=-user_count&page[offset]=${offset}`)
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.querySelector("#top-publishing .results");
-        resultsDiv.innerHTML = ""; // clear any previous results
 
         data.data.forEach((manga) => {
           const mangaCard = this.createMangaCard(manga);
           resultsDiv.appendChild(mangaCard);
         });
       });
-  }
+}
+viewMorePublishing() {
+  this.publishingOffset += 10;
+  this.fetchTopPublishingManga(this.publishingOffset);
+}
 
-  fetchTopUpcomingManga() {
-    fetch(this.baseURL + "manga?filter[status]=upcoming")
+fetchTopUpcomingManga(offset = 0) {
+    fetch(`${this.baseURL}manga?filter[status]=upcoming&page[offset]=${offset}`)
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.querySelector("#top-upcoming .results");
-        resultsDiv.innerHTML = ""; // clear any previous results
-    
+
         data.data.forEach((manga) => {
           const mangaCard = this.createMangaCard(manga);
           resultsDiv.appendChild(mangaCard);
         });
       });
-  }
+}
+viewMoreUpcoming() {
+  this.upcomingOffset += 10;
+  this.fetchTopUpcomingManga(this.upcomingOffset);
+}
 
-  fetchMostPopularManga() {
-    fetch(this.baseURL + "manga?sort=-favoritesCount")
+fetchMostPopularManga(offset = 0) {
+    fetch(`${this.baseURL}manga?sort=-favoritesCount&page[offset]=${offset}`)
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.querySelector("#most-popular .results");
-        resultsDiv.innerHTML = ""; // clear any previous results
 
         data.data.forEach((manga) => {
           const mangaCard = this.createMangaCard(manga);
           resultsDiv.appendChild(mangaCard);
         });
       });
-  }
+}
+viewMorePopular() {
+  this.popularOffset += 10;
+  this.fetchMostPopularManga(this.popularOffset);
+}
 
   createMangaCard(manga) {
     const mangaDiv = document.createElement("div");
