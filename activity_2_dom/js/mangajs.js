@@ -3,6 +3,7 @@ class MangaSearch {
     this.baseURL = "https://kitsu.io/api/edge/";
     this.populateGenres();
     this.displayDefaultContent();
+    this.currentPage = 1;
   }
 
   populateGenres() {
@@ -19,15 +20,31 @@ class MangaSearch {
       });
   }
 
-  displayDefaultContent() {
-    this.fetchTrendingThisWeek();
-    this.fetchTopPublishingManga();
-    this.fetchTopUpcomingManga();
-    this.fetchMostPopularManga();
+  displayDefaultContent(section) {
+    switch (section) {
+      case "trending":
+        this.fetchTrendingThisWeek();
+        break;
+      case "publishing":
+        this.fetchTopPublishingManga();
+        break;
+      case "upcoming":
+        this.fetchTopUpcomingManga;
+      case "popular":
+        this.fetchMostPopularManga;
+      default:
+        this.fetchTrendingThisWeek();
+        this.fetchTopPublishingManga();
+        this.fetchTopUpcomingManga();
+        this.fetchMostPopularManga();
+    }
   }
 
   fetchTrendingThisWeek() {
-    fetch(this.baseURL + "trending/manga")
+    fetch(
+      this.baseURL +
+        `trending/manga?page[limit]=20&page[offset]=${this.currentPage}`
+    )
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.querySelector("#trending .results");
@@ -42,7 +59,8 @@ class MangaSearch {
 
   fetchTopPublishingManga() {
     fetch(
-      this.baseURL + "manga?filter%5Bstatus%5D=current&page&sort=-user_count"
+      this.baseURL +
+        `manga?filter%5Bstatus%5D=current&?page[limit]=20&page[offset]=0&sort=-user_count`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -62,7 +80,7 @@ class MangaSearch {
       .then((data) => {
         const resultsDiv = document.querySelector("#top-upcoming .results");
         resultsDiv.innerHTML = ""; // clear any previous results
-
+    
         data.data.forEach((manga) => {
           const mangaCard = this.createMangaCard(manga);
           resultsDiv.appendChild(mangaCard);
@@ -90,8 +108,8 @@ class MangaSearch {
 
     const img = document.createElement("img");
     img.src =
-      manga.attributes.posterImage && manga.attributes.posterImage.medium
-        ? manga.attributes.posterImage.medium
+      manga.attributes.posterImage && manga.attributes.posterImage.original
+        ? manga.attributes.posterImage.original
         : "path_to_fallback_image.jpg";
     img.alt = `Image of ${
       manga.attributes.titles.en ||
@@ -115,7 +133,22 @@ class MangaSearch {
     return mangaDiv;
   }
 
-  // ... the rest of your search functions ...
+  viewMore() {
+    this.currentPage += 1;
+    this.displayDefaultContent(); // We'll adjust this function to append results
+  }
 }
+document.getElementById("viewMoreTrending").addEventListener("click", () => {
+  mangaSearchInstance.viewMore("trending");
+});
+document.getElementById("viewTopPublishing").addEventListener("click", () => {
+  mangaSearchInstance.viewMore("publishing");
+});
+document.getElementById("viewTopUpcoming").addEventListener("click", () => {
+  mangaSearchInstance.viewMore("upcoming");
+});
+document.getElementById("viewMostPopular").addEventListener("click", () => {
+  mangaSearchInstance.viewMore("popular");
+});
 
 const mangaSearchInstance = new MangaSearch();
