@@ -85,27 +85,30 @@ class AnimeSearcher {
 
     // Set a new debounce timer
     this.debounceTimer = setTimeout(() => {
-      // Check if any input is filled
-      const anyInputFilled = this.isAnyInputFilled();
+      // Check if the search input is empty
+      const searchInputIsEmpty = !this.isAnyInputFilled();
 
-      // Display/hide sections based on the search input
-      this.elements.trendingDiv.style.display = anyInputFilled
-        ? "none"
-        : "block";
-      this.elements.updatedDiv.style.display = anyInputFilled
-        ? "none"
-        : "block";
-      this.elements.trendingHeader.style.display = anyInputFilled
-        ? "none"
-        : "block";
-      this.elements.updatedHeader.style.display = anyInputFilled
-        ? "none"
-        : "block";
+      // Display/hide sections based on whether the search input is empty
+      this.elements.trendingDiv.style.display = searchInputIsEmpty
+        ? "block"
+        : "none";
+      this.elements.updatedDiv.style.display = searchInputIsEmpty
+        ? "block"
+        : "none";
+      this.elements.trendingHeader.style.display = searchInputIsEmpty
+        ? "block"
+        : "none";
+      this.elements.updatedHeader.style.display = searchInputIsEmpty
+        ? "block"
+        : "none";
 
-      // Call the search method to fetch and display results
-      this.search();
-    }, 1000); // Adjust the debounce delay (in milliseconds) as needed
+      // Only call the search method if search input is not empty
+      if (!searchInputIsEmpty) {
+        this.search();
+      }
+    }, 600); // Adjust the debounce delay (in milliseconds) as needed
   }
+
   isAnyInputFilled() {
     return this.inputElements.some((input) => {
       if (input.type === "text" || input.type === "number") {
