@@ -108,8 +108,8 @@ class MangaSearch {
 
     const img = document.createElement("img");
     img.src =
-      manga.attributes.posterImage && manga.attributes.posterImage.medium
-        ? manga.attributes.posterImage.medium
+      manga.attributes.posterImage && manga.attributes.posterImage.original
+        ? manga.attributes.posterImage.original
         : " ";
     img.alt = `Image of ${
       manga.attributes.titles.en ||
