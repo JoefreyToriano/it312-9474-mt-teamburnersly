@@ -108,9 +108,9 @@ class MangaSearch {
 
     const img = document.createElement("img");
     img.src =
-      manga.attributes.posterImage && manga.attributes.posterImage.original
-        ? manga.attributes.posterImage.original
-        : "path_to_fallback_image.jpg";
+      manga.attributes.posterImage && manga.attributes.posterImage.medium
+        ? manga.attributes.posterImage.medium
+        : " ";
     img.alt = `Image of ${
       manga.attributes.titles.en ||
       manga.attributes.titles.en_jp ||
@@ -118,7 +118,7 @@ class MangaSearch {
     }`;
     img.onerror = function () {
       this.onerror = null;
-      this.src = "path_to_fallback_image.jpg";
+      this.src = " ";
     };
     mangaDiv.appendChild(img);
 
@@ -133,22 +133,7 @@ class MangaSearch {
     return mangaDiv;
   }
 
-  viewMore() {
-    this.currentPage += 1;
-    this.displayDefaultContent(); // We'll adjust this function to append results
-  }
+  // ... the rest of your search functions ...
 }
-document.getElementById("viewMoreTrending").addEventListener("click", () => {
-  mangaSearchInstance.viewMore("trending");
-});
-document.getElementById("viewTopPublishing").addEventListener("click", () => {
-  mangaSearchInstance.viewMore("publishing");
-});
-document.getElementById("viewTopUpcoming").addEventListener("click", () => {
-  mangaSearchInstance.viewMore("upcoming");
-});
-document.getElementById("viewMostPopular").addEventListener("click", () => {
-  mangaSearchInstance.viewMore("popular");
-});
 
 const mangaSearchInstance = new MangaSearch();
