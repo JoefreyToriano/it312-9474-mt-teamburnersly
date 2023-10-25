@@ -7,7 +7,6 @@ class AnimeSearcher {
       yearInput: document.getElementById("yearInput"),
       ratingSelect: document.getElementById("ratingSelect"),
       statusSelect: document.getElementById("statusSelect"),
-
       seasonSelect: document.getElementById("seasonSelect"),
       resultsDiv: document.getElementById("results"),
       searchBtn: document.getElementById("searchBtn"),
@@ -26,6 +25,23 @@ class AnimeSearcher {
       this.elements.statusSelect,
       this.elements.seasonSelect,
     ];
+    this.inputElements.forEach((input) => {
+      input.addEventListener("input", () => {
+        this.realTimeSearch();
+      });
+    });
+    const filterSelectElements = [
+      this.elements.genreSelect,
+      this.elements.typeSelect,
+      this.elements.ratingSelect,
+      this.elements.statusSelect,
+      this.elements.seasonSelect,
+    ];
+    filterSelectElements.forEach((filterSelect) => {
+      filterSelect.addEventListener("change", () => {
+        this.realTimeSearch();
+      });
+    });
     this.elements.trendingHeader = document.querySelector(".trendingHeader");
     this.elements.updatedHeader = document.querySelector(".updatedHeader");
     console.log("Trending Header:", this.elements.trendingHeader);
@@ -54,6 +70,41 @@ class AnimeSearcher {
         this.elements.updatedHeader.style.display = "block";
       }
     });
+    this.debounceTimer = null;
+  }
+  realTimeSearch() {
+    // Clear previous results and reset the current page
+    this.elements.resultsDiv.innerHTML = "";
+    this.currentPage = 1;
+    this.updatePageDisplay();
+
+    // Clear the previous debounce timer (if any)
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer);
+    }
+
+    // Set a new debounce timer
+    this.debounceTimer = setTimeout(() => {
+      // Check if any input is filled
+      const anyInputFilled = this.isAnyInputFilled();
+
+      // Display/hide sections based on the search input
+      this.elements.trendingDiv.style.display = anyInputFilled
+        ? "none"
+        : "block";
+      this.elements.updatedDiv.style.display = anyInputFilled
+        ? "none"
+        : "block";
+      this.elements.trendingHeader.style.display = anyInputFilled
+        ? "none"
+        : "block";
+      this.elements.updatedHeader.style.display = anyInputFilled
+        ? "none"
+        : "block";
+
+      // Call the search method to fetch and display results
+      this.search();
+    }, 1000); // Adjust the debounce delay (in milliseconds) as needed
   }
   isAnyInputFilled() {
     return this.inputElements.some((input) => {
