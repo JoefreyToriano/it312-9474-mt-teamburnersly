@@ -19,6 +19,10 @@ a {
   text-decoration: none;
    color: #9e9d9d;
 }
+button a{
+   text-decoration: none;
+   color: #ffffff;
+}
 h1 {
   text-align: center;
   color: #474747;

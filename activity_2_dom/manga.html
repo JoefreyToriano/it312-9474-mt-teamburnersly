@@ -48,6 +48,14 @@
 
         <select id="genre">
           <option value="">--Genre--</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Romance">Drama</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Yaoi">Yaoi</option>
+          <option value="Shoujo Ai">Shoujo Ai</option>
+          <option value="Sports">Sports</option>
+          <option value="Magic">Magic</option>
+          <option value="Mystery">Mystery</option>
           <!-- Populate this dropdown dynamically with genres from the API -->
         </select>
         </div>
@@ -55,19 +63,23 @@
 
     <section id="results-section">
         <div id="trending">
-            <h2>Trending This Week</h2>
-            <div class="results"></div>
+          <h2>Trending This Week</h2>
+          <button id="viewMoreTrending">View More Trending Manga</button>
+          <div class="results"></div>
         </div>
         <div id="top-publishing">
           <h2>Top Publishing Manga</h2>
+          <button id="viewTopPublishing">View More Top Publising Manga</button>
           <div class="results"></div>
         </div>
         <div id="top-upcoming">
           <h2>Top Upcoming Manga</h2>
+          <button id="viewTopUpcoming">View More Top Upcoming Manga</button>
           <div class="results"></div>
         </div>
         <div id="most-popular">
           <h2>Most Popular Manga</h2>
+          <button id="viewMostPopular">View More Most Popular Manga</button>
           <div class="results"></div>
         </div>
       <ul id="results"></ul>
