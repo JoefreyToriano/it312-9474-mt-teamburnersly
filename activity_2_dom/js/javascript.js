@@ -251,21 +251,12 @@ class AnimeSearcher {
   }
 
   getSearchURL() {
+    const mainSearchTerm = this.elements.animeInput.value.trim();
     let year = this.elements.yearInput.value;
     let season = this.elements.seasonSelect.value;
 
-    if (season && !year) {
-      year = new Date().getFullYear();
-    }
-    if (year && !season) {
-      season = "spring";
-    }
-    if (year && season) {
-      return `https://api.jikan.moe/v4/seasons/${year}/${season.toLowerCase()}`;
-    }
     const paramsList = [
-      this.elements.animeInput.value.trim() &&
-        `q=${this.elements.animeInput.value.trim()}`,
+      mainSearchTerm && `q=${mainSearchTerm}`,
       this.elements.genreSelect.value &&
         `genres=${this.elements.genreSelect.value}`,
       this.elements.typeSelect.value &&
@@ -276,6 +267,17 @@ class AnimeSearcher {
       this.elements.statusSelect.value &&
         `status=${this.elements.statusSelect.value}`,
     ];
+
+    // If both season and year are present, construct the URL to search by season
+    if (year && season) {
+      const seasonURL = `https://api.jikan.moe/v4/seasons/${year}/${season.toLowerCase()}`;
+
+      // Ensure mainSearchTerm is added to the parameters for the season search
+      if (mainSearchTerm) {
+        return `${seasonURL}?q=${mainSearchTerm}`;
+      }
+      return seasonURL;
+    }
 
     const validParams = paramsList.filter(Boolean);
     validParams.push(`page=${this.currentPage}`);

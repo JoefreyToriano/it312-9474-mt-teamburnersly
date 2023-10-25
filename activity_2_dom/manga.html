@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>OnlyManga</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/mangastyle.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>OnlyManga</h1>
+      <h1>OnlyManga</h1>
     </header>
 
     <section class="search-section">
-
       <div class="main-search">
-        <input type="text" id="name" placeholder="Search for Manga...">
+        <input type="text" id="name" placeholder="Search for Manga..." />
         <button onclick="mangaSearchInstance.search()">Search</button>
-    </div>
+      </div>
       <button id="toggleFilters">Show Filters</button>
-      <div id="filtersDiv" style="display: none;">
+      <div id="filtersDiv" style="display: none">
         <select id="setting">
           <option value="">--Setting--</option>
           <option value="Countryside">Countryside</option>
@@ -57,32 +55,32 @@
           <option value="Mystery">Mystery</option>
           <!-- Populate this dropdown dynamically with genres from the API -->
         </select>
-        </div>
+      </div>
     </section>
 
     <section id="results-section">
-        <div id="trending">
-          <h2>Trending This Week</h2>
-          <button id="viewMoreTrending">View More</button>
-          <div class="results"></div>
-        </div>
-        <div id="top-publishing">
-          <h2>Top Publishing Manga</h2>
-          <button id="viewTopPublishing">View More</button>
-          <div class="results"></div>
-        </div>
-        <div id="top-upcoming">
-          <h2>Top Upcoming Manga</h2>
-          <button id="viewTopUpcoming">View More</button>
-          <div class="results"></div>
-        </div>
-        <div id="most-popular">
-          <h2>Most Popular Manga</h2>
-          <button id="viewMostPopular">View More</button>
-          <div class="results"></div>
-        </div>
+      <div id="trending">
+        <h2>Trending This Week</h2>
+        <div class="results"></div>
+        <button id="viewMoreTrending">View More</button>
+      </div>
+      <div id="top-publishing">
+        <h2>Top Publishing Manga</h2>
+        <div class="results"></div>
+        <button id="viewTopPublishing">View More</button>
+      </div>
+      <div id="top-upcoming">
+        <h2>Top Upcoming Manga</h2>
+        <div class="results"></div>
+        <button id="viewTopUpcoming">View More</button>
+      </div>
+      <div id="most-popular">
+        <h2>Most Popular Manga</h2>
+        <div class="results"></div>
+        <button id="viewMostPopular">View More</button>
+      </div>
       <ul id="results"></ul>
     </section>
-      <script src="js/mangajs.js"></script>
-    </body>
+    <script src="js/mangajs.js"></script>
+  </body>
 </html>
