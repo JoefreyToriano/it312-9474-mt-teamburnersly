@@ -121,6 +121,7 @@ viewMorePopular() {
   createMangaCard(manga) {
     const mangaDiv = document.createElement("div");
     mangaDiv.classList.add("manga-card");
+    mangaDiv.dataset.mangaId = manga.id;
 
     const img = document.createElement("img");
     img.src =
@@ -145,7 +146,7 @@ viewMorePopular() {
       manga.attributes.titles.en_jp ||
       "Unknown Title";
     mangaDiv.appendChild(title);
-
+    mangaDiv.addEventListener('click', () => this.openMangaModal(manga));
     return mangaDiv;
   }
   search() {
@@ -215,6 +216,69 @@ setupEventListeners() {
   nameInput.addEventListener('input', () => {
       this.search();
   });
+  // Add an event listener to the chapters button to toggle the chapters section
+  document.getElementById("chapterBtn").addEventListener("click", function() {
+    const chaptersDiv = document.getElementById("modalMangaChapters");
+    if (chaptersDiv.style.display === "none") {
+      chaptersDiv.style.display = "block";
+    } else {
+      chaptersDiv.style.display = "none";
+    }
+  });
 }
+openMangaModal(manga) {
+  // Fill in the modal content with manga details
+  const modal = document.getElementById("mangaModal");
+  document.getElementById("modalMangaImage").src = manga.attributes.posterImage.original;
+  document.getElementById("modalMangaTitle").textContent = manga.attributes.titles.en || manga.attributes.titles.en_jp || "Unknown Title";
+  document.getElementById("modalMangaSynopsis").textContent = manga.attributes.synopsis || "No synopsis available.";
+  document.getElementById("modalUserCount").textContent = manga.attributes.userCount || "N/A";
+  document.getElementById("modalFavoritesCount").textContent = manga.attributes.favoritesCount || "N/A";
+  document.getElementById("modalAgeRating").textContent = manga.attributes.ageRating || "N/A";
+  document.getElementById("modalStatus").textContent = manga.attributes.status || "N/A";
+  document.getElementById("modalDateCreated").textContent = new Date(manga.attributes.createdAt).toLocaleDateString() || "N/A";
+  document.getElementById("modalMangaScore").textContent = manga.attributes.averageRating || "N/A";
+  // Show the modal
+  modal.style.display = "block";
+  
+  // Add event listener to close the modal when clicked outside
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeModal();
+      }
+  }
+  this.fetchChaptersFromKitsu(manga.id); 
+}
+
+fetchChaptersFromKitsu(mangaId) {
+  fetch(`https://kitsu.io/api/edge/manga/${mangaId}/chapters`)
+  .then(response => response.json())
+  .then(data => {
+      const chapters = data.data;
+      const chaptersDiv = document.getElementById("modalMangaChapters");
+      chaptersDiv.innerHTML = '';
+
+      if (!chapters || chapters.length === 0) {
+          chaptersDiv.innerHTML = '<div>No chapters available for this manga.</div>';
+          return;
+      }
+
+      chapters.forEach(chapter => {
+          const chapterDiv = document.createElement("div");
+          chapterDiv.innerText = chapter.attributes.title || "Untitled Chapter";
+          chaptersDiv.appendChild(chapterDiv);
+      });
+  })
+  .catch(error => {
+      console.log('There was a problem with the fetch operation:', error.message);
+  });
+}
+}
+
+function closeModal() {
+  const modal = document.getElementById("mangaModal");
+  modal.style.display = "none";
+  // Hide chapters as well
+  document.getElementById("modalMangaChapters").style.display = "none";
 }
 const mangaSearchInstance = new MangaSearch();
