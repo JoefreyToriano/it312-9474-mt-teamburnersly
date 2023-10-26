@@ -267,31 +267,13 @@ openMangaModal(manga) {
       closeModal();
       }
   }
-  this.fetchChaptersFromKitsu(manga.id); 
-}
-
-fetchChaptersFromKitsu(mangaId) {
-  fetch(`https://kitsu.io/api/edge/manga/${mangaId}/chapters`)
-  .then(response => response.json())
-  .then(data => {
-      const chapters = data.data;
-      const chaptersDiv = document.getElementById("modalMangaChapters");
-      chaptersDiv.innerHTML = '';
-
-      if (!chapters || chapters.length === 0) {
-          chaptersDiv.innerHTML = '<div>No chapters available for this manga.</div>';
-          return;
-      }
-
-      chapters.forEach(chapter => {
-          const chapterDiv = document.createElement("div");
-          chapterDiv.innerText = chapter.attributes.title || "Untitled Chapter";
-          chaptersDiv.appendChild(chapterDiv);
-      });
-  })
-  .catch(error => {
-      console.log('There was a problem with the fetch operation:', error.message);
-  });
+  const chapterBtn = document.getElementById("chapterBtn");
+  chapterBtn.dataset.mangaSlug = manga.attributes.slug;
+  document.getElementById("chapterBtn").addEventListener("click", function() {
+    const mangaSlug = this.dataset.mangaSlug;
+    const kitsuUrl = `https://kitsu.io/manga/${mangaSlug}/chapters`;
+    window.open(kitsuUrl, "_blank");
+});
 }
 }
 

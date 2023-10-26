@@ -221,6 +221,7 @@ button#toggleFilters:hover {
   border: 2px solid #b0b0b0; /* Gray border */
 }
 /* Modal Styles */
+/* Modal Styles */
 #mangaModal {
   display: none;
   position: fixed;
@@ -228,79 +229,76 @@ button#toggleFilters:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);  /* Darker backdrop */
   overflow: auto;
   z-index: 1000;
+  font-family: 'Roboto', sans-serif;  /* Modern font */
 }
 
 #mangaModalContent {
   position: relative;
   background-color: #fefefe;
   margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 60%; /* Adjusted for a narrower modal */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
+  padding: 40px;  /* Increased padding for spaciousness */
+  border: 1px solid #e0e0e0;  /* Lighter border */
+  width: 60%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+  border-radius: 10px;  /* More rounded corners */
+}
+
+#mangaModalContent strong {
+  color: #066eb4;
+}
+
+#modalMangaTitle {
+  color: #2e2e2e;  /* Darker text color */
+  font-size: 24px;  /* Bigger title */
+  margin-bottom: 15px;  /* Spacing */
 }
 
 #modalMangaImage {
-  width: 200px;
-  height: 300px;
+  width: 250px;  /* Bigger image */
+  height: 375px;
   object-fit: cover;
   float: left;
-  margin-right: 20px;
-  border-radius: 5px; /* Added for slight rounding of images */
+  margin-right: 30px;  /* More margin */
+  border-radius: 10px;
 }
 
 .closeModalBtn {
-  color: #000000;
+  color: #aaa;  /* Neutral color */
   position: absolute;
-  top: 10px;
-  background-color: transparent;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .closeModalBtn:hover,
 .closeModalBtn:focus {
-  color: #555555;  /* A bit lighter on hover */
-  text-decoration: none;
+  color: #555;
 }
 
 #chapterBtn {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  border: 1px solid #1678f7;
-  background-color: #ffffff;
-  color: #000;
+  border: none;  /* No border */
+  background-color: #226af1;
+  color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  border-radius: 5px; /* Added for rounded corners */
-  width: 150px; /* Fixed width for the button */
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* Slight shadow for depth */
+  width: 150px;
 }
 
 #chapterBtn:hover {
-  background-color: #226af1;
-  color: #ffffff;
-  border: 3px solid white;
-}
-
-/* Styling for the chapters */
-#modalMangaChapters {
-  display: none;
-  padding: 10px;
-  border-top: 1px solid #eee;
-}
-
-#modalMangaChapters div {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px; /* Added for rounded chapter boxes */
+  background-color: #185bd7;  /* Slightly darker on hover */
 }
 footer {
   background-color: #ffffff;
