@@ -280,5 +280,6 @@ function closeModal() {
   modal.style.display = "none";
   // Hide chapters as well
   document.getElementById("modalMangaChapters").style.display = "none";
+  
 }
 const mangaSearchInstance = new MangaSearch();
