@@ -149,19 +149,36 @@ viewMorePopular() {
     mangaDiv.addEventListener('click', () => this.openMangaModal(manga));
     return mangaDiv;
   }
+  displayHomePage() {
+    const sectionsToShow = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
+    sectionsToShow.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) section.style.display = 'block';
+    });
+
+    const resultsSection = document.getElementById('results');
+    if (resultsSection) resultsSection.style.display = 'none';
+}
   search() {
     // Grab values from the input and selects
     const name = document.getElementById('name').value;
-    const setting = document.getElementById('setting').value;
-    const demographics = document.getElementById('demographics').value;
-    const themes = document.getElementById('themes').value;
-    const genre = document.getElementById('genre').value;
-    // Hides the Home page.
-    const sectionsToHide = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
-    sectionsToHide.forEach(sectionId => {
-      const section = document.getElementById(sectionId);
-      if (section) section.style.display = 'none';
-    });
+
+    // If the name is empty, display the homepage and return.
+    if (!name.trim()) {
+        this.displayHomePage();
+        return;
+    }
+      const setting = document.getElementById('setting').value;
+      const demographics = document.getElementById('demographics').value;
+      const themes = document.getElementById('themes').value;
+      const genre = document.getElementById('genre').value;
+  
+      // Hides the Home page.
+      const sectionsToHide = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
+      sectionsToHide.forEach(sectionId => {
+          const section = document.getElementById(sectionId);
+          if (section) section.style.display = 'none';
+      });
     // Construct the API URL with filters
     let url = this.baseURL + "manga?";
     if (name) url += `&filter%5Btext%5D=${encodeURIComponent(name)}`;
@@ -170,6 +187,9 @@ viewMorePopular() {
     if (demographics) url += `&filter[demographics]=${demographics}`;
     if (themes) url += `&filter[themes]=${themes}`;
     console.log("Constructed URL:", url);
+
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.style.display = 'block';
     // Make the API call
     fetch(url)
         .then(response => {
