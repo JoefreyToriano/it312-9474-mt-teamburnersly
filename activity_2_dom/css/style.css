@@ -477,7 +477,7 @@ footer {
   font-size: 14px;
 }
 
-.footer-manga-btn button {
+.footer-manga-btn  input {
   padding: 10px 15px;
   background-color: orange;
   border: none;
@@ -487,7 +487,7 @@ footer {
   transition: background-color 0.3s;
 }
 
-.footer-manga-btn button:hover {
+.footer-manga-btn input:hover {
   background-color: rgb(97, 96, 96);
   color: orange;
   transform: scale(1.05);
