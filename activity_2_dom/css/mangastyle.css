@@ -221,7 +221,6 @@ button#toggleFilters:hover {
   border: 2px solid #b0b0b0; /* Gray border */
 }
 /* Modal Styles */
-/* Modal Styles */
 #mangaModal {
   display: none;
   position: fixed;
@@ -251,7 +250,7 @@ button#toggleFilters:hover {
 }
 
 #modalMangaTitle {
-  color: #2e2e2e;  /* Darker text color */
+  color: #3d92f5;  /* Darker text color */
   font-size: 24px;  /* Bigger title */
   margin-bottom: 15px;  /* Spacing */
 }
