@@ -149,36 +149,19 @@ viewMorePopular() {
     mangaDiv.addEventListener('click', () => this.openMangaModal(manga));
     return mangaDiv;
   }
-  displayHomePage() {
-    const sectionsToShow = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
-    sectionsToShow.forEach(sectionId => {
-        const section = document.getElementById(sectionId);
-        if (section) section.style.display = 'block';
-    });
-
-    const resultsSection = document.getElementById('results');
-    if (resultsSection) resultsSection.style.display = 'none';
-}
   search() {
     // Grab values from the input and selects
     const name = document.getElementById('name').value;
-
-    // If the name is empty, display the homepage and return.
-    if (!name.trim()) {
-        this.displayHomePage();
-        return;
-    }
-      const setting = document.getElementById('setting').value;
-      const demographics = document.getElementById('demographics').value;
-      const themes = document.getElementById('themes').value;
-      const genre = document.getElementById('genre').value;
-  
-      // Hides the Home page.
-      const sectionsToHide = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
-      sectionsToHide.forEach(sectionId => {
-          const section = document.getElementById(sectionId);
-          if (section) section.style.display = 'none';
-      });
+    const setting = document.getElementById('setting').value;
+    const demographics = document.getElementById('demographics').value;
+    const themes = document.getElementById('themes').value;
+    const genre = document.getElementById('genre').value;
+    // Hides the Home page.
+    const sectionsToHide = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
+    sectionsToHide.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) section.style.display = 'none';
+    });
     // Construct the API URL with filters
     let url = this.baseURL + "manga?";
     if (name) url += `&filter%5Btext%5D=${encodeURIComponent(name)}`;
@@ -187,9 +170,6 @@ viewMorePopular() {
     if (demographics) url += `&filter[demographics]=${demographics}`;
     if (themes) url += `&filter[themes]=${themes}`;
     console.log("Constructed URL:", url);
-
-    const resultsDiv = document.getElementById('results');
-    resultsDiv.style.display = 'block';
     // Make the API call
     fetch(url)
         .then(response => {
@@ -267,13 +247,31 @@ openMangaModal(manga) {
       closeModal();
       }
   }
-  const chapterBtn = document.getElementById("chapterBtn");
-  chapterBtn.dataset.mangaSlug = manga.attributes.slug;
-  document.getElementById("chapterBtn").addEventListener("click", function() {
-    const mangaSlug = this.dataset.mangaSlug;
-    const kitsuUrl = `https://kitsu.io/manga/${mangaSlug}/chapters`;
-    window.open(kitsuUrl, "_blank");
-});
+  this.fetchChaptersFromKitsu(manga.id); 
+}
+
+fetchChaptersFromKitsu(mangaId) {
+  fetch(`https://kitsu.io/api/edge/manga/${mangaId}/chapters`)
+  .then(response => response.json())
+  .then(data => {
+      const chapters = data.data;
+      const chaptersDiv = document.getElementById("modalMangaChapters");
+      chaptersDiv.innerHTML = '';
+
+      if (!chapters || chapters.length === 0) {
+          chaptersDiv.innerHTML = '<div>No chapters available for this manga.</div>';
+          return;
+      }
+
+      chapters.forEach(chapter => {
+          const chapterDiv = document.createElement("div");
+          chapterDiv.innerText = chapter.attributes.title || "Untitled Chapter";
+          chaptersDiv.appendChild(chapterDiv);
+      });
+  })
+  .catch(error => {
+      console.log('There was a problem with the fetch operation:', error.message);
+  });
 }
 }
 
@@ -282,6 +280,5 @@ function closeModal() {
   modal.style.display = "none";
   // Hide chapters as well
   document.getElementById("modalMangaChapters").style.display = "none";
-  
 }
 const mangaSearchInstance = new MangaSearch();

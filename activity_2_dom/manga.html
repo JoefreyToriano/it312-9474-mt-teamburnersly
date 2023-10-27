@@ -15,24 +15,26 @@
     <div class="search-container">
       <div class="main-search">
         <input type="text" id="name" placeholder="Search for Manga..." />
-        <button class="search-btn" onclick="mangaSearchInstance.search()">🔍</button>
+        <button class="search-btn" onclick="mangaSearchInstance.search()">
+          🔍
+        </button>
       </div>
       <button id="toggleFilters">Filters</button>
     </div>
-      <div id="filtersDiv" style="display: none">
-        <div class="filter-row">
-            <label for="setting">Setting:</label>
-            <select id="setting">
+    <div id="filtersDiv" style="display: none">
+      <div class="filter-row">
+        <label for="setting">Setting:</label>
+        <select id="setting">
           <option value="">....</option>
           <option value="Countryside">Countryside</option>
           <option value="Desert">Desert</option>
           <option value="Earth">Earth</option>
           <!-- ... add more settings as needed -->
         </select>
-        </div>
-        <div class="filter-row">
-          <label for="demographics">Demographics:</label>
-          <select id="demographics">
+      </div>
+      <div class="filter-row">
+        <label for="demographics">Demographics:</label>
+        <select id="demographics">
           <option value="">....</option>
           <option value="Josei">Josei</option>
           <option value="Kids">Kids</option>
@@ -40,20 +42,20 @@
           <option value="Shoujo">Shoujo</option>
           <option value="Shounen">Shounen</option>
         </select>
-        </div>
+      </div>
 
-        <div class="filter-row">
-          <label for="themes">Themes:</label>
-          <select id="themes">
+      <div class="filter-row">
+        <label for="themes">Themes:</label>
+        <select id="themes">
           <option value="">....</option>
           <option value="Anti War">Anti War</option>
           <option value="Coming Of Age">Coming Of Age</option>
           <!-- ... add more themes as needed -->
         </select>
-        </div>
+      </div>
       <div class="filter-row">
-          <label for="genre">Genre:</label>
-          <select id="genre">
+        <label for="genre">Genre:</label>
+        <select id="genre">
           <option value="">....</option>
           <option value="Comedy">Comedy</option>
           <option value="Romance">Drama</option>
@@ -65,9 +67,8 @@
           <option value="Mystery">Mystery</option>
           <!-- Populate this dropdown dynamically with genres from the API -->
         </select>
-        </div>
       </div>
-    </section>
+    </div>
 
     <section id="results-section">
       <div id="trending">
@@ -92,22 +93,40 @@
       </div>
       <ul id="results"></ul>
     </section>
-    <div id="mangaModal">
+
+    <div id="mangaModal" style="display: none">
       <div id="mangaModalContent">
-          <img id="modalMangaImage" src="" alt="Manga Image">
-          <h2 id="modalMangaTitle"></h2>
-          <p id="modalMangaSynopsis"></p>
-          <p><strong>User Count:</strong> <span id="modalUserCount"></span></p>
-          <p><strong>Favorites Count:</strong> <span id="modalFavoritesCount"></span></p>
-          <p><strong>Age Rating:</strong> <span id="modalAgeRating"></span></p>
-          <p><strong>Status:</strong> <span id="modalStatus"></span></p>
-          <p><strong>Date Created:</strong> <span id="modalDateCreated"></span></p>
-          <p><strong>Manga Score:</strong> <span id="modalMangaScore"></span></p>
-          <button id="chapterBtn">Chapters</button>
-          <div id="modalMangaChapters" style="display:none;"></div>
-          <span class="closeModalBtn" onclick="closeModal()">&times;</span>
+        <div class="modalTopSection">
+          <img id="modalMangaImage" src="" alt="Manga Image" />
+          <div class="modalTextContainer">
+            <h2 id="modalMangaTitle"></h2>
+            <p id="modalMangaSynopsis"></p>
+            <p>
+              <strong>User Count:</strong> <span id="modalUserCount"></span>
+            </p>
+            <p>
+              <strong>Favorites Count:</strong>
+              <span id="modalFavoritesCount"></span>
+            </p>
+            <p>
+              <strong>Age Rating:</strong> <span id="modalAgeRating"></span>
+            </p>
+            <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+            <p>
+              <strong>Date Created:</strong> <span id="modalDateCreated"></span>
+            </p>
+            <p>
+              <strong>Manga Score:</strong> <span id="modalMangaScore"></span>
+            </p>
+          </div>
+         
+        </div>
+         <div id="modalMangaCharacters"></div>
+        <button id="chapterBtn">Chapters</button>
+        <div id="modalMangaChapters" style="display: none"></div>
+        <span class="closeModalBtn" onclick="closeModal()">&times;</span>
       </div>
-  </div>
+    </div>
     <script src="js/mangajs.js"></script>
   </body>
   <footer>
