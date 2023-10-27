@@ -3,8 +3,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
+body.fade-out {
+  opacity: 0;
+}
 header {
   background-color: transparent;
   color: rgb(126, 124, 124);
@@ -246,30 +251,30 @@ button#toggleFilters:hover {
   flex-direction: column;
 }
 .modalTopSection {
-    display: flex;
-    align-items: start; /* Ensures the content starts at the top */
-    justify-content: start; /* Aligns items to the start of the container */
+  display: flex;
+  align-items: start; /* Ensures the content starts at the top */
+  justify-content: start; /* Aligns items to the start of the container */
 }
 #mangaModalContent strong {
   color: #066eb4;
 }
 
 #modalMangaTitle {
-  color: #3d92f5;  /* Darker text color */
-  font-size: 24px;  /* Bigger title */
-  margin-bottom: 15px;  /* Spacing */
+  color: #3d92f5; /* Darker text color */
+  font-size: 24px; /* Bigger title */
+  margin-bottom: 15px; /* Spacing */
 }
 
 #modalMangaImage {
- width: 30%;
+  width: 30%;
   object-fit: cover;
   margin-right: 20px;
   border-radius: 5px;
   flex-shrink: 0;
-border-radius: 10px;
+  border-radius: 10px;
 }
 .closeModalBtn {
-  color: #aaa;  /* Neutral color */
+  color: #aaa; /* Neutral color */
   position: absolute;
   top: 15px;
   right: 15px;
@@ -291,7 +296,7 @@ border-radius: 10px;
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  border: none;  /* No border */
+  border: none; /* No border */
   background-color: #226af1;
   color: #ffffff;
   cursor: pointer;
@@ -302,7 +307,7 @@ border-radius: 10px;
 }
 
 #chapterBtn:hover {
-  background-color: #185bd7;  /* Slightly darker on hover */
+  background-color: #185bd7; /* Slightly darker on hover */
 }
 footer {
   background-color: #ffffff;
@@ -344,13 +349,13 @@ footer {
   background-color: rgb(81, 137, 243);
   border: none;
   border-radius: 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 a:hover {
   text-decoration: none;

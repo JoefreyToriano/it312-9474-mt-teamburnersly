@@ -282,3 +282,32 @@ function closeModal() {
   document.getElementById("modalMangaChapters").style.display = "none";
 }
 const mangaSearchInstance = new MangaSearch();
+document.addEventListener("DOMContentLoaded", function () {
+  let buttons = document.querySelectorAll('input[type="submit"], a');
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      let target = "";
+      if (this.tagName === "INPUT") {
+        target = this.parentElement.action;
+      } else if (this.tagName === "A") {
+        target = this.href;
+      }
+
+      document.body.classList.add("fade-out");
+
+      setTimeout(function () {
+        window.location.href = target;
+      }, 500); // Matches the transition duration of 0.5s
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add("fade-out");
+
+  setTimeout(function () {
+    document.body.classList.remove("fade-out");
+  }, 50); // Short delay for starting the fade-in transition
+});
