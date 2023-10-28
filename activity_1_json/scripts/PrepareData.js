@@ -1,4 +1,3 @@
-
 if (localStorage.getItem("allRecipes")==null){
     var recipes =[
             {
@@ -572,7 +571,7 @@ if (localStorage.getItem("allRecipes")==null){
             },
         
             {
-                recipe: 13,
+                recipeId: 13,
                 recipeName: "Ginisang Monggo",
                 recipeAuthor: 3,
                 recipeType: "Vegetable",
