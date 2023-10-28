@@ -11,14 +11,24 @@ class MangaSearch {
     this.popularOffset = 0;
     this.chapterOffset = 0;
     this.totalChaptersLoaded = 0;
-    document.getElementById('viewMoreTrending').addEventListener('click', () => this.viewMoreTrending());
-document.getElementById('viewTopPublishing').addEventListener('click', () => this.viewMorePublishing());
-document.getElementById('viewTopUpcoming').addEventListener('click', () => this.viewMoreUpcoming());
-document.getElementById('loadMoreChapters').addEventListener('click', () => this.loadMoreChapters());
-document.getElementById('viewMostPopular').addEventListener('click', () => this.viewMorePopular());
+    document
+      .getElementById("viewMoreTrending")
+      .addEventListener("click", () => this.viewMoreTrending());
+    document
+      .getElementById("viewTopPublishing")
+      .addEventListener("click", () => this.viewMorePublishing());
+    document
+      .getElementById("viewTopUpcoming")
+      .addEventListener("click", () => this.viewMoreUpcoming());
+    document
+      .getElementById("loadMoreChapters")
+      .addEventListener("click", () => this.loadMoreChapters());
+    document
+      .getElementById("viewMostPopular")
+      .addEventListener("click", () => this.viewMorePopular());
   }
   loadMoreChapters() {
-    this.chapterOffset += 10; 
+    this.chapterOffset += 10;
     this.fetchChaptersFromKitsu(this.currentMangaId, true);
   }
   populateGenres() {
@@ -221,130 +231,183 @@ document.getElementById('viewMostPopular').addEventListener('click', () => this.
         const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = ""; // clear previous results
 
-            if (data.data.length === 0) {
-                resultsDiv.innerHTML = '<div>No manga found for the given criteria.</div>';
-            } else {
-                data.data.forEach(manga => {
-                    const mangaCard = this.createMangaCard(manga);
-                    resultsDiv.appendChild(mangaCard);
-                });
-            }
-        })
-        .catch(error => {
-            console.log('There was a problem with the fetch operation:', error.message);
-        });
-}
-setupEventListeners() {
-  const toggleButton = document.getElementById('toggleFilters');
-  const filtersDiv = document.getElementById('filtersDiv');
-  const nameInput = document.getElementById('name');
-  
-  // Toggle filters visibility
-  toggleButton.addEventListener('click', () => {
-      if (filtersDiv.style.display === 'none') {
-          filtersDiv.style.display = 'block';
-          toggleButton.innerText = 'Hide Filters';
+        if (data.data.length === 0) {
+          resultsDiv.innerHTML =
+            "<div>No manga found for the given criteria.</div>";
+        } else {
+          data.data.forEach((manga) => {
+            const mangaCard = this.createMangaCard(manga);
+            resultsDiv.appendChild(mangaCard);
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(
+          "There was a problem with the fetch operation:",
+          error.message
+        );
+      });
+  }
+  setupEventListeners() {
+    const toggleButton = document.getElementById("toggleFilters");
+    const filtersDiv = document.getElementById("filtersDiv");
+    const nameInput = document.getElementById("name");
+
+    // Toggle filters visibility
+    toggleButton.addEventListener("click", () => {
+      if (filtersDiv.style.display === "none") {
+        filtersDiv.style.display = "block";
+        toggleButton.innerText = "Hide Filters";
       } else {
-          filtersDiv.style.display = 'none';
-          toggleButton.innerText = 'Show Filters';
+        filtersDiv.style.display = "none";
+        toggleButton.innerText = "Show Filters";
       }
-  });
-
-  // Initiate search when something is typed in the search bar
-  nameInput.addEventListener('input', () => {
-      this.search();
-  });
-
-  // Add an event listener to the chapters button to toggle the chapters section
-  document.getElementById("chapterBtn").addEventListener("click", () => this.handleChapterButtonClick());
-}
-openMangaModal(manga) {
-  // Fill in the modal content with manga details
-  const modal = document.getElementById("mangaModal");
-  document.getElementById("modalMangaImage").src = manga.attributes.posterImage.original;
-  document.getElementById("modalMangaTitle").textContent = manga.attributes.titles.en || manga.attributes.titles.en_jp || "Unknown Title";
-  document.getElementById("modalMangaSynopsis").textContent = manga.attributes.synopsis || "No synopsis available.";
-  document.getElementById("modalUserCount").textContent = manga.attributes.userCount || "N/A";
-  document.getElementById("modalFavoritesCount").textContent = manga.attributes.favoritesCount || "N/A";
-  document.getElementById("modalAgeRating").textContent = manga.attributes.ageRating || "N/A";
-  document.getElementById("modalStatus").textContent = manga.attributes.status || "N/A";
-  document.getElementById("modalDateCreated").textContent = new Date(manga.attributes.createdAt).toLocaleDateString() || "N/A";
-  document.getElementById("modalMangaScore").textContent = manga.attributes.averageRating || "N/A";
-  // Show the modal
-  modal.style.display = "block";
-  
-  // Add event listener to close the modal when clicked outside
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      closeModal();
-      }
-  }
-  this.fetchChaptersFromKitsu(manga.id);
-}
-handleChapterButtonClick() {
-  const chaptersDiv = document.getElementById("modalMangaChapters");
-  const loadMoreButton = document.getElementById("loadMoreChapters");
-  if (chaptersDiv.style.display === "none") {
-      chaptersDiv.style.display = "block";
-      loadMoreButton.style.display = "block"; // Show the load more button
-  } else {
-      chaptersDiv.style.display = "none";
-      loadMoreButton.style.display = "none"; // Hide the load more button
-  }
-}
-fetchChaptersFromKitsu(mangaId, append = false) {
-  console.log(mangaId);
-  if (!append) {
-      this.chapterOffset = 0; // Reset offset if not appending
-  }
-  this.currentMangaId = mangaId; // Store the current manga ID for later use
-  
-  fetch(`https://kitsu.io/api/edge/manga/${mangaId}/chapters?page[offset]=${this.chapterOffset}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      const chapters = data.data;
-      const chaptersDiv = document.getElementById("modalMangaChapters");
-      if (!append) {
-          chaptersDiv.innerHTML = ''; // Clear only if not appending
-          this.totalChaptersLoaded = 0; // Reset if not appending
-      }
-
-      chapters.forEach((chapter, index) => {
-        const chapterDiv = document.createElement("div");
-        const chapterNumber = this.totalChaptersLoaded + index + 1;
-        chapterDiv.innerHTML = `<strong style="color: lightblue;">Chapter ${chapterNumber}:</strong> ${chapter.attributes.titles.en_jp || chapter.attributes.canonicalTitle || "Unknown Chapter"}`;
-        
-        // Add event listener to the chapter div
-        chapterDiv.addEventListener('click', () => showReadingOptions(chapter));
-    
-        chaptersDiv.appendChild(chapterDiv);
     });
-      
-    function showReadingOptions(chapter) {
-      const chapterTitle = chapter.attributes.titles.en_jp || chapter.attributes.canonicalTitle || "Unknown Chapter";
-      document.getElementById('modalChapterTitle').innerText = chapterTitle;
-      
-      const optionsList = document.getElementById('readingOptionsList');
-      optionsList.innerHTML = `
+
+    // Initiate search when something is typed in the search bar
+    nameInput.addEventListener("input", () => {
+      this.search();
+    });
+
+    // Add an event listener to the chapters button to toggle the chapters section
+    document
+      .getElementById("chapterBtn")
+      .addEventListener("click", () => this.handleChapterButtonClick());
+  }
+  openMangaModal(manga) {
+    // Fill in the modal content with manga details
+    const modal = document.getElementById("mangaModal");
+    document.getElementById("modalMangaImage").src =
+      manga.attributes.posterImage.original;
+    document.getElementById("modalMangaTitle").textContent =
+      manga.attributes.titles.en ||
+      manga.attributes.titles.en_jp ||
+      "Unknown Title";
+    document.getElementById("modalMangaSynopsis").textContent =
+      manga.attributes.synopsis || "No synopsis available.";
+    document.getElementById("modalUserCount").textContent =
+      manga.attributes.userCount || "N/A";
+    document.getElementById("modalFavoritesCount").textContent =
+      manga.attributes.favoritesCount || "N/A";
+    document.getElementById("modalAgeRating").textContent =
+      manga.attributes.ageRating || "N/A";
+    document.getElementById("modalStatus").textContent =
+      manga.attributes.status || "N/A";
+    document.getElementById("modalDateCreated").textContent =
+      new Date(manga.attributes.createdAt).toLocaleDateString() || "N/A";
+    document.getElementById("modalMangaScore").textContent =
+      manga.attributes.averageRating || "N/A";
+    // Show the modal
+    modal.style.display = "block";
+
+    // Add event listener to close the modal when clicked outside
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+    // Explicitly hide the "Load More" button and the chapters section when the modal opens
+    const loadMoreButton = document.getElementById("loadMoreChapters");
+    const chaptersDiv = document.getElementById("modalMangaChapters");
+
+    loadMoreButton.style.display = "none";
+    chaptersDiv.style.display = "none";
+
+    // Show the modal
+    modal.style.display = "block";
+    this.fetchChaptersFromKitsu(manga.id);
+  }
+  handleChapterButtonClick() {
+    const chaptersDiv = document.getElementById("modalMangaChapters");
+    const loadMoreButton = document.getElementById("loadMoreChapters");
+
+    if (
+      chaptersDiv.style.display === "none" ||
+      chaptersDiv.style.display === ""
+    ) {
+      chaptersDiv.style.display = "block";
+      loadMoreButton.style.display = "block"; // Show the "Load More" button when chapters are displayed
+    } else {
+      chaptersDiv.style.display = "none";
+      loadMoreButton.style.display = "none"; // Hide the "Load More" button when chapters are hidden
+    }
+  }
+  fetchChaptersFromKitsu(mangaId, append = false) {
+    console.log(mangaId);
+    if (!append) {
+      this.chapterOffset = 0; // Reset offset if not appending
+    }
+    this.currentMangaId = mangaId; // Store the current manga ID for later use
+
+    fetch(
+      `https://kitsu.io/api/edge/manga/${mangaId}/chapters?page[offset]=${this.chapterOffset}`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const chapters = data.data;
+        const chaptersDiv = document.getElementById("modalMangaChapters");
+        const loadMoreButton = document.getElementById("loadMoreChapters");
+
+        if (!append) {
+          chaptersDiv.innerHTML = ""; // Clear only if not appending
+          this.totalChaptersLoaded = 0; // Reset if not appending
+        }
+
+        chapters.forEach((chapter, index) => {
+          const chapterDiv = document.createElement("div");
+          const chapterNumber = this.totalChaptersLoaded + index + 1;
+          chapterDiv.innerHTML = `<strong style="color: #3d92f5;">Chapter ${chapterNumber}:</strong> ${
+            chapter.attributes.titles.en_jp ||
+            chapter.attributes.canonicalTitle ||
+            "Unknown Chapter"
+          }`;
+
+          // Add event listener to the chapter div
+          chapterDiv.addEventListener("click", () =>
+            showReadingOptions(chapter)
+          );
+
+          chaptersDiv.appendChild(chapterDiv);
+        });
+
+        // Check if there are more chapters to load
+        if (chapters.length < 10) {
+          loadMoreButton.style.display = "none"; // Hide the button if no more chapters
+        } else {
+          loadMoreButton.style.display = "block"; // Show the button if there might be more chapters
+        }
+
+        function showReadingOptions(chapter) {
+          const chapterTitle =
+            chapter.attributes.titles.en_jp ||
+            chapter.attributes.canonicalTitle ||
+            "Unknown Chapter";
+          document.getElementById("modalChapterTitle").innerText = chapterTitle;
+
+          const optionsList = document.getElementById("readingOptionsList");
+          optionsList.innerHTML = `
           <li><a href="https://www.crunchyroll.com" target="_blank">Crunchyroll</a></li>
           <li><a href="https://mangakatana.com" target="_blank">MangaKatana</a></li>
           <li><a href="https://mangakakalot.com" target="_blank">MangaKakalot</a></li>
       `;
-      
-      document.getElementById('readingOptionsModal').style.display = 'flex';
+
+          document.getElementById("readingOptionsModal").style.display = "flex";
+        }
+        this.totalChaptersLoaded += chapters.length;
+        this.chapterOffset += chapters.length; // Update the offset
+      })
+      .catch((error) => {
+        console.log(
+          "There was a problem with the fetch operation:",
+          error.message
+        );
+      });
   }
-      this.totalChaptersLoaded += chapters.length;
-      this.chapterOffset += chapters.length; // Update the offset
-    })
-    .catch(error => {
-        console.log('There was a problem with the fetch operation:', error.message);
-    });
-}
 }
 
 function closeModal() {
