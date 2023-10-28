@@ -16,6 +16,7 @@ function getUserById(id){
 }
 
 function getRecipeById(id){
+    var chosenRecipe
     let recipeList = JSON.parse(localStorage.getItem("allRecipes"))
     for(let i = 0; i < recipeList.length; i++){
         if(recipeList[i].recipeId==id){
