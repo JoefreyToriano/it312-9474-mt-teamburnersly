@@ -68,13 +68,15 @@ document.getElementById('viewMostPopular').addEventListener('click', () => this.
           resultsDiv.appendChild(mangaCard);
         });
       });
-}
-viewMoreTrending() {
+  }
+  viewMoreTrending() {
     this.trendingOffset += 10;
     this.fetchTrendingThisWeek(this.trendingOffset);
-}
+  }
   fetchTopPublishingManga(offset = 0) {
-    fetch(`${this.baseURL}manga?filter%5Bstatus%5D=current&page&sort=-user_count&page[offset]=${offset}`)
+    fetch(
+      `${this.baseURL}manga?filter%5Bstatus%5D=current&page&sort=-user_count&page[offset]=${offset}`
+    )
       .then((response) => response.json())
       .then((data) => {
         const resultsDiv = document.querySelector("#top-publishing .results");
@@ -84,13 +86,13 @@ viewMoreTrending() {
           resultsDiv.appendChild(mangaCard);
         });
       });
-}
-viewMorePublishing() {
-  this.publishingOffset += 10;
-  this.fetchTopPublishingManga(this.publishingOffset);
-}
+  }
+  viewMorePublishing() {
+    this.publishingOffset += 10;
+    this.fetchTopPublishingManga(this.publishingOffset);
+  }
 
-fetchTopUpcomingManga(offset = 0) {
+  fetchTopUpcomingManga(offset = 0) {
     fetch(`${this.baseURL}manga?filter[status]=upcoming&page[offset]=${offset}`)
       .then((response) => response.json())
       .then((data) => {
@@ -101,13 +103,13 @@ fetchTopUpcomingManga(offset = 0) {
           resultsDiv.appendChild(mangaCard);
         });
       });
-}
-viewMoreUpcoming() {
-  this.upcomingOffset += 10;
-  this.fetchTopUpcomingManga(this.upcomingOffset);
-}
+  }
+  viewMoreUpcoming() {
+    this.upcomingOffset += 10;
+    this.fetchTopUpcomingManga(this.upcomingOffset);
+  }
 
-fetchMostPopularManga(offset = 0) {
+  fetchMostPopularManga(offset = 0) {
     fetch(`${this.baseURL}manga?sort=-favoritesCount&page[offset]=${offset}`)
       .then((response) => response.json())
       .then((data) => {
@@ -118,11 +120,11 @@ fetchMostPopularManga(offset = 0) {
           resultsDiv.appendChild(mangaCard);
         });
       });
-}
-viewMorePopular() {
-  this.popularOffset += 10;
-  this.fetchMostPopularManga(this.popularOffset);
-}
+  }
+  viewMorePopular() {
+    this.popularOffset += 10;
+    this.fetchMostPopularManga(this.popularOffset);
+  }
 
   createMangaCard(manga) {
     const mangaDiv = document.createElement("div");
@@ -152,21 +154,48 @@ viewMorePopular() {
       manga.attributes.titles.en_jp ||
       "Unknown Title";
     mangaDiv.appendChild(title);
-    mangaDiv.addEventListener('click', () => this.openMangaModal(manga));
+    mangaDiv.addEventListener("click", () => this.openMangaModal(manga));
     return mangaDiv;
+  }
+  displayHomePage() {
+    const sectionsToShow = [
+      "trending",
+      "top-publishing",
+      "top-upcoming",
+      "most-popular",
+    ];
+    sectionsToShow.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      if (section) section.style.display = "block";
+    });
+
+    const resultsSection = document.getElementById("results");
+    if (resultsSection) resultsSection.style.display = "none";
   }
   search() {
     // Grab values from the input and selects
-    const name = document.getElementById('name').value;
-    const setting = document.getElementById('setting').value;
-    const demographics = document.getElementById('demographics').value;
-    const themes = document.getElementById('themes').value;
-    const genre = document.getElementById('genre').value;
+    const name = document.getElementById("name").value;
+
+    // If the name is empty, display the homepage and return.
+    if (!name.trim()) {
+      this.displayHomePage();
+      return;
+    }
+    const setting = document.getElementById("setting").value;
+    const demographics = document.getElementById("demographics").value;
+    const themes = document.getElementById("themes").value;
+    const genre = document.getElementById("genre").value;
+
     // Hides the Home page.
-    const sectionsToHide = ['trending', 'top-publishing', 'top-upcoming', 'most-popular'];
-    sectionsToHide.forEach(sectionId => {
+    const sectionsToHide = [
+      "trending",
+      "top-publishing",
+      "top-upcoming",
+      "most-popular",
+    ];
+    sectionsToHide.forEach((sectionId) => {
       const section = document.getElementById(sectionId);
-      if (section) section.style.display = 'none';
+      if (section) section.style.display = "none";
     });
     // Construct the API URL with filters
     let url = this.baseURL + "manga?";
@@ -176,18 +205,21 @@ viewMorePopular() {
     if (demographics) url += `&filter[demographics]=${demographics}`;
     if (themes) url += `&filter[themes]=${themes}`;
     console.log("Constructed URL:", url);
+
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.style.display = "block";
     // Make the API call
     fetch(url)
-        .then(response => {
-            console.log("API Response:", response); // Log the API response
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = ''; // clear previous results
+      .then((response) => {
+        console.log("API Response:", response); // Log the API response
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = ""; // clear previous results
 
             if (data.data.length === 0) {
                 resultsDiv.innerHTML = '<div>No manga found for the given criteria.</div>';
