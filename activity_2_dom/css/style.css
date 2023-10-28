@@ -7,17 +7,26 @@
 }
 .containerS {
   position: relative;
-  z-index: 3;
+  z-index: 4;
+}
+html, body {
+  height: 100%;
+  margin: 0;
 }
 body {
   font-family: "Arial", sans-serif;
   background-color: #000000;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
   opacity: 1;
   transition: opacity 0.5s;
 }
-
+.content-wrapper {
+  flex: 1 0 auto;
+}
 body.fade-out {
   opacity: 0;
 }
@@ -451,8 +460,12 @@ p {
 
 footer {
   background-color: #2C2F33;
-  position: relative;
-  padding: 30px 0;
+  position: absolute;
+  flex-shrink: 0;
+  bottom: -1475px;
+  left: 0;
+  right: 0;
+  padding: 50px 0;
   color: orange;
   z-index: 3;
 }
@@ -529,34 +542,6 @@ footer {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-/* Animation Initial States */
-.footer-logo, .footer-disclaimer, .footer-manga-btn, .footer-copyright {
-  opacity: 0; 
-  transition: all 0.5s; 
-}
-
-.footer-logo {
-  transform: translateY(-20px); 
-}
-.footer-disclaimer {
-  transform: translateX(-20px); 
-}
-
-.footer-manga-btn {
-  transform: translateX(20px); 
-}
-
-.footer-copyright {
-  transform: translateY(20px);
-}
-@media (max-width: 768px) {
-  .footer-logo, 
-  .footer-disclaimer, 
-  .footer-manga-btn, 
-  .footer-copyright {
-    transform: translateY(20px); 
-  }
 }
 .bgAnimation{
     position: absolute;

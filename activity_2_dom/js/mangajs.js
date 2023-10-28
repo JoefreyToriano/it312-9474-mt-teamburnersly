@@ -279,17 +279,27 @@ openMangaModal(manga) {
       closeModal();
       }
   }
-  this.fetchChaptersFromKitsu(manga.id);
+  // Explicitly hide the "Load More" button and the chapters section when the modal opens
+  const loadMoreButton = document.getElementById("loadMoreChapters");
+  const chaptersDiv = document.getElementById("modalMangaChapters");
+  
+  loadMoreButton.style.display = "none";
+  chaptersDiv.style.display = "none";
+
+  // Show the modal
+  modal.style.display = "block";
+     this.fetchChaptersFromKitsu(manga.id);
 }
 handleChapterButtonClick() {
   const chaptersDiv = document.getElementById("modalMangaChapters");
   const loadMoreButton = document.getElementById("loadMoreChapters");
-  if (chaptersDiv.style.display === "none") {
+  
+  if (chaptersDiv.style.display === "none" || chaptersDiv.style.display === "") {
       chaptersDiv.style.display = "block";
-      loadMoreButton.style.display = "block"; // Show the load more button
+      loadMoreButton.style.display = "block"; // Show the "Load More" button when chapters are displayed
   } else {
       chaptersDiv.style.display = "none";
-      loadMoreButton.style.display = "none"; // Hide the load more button
+      loadMoreButton.style.display = "none"; // Hide the "Load More" button when chapters are hidden
   }
 }
 fetchChaptersFromKitsu(mangaId, append = false) {
@@ -309,6 +319,8 @@ fetchChaptersFromKitsu(mangaId, append = false) {
     .then(data => {
       const chapters = data.data;
       const chaptersDiv = document.getElementById("modalMangaChapters");
+      const loadMoreButton = document.getElementById("loadMoreChapters");
+      
       if (!append) {
           chaptersDiv.innerHTML = ''; // Clear only if not appending
           this.totalChaptersLoaded = 0; // Reset if not appending
@@ -317,13 +329,20 @@ fetchChaptersFromKitsu(mangaId, append = false) {
       chapters.forEach((chapter, index) => {
         const chapterDiv = document.createElement("div");
         const chapterNumber = this.totalChaptersLoaded + index + 1;
-        chapterDiv.innerHTML = `<strong style="color: lightblue;">Chapter ${chapterNumber}:</strong> ${chapter.attributes.titles.en_jp || chapter.attributes.canonicalTitle || "Unknown Chapter"}`;
+        chapterDiv.innerHTML = `<strong style="color: #3d92f5;">Chapter ${chapterNumber}:</strong> ${chapter.attributes.titles.en_jp || chapter.attributes.canonicalTitle || "Unknown Chapter"}`;
         
         // Add event listener to the chapter div
         chapterDiv.addEventListener('click', () => showReadingOptions(chapter));
     
         chaptersDiv.appendChild(chapterDiv);
-    });
+      });
+
+      // Check if there are more chapters to load
+      if (chapters.length < 10) {
+        loadMoreButton.style.display = "none"; // Hide the button if no more chapters
+      } else {
+        loadMoreButton.style.display = "block"; // Show the button if there might be more chapters
+      }
       
     function showReadingOptions(chapter) {
       const chapterTitle = chapter.attributes.titles.en_jp || chapter.attributes.canonicalTitle || "Unknown Chapter";

@@ -671,32 +671,6 @@ function isElementInViewport(el) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
-
-function animateFooter() {
-  if (isElementInViewport(document.querySelector("footer"))) {
-    document.querySelector(".footer-logo").style.opacity = "1";
-    document.querySelector(".footer-logo").style.transform = "translateY(0)";
-
-    document.querySelector(".footer-disclaimer").style.opacity = "1";
-    document.querySelector(".footer-disclaimer").style.transform =
-      "translateX(0)";
-
-    document.querySelector(".footer-manga-btn").style.opacity = "1";
-    document.querySelector(".footer-manga-btn").style.transform =
-      "translateX(0)";
-
-    document.querySelector(".footer-copyright").style.opacity = "1";
-    document.querySelector(".footer-copyright").style.transform =
-      "translateY(0)";
-
-    // Remove the scroll event listener once the animation is triggered
-    window.removeEventListener("scroll", animateFooter);
-  }
-}
-
-// Add scroll event listener
-window.addEventListener("scroll", animateFooter);
-
 const bgAnimation = document.getElementById("bgAnimation");
 
 const numberOfColorBoxes = 400;
