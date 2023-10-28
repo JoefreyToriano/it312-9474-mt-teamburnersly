@@ -36,7 +36,7 @@ function displaySearchResults(results) {
                 <div>
                     <h2>${recipe.recipeName}</h2>
                     <p>${recipe.recipeDesc}</p>
-                    <p>Rating: ${recipe.averageRating}</p>
+                    <p>Rating: ${recipe.averageRating.toFixed(1)}</p>
                     <p>${generateStarRatingHTML(recipe.averageRating)}</p>
                 </div>
                 <img src="${imgUrl}" alt="${recipe.recipeName}">

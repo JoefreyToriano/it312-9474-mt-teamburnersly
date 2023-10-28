@@ -55,7 +55,19 @@ h1 strong {
 .manga-card:hover {
   border: 3px solid #066eb4;
 }
-
+#loadMoreChapters {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none; /* No border */
+  background-color: #656668;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border-radius: 5px; /* Added for rounded corners */
+  width: 150px; /* Fixed width for the button */
+  align-self: center;
+}
 .manga-title {
   background-color: #2074f1;
   color: #ffffff;
@@ -313,7 +325,7 @@ button#toggleFilters:hover {
   background-color: #185bd7; /* Slightly darker on hover */
 }
 footer {
-  background-color: #ffffff;
+  background-color: rgb(184, 185, 185);
   position: relative;
   padding: 30px 0;
   text-decoration: none;
