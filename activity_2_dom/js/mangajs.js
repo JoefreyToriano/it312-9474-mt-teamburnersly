@@ -184,18 +184,17 @@ class MangaSearch {
   }
   search() {
     // Grab values from the input and selects
-    const name = document.getElementById("name").value;
-
-    // If the name is empty, display the homepage and return.
-    if (!name.trim()) {
-      this.displayHomePage();
-      return;
-    }
+    const name = document.getElementById("name").value.trim();
     const setting = document.getElementById("setting").value;
     const demographics = document.getElementById("demographics").value;
     const themes = document.getElementById("themes").value;
     const genre = document.getElementById("genre").value;
 
+    // If the name and all filters are empty, display the homepage and return.
+    if (!name && !setting && !demographics && !themes && !genre) {
+      this.displayHomePage();
+      return;
+    }
     // Hides the Home page.
     const sectionsToHide = [
       "trending",
@@ -252,6 +251,10 @@ class MangaSearch {
     const toggleButton = document.getElementById("toggleFilters");
     const filtersDiv = document.getElementById("filtersDiv");
     const nameInput = document.getElementById("name");
+    const genreInput = document.getElementById("genre");
+    const settingInput = document.getElementById("setting");
+    const demographicsInput = document.getElementById("demographics");
+    const themesInput = document.getElementById("themes");
 
     // Toggle filters visibility
     toggleButton.addEventListener("click", () => {
@@ -268,6 +271,11 @@ class MangaSearch {
     nameInput.addEventListener("input", () => {
       this.search();
     });
+    // Listen for changes in the filters and initiate search
+    genreInput.addEventListener("change", () => this.search());
+    settingInput.addEventListener("change", () => this.search());
+    demographicsInput.addEventListener("change", () => this.search());
+    themesInput.addEventListener("change", () => this.search());
 
     // Add an event listener to the chapters button to toggle the chapters section
     document
