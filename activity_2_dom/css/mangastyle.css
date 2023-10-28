@@ -17,6 +17,12 @@ header {
   padding: 10px;
   font-size: 30px;
 }
+.manga-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;  /* this helps the link occupy the full width & height of h1 */
+}
+
 h1 strong {
   color: #238aff;
   font-weight: 900;
@@ -67,6 +73,10 @@ h1 strong {
   border-radius: 5px; /* Added for rounded corners */
   width: 150px; /* Fixed width for the button */
   align-self: center;
+}
+a {
+  text-decoration: none;
+  color: #9e9d9d;
 }
 .manga-title {
   background-color: #2074f1;

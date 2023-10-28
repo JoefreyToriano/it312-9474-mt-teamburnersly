@@ -36,11 +36,27 @@ class MangaSearch {
       .then((response) => response.json())
       .then((data) => {
         const genreSelect = document.getElementById("genre");
+
+        // Clear the dropdown to avoid any potential duplicates
+        genreSelect.innerHTML = "";
+
+        // Create and append the default option "Genre"
+        const defaultOption = document.createElement("option");
+        defaultOption.value = ""; // Empty value for default option
+        defaultOption.textContent = "....";
+        genreSelect.appendChild(defaultOption);
+
         for (let genre of data.data) {
-          const option = document.createElement("option");
-          option.value = genre.id;
-          option.textContent = genre.attributes.name;
-          genreSelect.appendChild(option);
+          if (
+            !Array.from(genreSelect.options).some(
+              (option) => option.value === genre.attributes.name
+            )
+          ) {
+            const option = document.createElement("option");
+            option.value = genre.attributes.name; // Setting the name as the value
+            option.textContent = genre.attributes.name;
+            genreSelect.appendChild(option);
+          }
         }
       });
   }
@@ -206,13 +222,13 @@ class MangaSearch {
       const section = document.getElementById(sectionId);
       if (section) section.style.display = "none";
     });
-    // Construct the API URL with filters
     let url = this.baseURL + "manga?";
-    if (name) url += `&filter%5Btext%5D=${encodeURIComponent(name)}`;
-    if (genre) url += `&filter%5Bgenres%5D=${encodeURIComponent(genre)}`;
-    if (setting) url += `&filter[setting]=${setting}`;
-    if (demographics) url += `&filter[demographics]=${demographics}`;
-    if (themes) url += `&filter[themes]=${themes}`;
+    if (name) url += `&filter[text]=${encodeURIComponent(name)}`;
+    if (genre) url += `&filter[categories]=${genre}`;
+    if (setting) url += `&filter[categories]=${setting}`;
+    if (demographics) url += `&filter[categories]=${demographics}`;
+    if (themes) url += `&filter[categories]=${themes}`;
+    url += `&page[limit]=20`;
     console.log("Constructed URL:", url);
 
     const resultsDiv = document.getElementById("results");
@@ -247,6 +263,7 @@ class MangaSearch {
         );
       });
   }
+
   setupEventListeners() {
     const toggleButton = document.getElementById("toggleFilters");
     const filtersDiv = document.getElementById("filtersDiv");
