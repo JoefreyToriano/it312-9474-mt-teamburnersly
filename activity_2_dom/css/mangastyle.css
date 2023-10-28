@@ -75,15 +75,15 @@ h1 strong {
   bottom: 0;
   width: 100%;
   text-align: center;
-  
+
   font-size: 14px;
   height: 40px; /* Set a fixed height for the title area */
   overflow: visible;
   display: -webkit-box;
   -webkit-line-clamp: 2; /* Limit to 2 lines */
   -webkit-box-orient: vertical;
-   line-height: 18px;  /* Explicit line height */
-  padding: 2px 5px;   /* Reduced vertical padding */
+  line-height: 18px; /* Explicit line height */
+  padding: 2px 5px; /* Reduced vertical padding */
   box-sizing: border-box; /* Include padding in height */
 }
 .manga-card img {
@@ -337,7 +337,7 @@ button#toggleFilters:hover {
 footer {
   background-color: rgb(184, 185, 185);
   position: relative;
-  padding: 30px 0;
+  padding: 40px 0;
   text-decoration: none;
   color: rgb(76, 129, 243);
   z-index: 3;
@@ -406,7 +406,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -416,13 +416,13 @@ a:hover {
   background: white;
   padding: 20px;
   max-width: 80%;
-  width: 400px; 
+  width: 400px;
   text-align: center;
-  border-radius: 5px; 
+  border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #modalChapterTitle {
-  color: #007BFF;
+  color: #007bff;
 }
 #readingOptionsModal h2 {
   font-size: 20px;
@@ -432,34 +432,34 @@ a:hover {
 
 #readingOptionsList {
   list-style-type: none;
-  padding: 0; 
-  margin: 0; 
+  padding: 0;
+  margin: 0;
 }
 
 #readingOptionsList li {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 #readingOptionsList a {
-  color: #007BFF;
-  text-decoration: none; 
+  color: #007bff;
+  text-decoration: none;
 }
 
 #readingOptionsList a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 #readingOptionsModal button {
-  background-color: #007BFF; 
-  color: white; 
-  padding: 10px 15px; 
-  border: none; 
-  border-radius: 5px; 
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 12px;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
 }
 
 #readingOptionsModal button:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }

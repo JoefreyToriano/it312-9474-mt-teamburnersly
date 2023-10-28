@@ -93,7 +93,7 @@
       </div>
       <ul id="results"></ul>
     </section>
-<!-- Manga Modal -->
+    <!-- Manga Modal -->
     <div id="mangaModal" style="display: none">
       <div id="mangaModalContent">
         <div class="modalTopSection">
@@ -119,25 +119,27 @@
               <strong>Manga Score:</strong> <span id="modalMangaScore"></span>
             </p>
           </div>
-         
         </div>
-         <div id="modalMangaCharacters"></div>
+        <div id="modalMangaCharacters"></div>
         <button id="chapterBtn">Chapters</button>
-        <div id="modalMangaChapters" style="display: none">
-        </div>
+        <div id="modalMangaChapters" style="display: none"></div>
         <button id="loadMoreChapters">Load More</button>
         <span class="closeModalBtn" onclick="closeModal()">&times;</span>
       </div>
-<!-- Reading Options Modal -->
-<div id="readingOptionsModal">
-  <div>
-      <h2>Reading Options for <span id="modalChapterTitle"></span></h2>
-      <ul id="readingOptionsList">
-          <!-- Options will be populated here -->
-      </ul>
-      <button onclick="document.getElementById('readingOptionsModal').style.display='none';">Close</button>
-  </div>
-</div>      
+      <!-- Reading Options Modal -->
+      <div id="readingOptionsModal">
+        <div>
+          <h2>Reading Options for <span id="modalChapterTitle"></span></h2>
+          <ul id="readingOptionsList">
+            <!-- Options will be populated here -->
+          </ul>
+          <button
+            onclick="document.getElementById('readingOptionsModal').style.display='none';"
+          >
+            Close
+          </button>
+        </div>
+      </div>
     </div>
     <script src="js/mangajs.js"></script>
   </body>
